@@ -1,0 +1,34 @@
+/**
+Theme Name: astra-child-theme
+Author: Mathilde & Katrine
+Author URI: http://wpastra.com/about/
+Description: Childtheme
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: astra-child-theme
+Template: astra
+*/
+
+/*Importing Yantramanav font from GoogleFonts*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300&family=Righteous&display=swap');
+
+/*Importing Open Sans font from GoogleFonts*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300&family=Righteous&display=swap');
+
+
+:root {
+    --dark_red: #6B1014;
+    --spanish_red: #AD1519;
+    --dark_yellow: #D8AB00;
+    --spanish_yellow: #FABD00;
+    --white: #F9F9F9;
+    --beige: #E5DAC3;
+    --green: #465D52;
+    --dark_green: #123929;
+    --black: #180F0D;
+    --dark_orange: #B45223;
+    --orange: #E3530E;
+    --blue: #6473FF;
+  }
+

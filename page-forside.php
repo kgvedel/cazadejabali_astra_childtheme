@@ -45,7 +45,7 @@ get_header(); ?>
             <form class="nyhedsbrev_form">
                 <div class="form_group">
                     <label for="email">Email <span class="required">*</span></label>
-                    <input type="email" id="email" name="Email" placeholder="Indtast email" required="">
+                    <input type="email" id="email" name="Email" placeholder="Indtast email" required>
                 </div>
 
                 <div class="sign_btn">

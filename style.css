@@ -101,5 +101,42 @@ Template: astra
     }
 
     .footer_logo{
-      background-image: url("green\ \(1\).svg");
+      background-image: url("green.svg");
     }
+  
+.footer_menu > ul:nth-child(1) {
+display: flex;
+gap: 24px;
+padding: 24px;
+}
+
+.footer_menu {
+background-color: var(--dark_green);
+}
+
+.footer_middle {
+padding: 24px;
+}
+
+#footer_nyhedsbrev_section > section:nth-child(1) > div:nth-child(1) > h4:nth-child(1) {
+padding: 0px 0px 16px 0px;
+}
+
+.footer_social {
+align-items: center;
+display:flex;
+}
+
+.download {
+display: flex;
+align-items: center;
+}
+
+.footer_contact {
+display: flex;
+}
+
+.footer_top {
+display: flex;
+flex-direction: column;
+}

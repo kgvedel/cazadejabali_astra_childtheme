@@ -52,7 +52,7 @@ get_header(); ?>
             </div>
             <div class="knapper">
                 <li><a href="" class="lokation"><span class="material-icons">location_on</span>Se lokation</a></li>
-                <button class="læs_mere">Læs mere</button>
+                <button class="seeMore">Læs mere</button>
             </div>
 
         </article>
@@ -72,13 +72,34 @@ let template = document.querySelector("template");
 
 
 //url til wp  db 
-const url = "https://www.xn--mflingo-q1a.dk/kea/pompettesite/wp-json/wp/v2/wine?per_page=100";
+const url = "https://www.vildsvinejagt.com/wp-json/wp/v2/attraction";
 // asynkron function som afventer og indhenter json data fra vores rest api
-async function hentData() {
+async function getData() {
     const jsonData = await fetch(url);
     attractions = await jsonData.json();
-    visSeværdigheder();
+    showAttractions();
 }
+
+
+
+function showAttractions() {
+    console.log(attractions);
+    //for each loop looper igennem alle vinene i json
+    attractions.forEach(attraction => {
+       
+
+            const klon = template.cloneNode(true).content;
+            klon.querySelector(".navn").textContent = attraction.navn;
+            klon.querySelector("img").src = attraction.billede.guid;
+            klon.querySelector(".beskrivelse").textContent += attraction.beskrivelse;
+            klon.querySelector(".seeMore").addEventListener("click", () => location.href = attraction.link);
+
+            destination.appendChild(klon);
+     
+    });
+}
+
+getData();
 
 </script>
 

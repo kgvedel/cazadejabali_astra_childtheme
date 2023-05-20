@@ -26,18 +26,18 @@ get_header(); ?>
 
     <?php astra_content_page_loop(); ?>
 
-    <section id="kontakt_sektion">
-		
-        <section id="grafik_sektion">
+    <section id="contact_section">
+
+        <section id="graphic_section">
             <img src="https://www.vildsvinejagt.com/wp-content/uploads/2023/05/green.svg" alt="grafik_logo_vildsvin">
         </section>
 
-        <section id="form_sektion">
+        <section id="form_section">
             <h2>Kontakt</h2>
             <h3>Har du nogle spørgsmål?</h3>
             <!-- Contact form section layout -->
-            <form id="kontakt_form">
-                <!-- Two column layout, name and email a column each, message two columns. Labels should be over input-->
+            <form id="contact_form">
+                
                 <div class="form_group">
                     <label for="name">Navn <span class="required">*</span></label>
                     <input type="text" id="name" name="Name" required="">

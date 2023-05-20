@@ -99,3 +99,7 @@ Template: astra
       padding: 8px 16px 8px 16px;
       text-align: center;
     }
+
+    .footer_logo{
+      background-image: url("green\ \(1\).svg");
+    }

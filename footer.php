@@ -16,11 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 <?php astra_content_bottom(); ?>
-	</div> <!-- ast-container -->
-	</div><!-- #content -->
+</div> <!-- ast-container -->
+</div><!-- #content -->
 
 <?php 
-<footer>
+?>
+
+<section id="footer">
     <section class="left">
 	<div class="footer_logo"></div>
 	<ul>
@@ -60,13 +62,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 </ul>
 </div>
 
-</footer>
-
-?>
-	</div><!-- #page -->
+</section>
+</div><!-- #page -->
 <?php 
 	astra_body_bottom();    
 	wp_footer(); 
 ?>
-	</body>
+</body>
+
 </html>

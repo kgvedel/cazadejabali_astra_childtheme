@@ -45,6 +45,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 </section>
 <section class="footer_middle">
+<section id="nyhedsbrev_section">
+        <section id="nyhedsbrev">
+            <div id="tekst">
+                <h4>Tilmeld nyhedsbrev</h4>
+            </div>
+            <form class="nyhedsbrev_form">
+                <div class="form_group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="Email" placeholder="Indtast email" required>
+                </div>
+
+                <div class="sign_btn">
+                    <button id="sign_up" type="submit">Tilmeld Nyhedsbrev</button>
+                </div>
+            </form>
+        </section>
+    </section>
+
 <div class="footer_social">
 <ul class="social">
 <li><a href="https://www.facebook.com" target="_blank"><span class="fa fa-facebook-official fa-2x"></span></a></li>

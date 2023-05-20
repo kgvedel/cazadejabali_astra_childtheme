@@ -39,13 +39,13 @@ get_header(); ?>
             <form id="contact_form">
                 
                 <div class="form_group">
-                    <label for="name">Navn <span class="required">*</span></label>
-                    <input type="text" id="name" name="Name" required="">
+                    <label for="name">Fulde Navn <span class="required">*</span></label>
+                    <input type="text" id="name" name="Name" placeholder="Indtast navn" required="">
                 </div>
 
                 <div class="form_group">
                     <label for="email">Email <span class="required">*</span></label>
-                    <input type="email" id="email" name="Email" required="">
+                    <input type="email" id="email" name="Email" placeholder="Indtast email" required="">
                 </div>
 
                 <div class="form_group">

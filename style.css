@@ -92,7 +92,7 @@ Template: astra
     gap: 24px;
     }
 
-     a.jp_btn{
+     .jp_btn{
       background: var(--spanish_red);
       color: var(--white);
       font-weight: bold;

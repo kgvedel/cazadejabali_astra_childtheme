@@ -45,15 +45,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 </section>
 <section class="footer_middle">
-<section id="nyhedsbrev_section">
+<section id="footer_nyhedsbrev_section">
         <section id="nyhedsbrev">
             <div id="tekst">
                 <h4>Tilmeld nyhedsbrev</h4>
             </div>
-            <form class="nyhedsbrev_form">
-                <div class="form_group">
+            <form class="footer_nyhedsbrev_form">
+                <div class="footer_form_group">
                     <label for="email">Email <span class="required">*</span></label>
-                    <input type="email" id="email" name="Email" placeholder="Indtast email" required>
+                    <input class="footer_input" type="email" id="email" name="Email" placeholder="Indtast email" required>
                 </div>
 
                 <div class="sign_btn">

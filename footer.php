@@ -29,11 +29,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <section id="footer">
     <section class="left">
-	<div class="footer_logo"></div>
-	<ul>
-		<li>foofestival@mail.com</li>
-		<li>+45 40043611</li>
-	</ul>
+	<div class="footer_logo">
+		
+	</div>
 </section>
 <section class="right">
 

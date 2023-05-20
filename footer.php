@@ -25,6 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 </head>
 
 <section id="footer">
@@ -36,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <section class="right">
 
 	<div class="footer_contact">
-		<ul>
+		<ul class="contact">
 			<li><a href="https://goo.gl/maps/swjEAjDChhDWmxaz7" target="_blank"><span class="material-icons">location_on</span>CazadeJabalí, Calle San Miguel 37A, 22583 Arén, España</a></li>
 			<li><a href="tel:+34638731397"><span class="material-icons">phone</span>+34 638 731 397</a></li>
 			<li><a href="tel:+4530647409"><span class="material-icons">phone</span>+45 30 64 74 09</a></li>
@@ -45,11 +46,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 </section>
 <div class="footer_social">
-<ul>
+<ul class="social">
 <li><a href="https://www.facebook.com" target="_blank"><span class="fa fa-facebook-official fa-2x"></span></a></li>
 <li><a href="https://www.instagram.com" target="_blank"><span class="fa fa-instagram fa-2x"></span></a></li>
 <li><a href="https://www.youtube.com" target="_blank"><span class="fa fa-youtube fa-2x"></span></a></li>
 </ul>
+</div>
+<ul class="download">
+		<li><a target="_blank" class="jp-btn" href="https://www.vildsvinejagt.com/wp-content/uploads/2023/05/Cazadejabali_jagtprogram.pdf">Jagtprogram</a></li>
+		<li><a target="_blank" class="jp-btn" href="https://www.vildsvinejagt.com/wp-content/uploads/2023/05/CazadeJabali_flyer-1.pdf">Flyer</a></li>
+		<li><a target="_blank" class="jp-btn" href="https://www.google.com">Plakat</a></li>
+	
+	</ul>
 </div>
 
 

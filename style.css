@@ -74,3 +74,28 @@ Template: astra
     margin: 0;
     padding: 0;
   }
+
+
+  /*footer styling*/
+
+  .footer_middle {
+    display: flex;
+    justify-content: space-around;
+    }
+    .social {
+    display: flex;
+    gap: 24px;
+    }
+
+    .download {
+    display: flex;
+    gap: 24px;
+    }
+
+     a.jp_btn{
+      background: var(--spanish_red);
+      color: var(--white);
+      font-weight: bold;
+      padding: 8px 16px 8px 16px;
+      text-align: center;
+    }

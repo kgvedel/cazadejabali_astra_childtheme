@@ -29,13 +29,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 </head>
 
 <section id="footer">
+	<section class="footer_top">
     <section class="left">
 	<div class="footer_logo">
-
 	</div>
 </section>
 <section class="right">
-
 	<div class="footer_contact">
 		<ul class="contact">
 			<li><a href="https://goo.gl/maps/swjEAjDChhDWmxaz7" target="_blank"><span class="material-icons">location_on</span>CazadeJabalí, Calle San Miguel 37A, 22583 Arén, España</a></li>
@@ -45,13 +44,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</ul>
 	</div>
 </section>
+<section class="footer_middle">
 <div class="footer_social">
 <ul class="social">
 <li><a href="https://www.facebook.com" target="_blank"><span class="fa fa-facebook-official fa-2x"></span></a></li>
 <li><a href="https://www.instagram.com" target="_blank"><span class="fa fa-instagram fa-2x"></span></a></li>
 <li><a href="https://www.youtube.com" target="_blank"><span class="fa fa-youtube fa-2x"></span></a></li>
 </ul>
-</div>
+</div class="footer_download">
 <ul class="download">
 		<li><a target="_blank" class="jp-btn" href="https://www.vildsvinejagt.com/wp-content/uploads/2023/05/Cazadejabali_jagtprogram.pdf">Jagtprogram</a></li>
 		<li><a target="_blank" class="jp-btn" href="https://www.vildsvinejagt.com/wp-content/uploads/2023/05/CazadeJabali_flyer-1.pdf">Flyer</a></li>
@@ -59,8 +59,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	
 	</ul>
 </div>
+</section>
 
-
+<section class="footer_bottom">
 <div class="footer_menu">
 <ul>
 <li><a href="https://www.vildsvinejagt.com/">Hjem</a></li>
@@ -72,9 +73,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 <li><a href="https://www.vildsvinejagt.com/index.php/faq/">FAQ</a></li>
 </ul>
 </div>
-
 </section>
+
 </div><!-- #page -->
+
 <?php 
 	astra_body_bottom();    
 	wp_footer(); 

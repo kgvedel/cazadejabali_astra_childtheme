@@ -19,6 +19,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div> <!-- ast-container -->
 	</div><!-- #content -->
 <?php 
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
 <footer>
     <section class="left">
 	<div class="footer_logo"></div>
@@ -38,6 +43,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</ul>
 	</div>
 </section>
+<div class="footer_social">
+<ul>
+<li><a class="material-icons" href="https://www.vildsvinejagt.com/">cloud</a></li>
+<li><a href="https://www.vildsvinejagt.com/index.php/jagtprogram-2/">Jagtprogram</a></li>
+<li><a href="https://www.vildsvinejagt.com/index.php/aren/">Arén</a></li>
+</ul>
+</div>
+
+
 <div class="footer_menu">
 <ul>
 <li><a href="https://www.vildsvinejagt.com/">Hjem</a></li>

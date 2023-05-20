@@ -46,9 +46,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 </section>
 <div class="footer_social">
 <ul>
-<li><a href="https://www.facebook.com"><span class="fa fa-facebook-officialx2"></span></a></li>
-<li><a href="https://www.instagram.com"><span class="fa fa-instagramx2"></span></a></li>
-<li><a href="https://www.youtube.com"><span class="fa fa-youtubex2"></span></a></li>
+<li><a href="https://www.facebook.com"><span class="fa fa-facebook-official-2x"></span></a></li>
+<li><a href="https://www.instagram.com"><span class="fa fa-instagram-2x"></span></a></li>
+<li><a href="https://www.youtube.com"><span class="fa fa-youtube-2x"></span></a></li>
 </ul>
 </div>
 

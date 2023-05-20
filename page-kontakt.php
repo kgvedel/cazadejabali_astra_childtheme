@@ -20,23 +20,53 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header(); ?>
 
 
-	<div id="primary" <?php astra_primary_class(); ?>>
+<div id="primary" <?php astra_primary_class(); ?>>
 
-		<?php astra_primary_content_top(); ?>
+    <?php astra_primary_content_top(); ?>
 
-		<?php astra_content_page_loop(); ?>
+    <?php astra_content_page_loop(); ?>
 
-		<section id="content-section">
-			<h1 id="tester">Heeeeej det virker jo</h1>
-		</section>
+    <section id="kontakt_sektion">
+		
+        <section id="grafik_sektion">
+            <img src="https://www.vildsvinejagt.com/wp-content/uploads/2023/05/green.svg" alt="grafik_logo_vildsvin">
+        </section>
 
-		<?php astra_primary_content_bottom(); ?>
+        <section id="form_sektion">
+            <h2>Kontakt</h2>
+            <h3>Har du nogle spørgsmål?</h3>
+            <!-- Contact form section layout -->
+            <form id="kontakt_form">
+                <!-- Two column layout, name and email a column each, message two columns. Labels should be over input-->
+                <div class="form_group">
+                    <label for="name">Navn <span class="required">*</span></label>
+                    <input type="text" id="name" name="Name" required="">
+                </div>
 
-	</div><!-- #primary -->
+                <div class="form_group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="Email" required="">
+                </div>
+
+                <div class="form_group">
+                    <label for="message">Din besked <span class="required">*</span></label>
+                    <textarea id="message" name="Message" required=""></textarea>
+                </div>
+
+                <div class="form_group">
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+        </section>
+
+    </section>
+
+
+</div><!-- #primary -->
 
 <?php if ( astra_page_layout() == 'right-sidebar' ) : ?>
 
-	<?php get_sidebar(); ?>
+<?php get_sidebar(); ?>
 
 <?php endif ?>
 

@@ -18,6 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php astra_content_bottom(); ?>
 	</div> <!-- ast-container -->
 	</div><!-- #content -->
+
 <?php 
 <footer>
     <section class="left">

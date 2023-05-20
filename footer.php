@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <section id="footer">
     <section class="left">
 	<div class="footer_logo">
-		
+
 	</div>
 </section>
 <section class="right">
@@ -46,9 +46,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 </section>
 <div class="footer_social">
 <ul>
-<li><a href="https://www.facebook.com"><span class="fa fa-facebook-official"></span></a></li>
-<li><a href="https://www.instagram.com"><span class="fa fa-instagram"></span></a></li>
-<li><a href="https://www.youtube.com"><span class="fa fa-youtube"></span></a></li>
+<li><a href="https://www.facebook.com"><span class="fa fa-facebook-officialx2"></span></a></li>
+<li><a href="https://www.instagram.com"><span class="fa fa-instagramx2"></span></a></li>
+<li><a href="https://www.youtube.com"><span class="fa fa-youtubex2"></span></a></li>
 </ul>
 </div>
 

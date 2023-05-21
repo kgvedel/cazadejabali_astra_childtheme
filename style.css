@@ -1,16 +1,14 @@
 /*
- Theme Name:   astra child
- Theme URI:	https://www.vildsvinejagt.com/astra-child
- Description:  Astra Child Theme is an awesome theme.
- Author:   	vildsvinejagt
- Author URI:   https://vildsvinejagt.com
- Template: 	astra
- Version:  	1.0.0
- License:  	GNU General Public License v2 or later
- License URI:  http://www.gnu.org/licenses/gpl-2.0.html
- Tags:astra
- Text Domain:  astrachild
+Theme Name:   Our Child
+Theme URI:    http://example.com/twenty-fifteen-child/
+Description:  this is our child theme
+Author:       Mathilde og katrine
+Template:     astra
+Version:      1.1.0
+License:      GNU General Public License v2 or later
+License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
+
 
 /*Importing Yantramanav font from GoogleFonts*/
 @import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap');

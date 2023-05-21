@@ -22,6 +22,11 @@ if (!defined('ABSPATH')) {
 <?php
 ?>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="style.css">
+
+
 <footer>
 
 	<section id="sfooter">
@@ -68,12 +73,13 @@ if (!defined('ABSPATH')) {
 		<section class="footer_middle">
 			<div class="footer_social">
 				<ul class="social">
-					<li><a href="https://www.facebook.com" target="_blank"><span
-								class="fa fa-facebook-official fa-2x"></span></a></li>
-					<li><a href="https://www.instagram.com" target="_blank"><span
-								class="fa fa-instagram fa-2x"></span></a>
+					<li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-official"
+								style="font-size:60px;color:red;"></i></a></li>
+					<li><a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"
+								style="font-size:60px;color:red;"></i></a>
 					</li>
-					<li><a href="https://www.youtube.com" target="_blank"><span class="fa fa-youtube fa-2x"></span></a>
+					<li><a href="https://www.youtube.com" target="_blank"><i class="fa fa-youtube"
+								style="font-size:60px;color:red;"></i></a>
 					</li>
 				</ul>
 			</div class="footer_download">

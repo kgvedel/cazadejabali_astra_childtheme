@@ -1,9 +1,9 @@
 /**
 Theme Name: astra-child-theme
-Author: Mathilde & Katrine
+Author: MathildeKatrine
 Author URI: http://wpastra.com/about/
-Description: Childtheme
-Version: 1.1.0
+Description: astra-child-theme
+Version: 1.5.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: astra-child-theme
@@ -78,6 +78,35 @@ Template: astra
 
   /*footer styling*/
 
+  .footer_top{
+    display: flex;
+  }
+
+  #footer_logo img{
+    width: 150px;
+  }
+
+  .footer_middle{
+    display: flex;
+  }
+
+  .footer_bottom{
+    background-color: var(--dark_green);
+    display: flex;
+  }
+
+  a.jp_btn{
+    background: var(--spanish_red);
+    color: var(--white);
+    font-weight: bold;
+    padding: 8px 16px 8px 16px;
+    text-align: center;
+  }
+
+ /* #footer{
+    max-width: 1100px;
+  }
+
   .footer_middle {
     display: flex;
     justify-content: space-around;
@@ -91,20 +120,7 @@ Template: astra
     display: flex;
     gap: 24px;
     }
-
-     .jp_btn{
-      background: var(--spanish_red);
-      color: var(--white);
-      font-weight: bold;
-      padding: 8px 16px 8px 16px;
-      text-align: center;
-    }
   
-.footer_menu > ul:nth-child(1) {
-display: flex;
-gap: 24px;
-padding: 24px;
-}
 
 .footer_menu {
 background-color: var(--dark_green);
@@ -112,10 +128,6 @@ background-color: var(--dark_green);
 
 .footer_middle {
 padding: 24px;
-}
-
-#footer_nyhedsbrev_section > section:nth-child(1) > div:nth-child(1) > h4:nth-child(1) {
-padding: 0px 0px 16px 0px;
 }
 
 .footer_social {
@@ -136,3 +148,12 @@ display: flex;
 display: flex;
 flex-direction: column;
 }
+
+
+.footer_top {
+  border-style: solid;
+  border-color: var(--dark_red);
+  border-style: solid;
+  border-width: 2px 0px 0px 0px;
+}
+*/

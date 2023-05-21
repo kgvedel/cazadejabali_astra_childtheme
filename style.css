@@ -78,16 +78,69 @@ Template: astra
 
   /*footer styling*/
 
-  .footer_top{
-    display: flex;
-  }
+.footer_top {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.footer_middle {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  align-items: center;
+}
+
+.social {
+  display: flex;
+  gap: 24px;
+  padding: 8px;
+}
+
+.download {
+  display: flex;
+  gap: 24px;
+  padding: 8px;
+}
+
+.footer_menu > ul:nth-child(1) {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#footer_nyhedsbrev_section > section:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer_nyhedsbrev_form {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+#footer_nyhedsbrev_section {
+  width: 100%;
+  padding: 24px;
+}
+
+#sfooter {
+  max-width: 1140px;
+  align-items: center;
+  margin: 0 auto;
+  border-style: solid;
+  border-width: 2px 0px 0px 0px;
+  padding: 24px;
+  border-color: var(--dark_red);
+}
 
   #footer_logo img{
-    width: 150px;
-  }
-
-  .footer_middle{
-    display: flex;
+    width: 240px;
   }
 
   .footer_bottom{
@@ -95,13 +148,6 @@ Template: astra
     display: flex;
   }
 
-  a.jp_btn{
-    background: var(--spanish_red);
-    color: var(--white);
-    font-weight: bold;
-    padding: 8px 16px 8px 16px;
-    text-align: center;
-  }
 
  /* #footer{
     max-width: 1100px;

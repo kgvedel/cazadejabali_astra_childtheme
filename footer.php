@@ -26,15 +26,14 @@ if (!defined('ABSPATH')) {
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="style.css">
-
 </head>
 
 <footer>
 
-	<section id="footer">
+	<section id="sfooter">
 		<section class="footer_top">
 			<section class="left">
-				<div class="footer_logo">
+				<div id="footer_logo">
 					<img src="https://www.vildsvinejagt.com/wp-content/uploads/2023/05/green.svg"
 						alt="grafik_logo_vildsvin">
 				</div>
@@ -72,7 +71,6 @@ if (!defined('ABSPATH')) {
 				</form>
 			</section>
 		</section>
-
 		<section class="footer_middle">
 			<div class="footer_social">
 				<ul class="social">
@@ -93,11 +91,9 @@ if (!defined('ABSPATH')) {
 						href="https://www.vildsvinejagt.com/wp-content/uploads/2023/05/CazadeJabali_flyer-1.pdf">Flyer</a>
 				</li>
 				<li><a target="_blank" class="jp-btn" href="https://www.google.com">Plakat</a></li>
-
 			</ul>
 			</div>
 		</section>
-
 		<section class="footer_bottom">
 			<div class="footer_menu">
 				<ul>

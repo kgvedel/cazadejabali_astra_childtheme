@@ -1,9 +1,9 @@
 /**
 Theme Name: astra-child-theme
-Author: Mathilde & Katrine
+Author: MathildeKatrine
 Author URI: http://wpastra.com/about/
-Description: Childtheme
-Version: 1.1.1
+Description: astra-child-theme
+Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: astra-child-theme
@@ -82,7 +82,7 @@ Template: astra
     display: flex;
   }
 
-  .footer_logo img{
+  #footer_logo img{
     width: 150px;
   }
 
@@ -91,7 +91,16 @@ Template: astra
   }
 
   .footer_bottom{
+    background-color: var(--dark_green);
     display: flex;
+  }
+
+  a.jp_btn{
+    background: var(--spanish_red);
+    color: var(--white);
+    font-weight: bold;
+    padding: 8px 16px 8px 16px;
+    text-align: center;
   }
 
  /* #footer{
@@ -110,14 +119,6 @@ Template: astra
     .download {
     display: flex;
     gap: 24px;
-    }
-
-     .jp_btn{
-      background: var(--spanish_red);
-      color: var(--white);
-      font-weight: bold;
-      padding: 8px 16px 8px 16px;
-      text-align: center;
     }
   
 

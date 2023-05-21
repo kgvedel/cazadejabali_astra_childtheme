@@ -78,7 +78,23 @@ Template: astra
 
   /*footer styling*/
 
-  #footer{
+  .footer_top{
+    display: flex;
+  }
+
+  .footer_logo img{
+    width: 150px;
+  }
+
+  .footer_middle{
+    display: flex;
+  }
+
+  .footer_bottom{
+    display: flex;
+  }
+
+ /* #footer{
     max-width: 1100px;
   }
 
@@ -131,3 +147,12 @@ display: flex;
 display: flex;
 flex-direction: column;
 }
+
+
+.footer_top {
+  border-style: solid;
+  border-color: var(--dark_red);
+  border-style: solid;
+  border-width: 2px 0px 0px 0px;
+}
+*/

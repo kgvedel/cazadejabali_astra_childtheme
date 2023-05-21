@@ -44,8 +44,7 @@ if (!defined('ABSPATH')) {
 					<ul class="contact">
 						<li><a href="https://goo.gl/maps/swjEAjDChhDWmxaz7" target="_blank"><span
 									class="material-icons">location_on</span>CazadeJabalí, Calle San Miguel 37A, 22583
-								Arén,
-								España</a></li>
+								Arén, España</a></li>
 						<li><a href="tel:+34638731397"><span class="material-icons">phone</span>+34 638 731 397</a></li>
 						<li><a href="tel:+4530647409"><span class="material-icons">phone</span>+45 30 64 74 09</a></li>
 						<li><a href="mailto:tom@cazadejabali.com" target="_blank"><span
@@ -55,27 +54,26 @@ if (!defined('ABSPATH')) {
 			</section>
 		</section>
 
+		<section id="footer_nyhedsbrev_section">
+			<section id="nyhedsbrev">
+				<div id="tekst">
+					<h4>Tilmeld nyhedsbrev</h4>
+				</div>
+				<form class="footer_nyhedsbrev_form">
+					<div class="footer_form_group">
+						<label for="email">Email <span class="required">*</span></label>
+						<input class="footer_input" type="email" id="email" name="Email" placeholder="Indtast email"
+							required>
+					</div>
+
+					<div class="sign_btn">
+						<button id="sign_up" type="submit">Tilmeld Nyhedsbrev</button>
+					</div>
+				</form>
+			</section>
+		</section>
 
 		<section class="footer_middle">
-			<section id="footer_nyhedsbrev_section">
-				<section id="nyhedsbrev">
-					<div id="tekst">
-						<h4>Tilmeld nyhedsbrev</h4>
-					</div>
-					<form class="footer_nyhedsbrev_form">
-						<div class="footer_form_group">
-							<label for="email">Email <span class="required">*</span></label>
-							<input class="footer_input" type="email" id="email" name="Email" placeholder="Indtast email"
-								required>
-						</div>
-
-						<div class="sign_btn">
-							<button id="sign_up" type="submit">Tilmeld Nyhedsbrev</button>
-						</div>
-					</form>
-				</section>
-			</section>
-
 			<div class="footer_social">
 				<ul class="social">
 					<li><a href="https://www.facebook.com" target="_blank"><span

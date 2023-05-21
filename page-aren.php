@@ -30,7 +30,7 @@ get_header(); ?>
     <?php astra_primary_content_top(); ?>
 
     <?php astra_content_page_loop(); ?>
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    
     <div class="carousel">
@@ -42,7 +42,7 @@ get_header(); ?>
     <template id="cardTemplate">
         <div class="card">
             <img class="card-image" src="" alt="">
-            <h3 class="card-title"></h3>
+            <h4 class="card-title"></h4>
             <p class="card-description"></p>
         </div>
     </template>

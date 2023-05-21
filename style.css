@@ -3,7 +3,7 @@ Theme Name: astra-child-theme
 Author: MathildeKatrine
 Author URI: http://wpastra.com/about/
 Description: astra-child-theme
-Version: 1.5.0
+Version: 1.5.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: astra-child-theme
@@ -48,7 +48,7 @@ Template: astra
   }
 
   h3{
-    font-size: 72px;
+    font-size: 56px;
     font-style: normal;
     font-weight: 600;
   }

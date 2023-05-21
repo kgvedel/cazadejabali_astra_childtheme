@@ -157,3 +157,36 @@ flex-direction: column;
   border-width: 2px 0px 0px 0px;
 }
 */
+
+/*aren - seværdigheder card styling*/
+.carousel {
+  display: flex;
+  max-width: 1100px;
+}
+
+.attractions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  width: 240px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.controls {
+  margin-top: 10px;
+}
+
+#prevButton,
+#nextButton {
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.card-image {
+  max-width: 200px;
+}

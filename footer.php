@@ -35,6 +35,8 @@ if (!defined('ABSPATH')) {
 		<section class="footer_top">
 			<section class="left">
 				<div class="footer_logo">
+					<img src="https://www.vildsvinejagt.com/wp-content/uploads/2023/05/green.svg"
+						alt="grafik_logo_vildsvin">
 				</div>
 			</section>
 			<section class="right">

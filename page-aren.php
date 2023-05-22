@@ -47,8 +47,8 @@ get_header(); ?>
             <hr class="linebreaker">
             <p class="card-description"></p>
             <div class="button_container">
-                <button id="button" class="btn-location"><i class="fa fa-map-marker"></i> Find lokation i maps</button>
-                <button id="button" class="btn-link">Se mere</button>
+                <button class="btn-location"><i class="fa fa-map-marker"></i> Find lokation i maps</button>
+                <button class="btn-link">Se mere</button>
             </div>
         </div>
     </template>

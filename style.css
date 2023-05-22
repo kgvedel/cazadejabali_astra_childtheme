@@ -66,14 +66,15 @@ h4 {
 }
 
   ul{
-    list-style: none;
+    list-style: none !important;
     margin: 0;
     padding: 0;
   }
-  h2, .entry-content h2{
-    color:#6B1014;
-    font-size: 102px;
+
+  button{
+    padding: 8px 24px;
   }
+
  /*Generelt form styling*/
  form{
   background: #E5DAC3;

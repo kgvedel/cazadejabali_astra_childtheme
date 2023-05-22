@@ -217,8 +217,11 @@ function handleTouchEnd(event) {
   handleSwipe();
 }
 
-document.addEventListener('touchstart', handleTouchStart);
-document.addEventListener('touchend', handleTouchEnd);
+// Event listeners til carousel sectionen
+const carousel = document.querySelector('.carousel');
+carousel.addEventListener('touchstart', handleTouchStart);
+carousel.addEventListener('touchend', handleTouchEnd);
+
 </script>
 
 <?php if ( astra_page_layout() == 'right-sidebar' ) : ?>

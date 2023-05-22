@@ -34,6 +34,7 @@ h1,
 h2,
 h3 {
   font-family: "Yantramanav";
+  color: var(--black);
 }
 
 h1 {
@@ -73,6 +74,7 @@ ul {
 
 button{
   padding:8px 24px;
+  font-weight: bold;
 }
 
 img{

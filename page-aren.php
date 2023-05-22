@@ -32,21 +32,26 @@ get_header(); ?>
     <?php astra_content_page_loop(); ?>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <div class="carousel">
-        <button class="fa fa-angle-left" id="prevButton"></button>
-        <div class="attractions"></div>
-        <button class="fa fa-angle-right" id="nextButton"></button>
-    </div>
-
+    <section id="seværdigheder">
+        <h2>Seværdigheder</h2>
+        <div class="carousel">
+            <button class="fa fa-angle-left controls" id="prevButton"></button>
+            <div class="attractions"></div>
+            <button class="fa fa-angle-right controls" id="nextButton"></button>
+        </div>
+    </section>
     <template id="cardTemplate">
         <div class="card">
-            <img class="card-image" src="" alt="">
+            <img id="card-image" class="card-image" src="" alt="">
             <h4 class="card-title"></h4>
+            <hr class="linebreaker">
             <p class="card-description"></p>
+            <div class="button_container">
+                <button class="btn-location"><i class="fa fa-map-marker"> Find lokation i maps</i></button>
+                <button class="btn-link">Se mere</button>
+            </div>
         </div>
     </template>
-
     <?php astra_primary_content_bottom(); ?>
 
 </div><!-- #primary -->
@@ -135,14 +140,27 @@ function updateCards() {
         //cloner template og laver variabler for de individuelle elementer
         const cardClone = cardTemplate.content.cloneNode(true);
         const card = cardClone.querySelector('.card');
-        const cardImage = cardClone.querySelector('.card-image');
-        const cardTitle = cardClone.querySelector('.card-title');
-        const cardDescription = cardClone.querySelector('.card-description');
+        const attractionImage = cardClone.querySelector('.card-image');
+        const attractionTitle = cardClone.querySelector('.card-title');
+        const attractionDescription = cardClone.querySelector('.card-description');
+        const attractionLocation = cardClone.querySelector('.btn-location');
+        const attractionMore = cardClone.querySelector('.btn-link');
+
 
         //indsætter data baseret på data indexet 
-        cardImage.src = attractions[dataIndex].billede.guid;
-        cardTitle.textContent = attractions[dataIndex].navn;
-        cardDescription.textContent = attractions[dataIndex].beskrivelse;
+        attractionImage.src = attractions[dataIndex].billede.guid;
+        attractionTitle.textContent = attractions[dataIndex].navn;
+        attractionDescription.textContent = attractions[dataIndex].beskrivelse;
+
+        attractionLocation.addEventListener("click", () => window.open(attractions[dataIndex].placering));
+        attractionMore.addEventListener("click", () => window.open(attractions[dataIndex].link));
+
+        if (dataIndex == 0) {
+
+            attractionLocation.remove();
+            attractionMore.remove();
+        }
+
 
         destination.appendChild(cardClone);
     }
@@ -185,43 +203,42 @@ const swipeThreshold = 90; // for at sikre det kun aktiveres efter en hvis dista
 
 // Funktion der håndterer swipe, og kalder enten prev eller next card afhængigt af swipe-retningen
 function handleSwipe() {
-  // Beregn afstanden mellem touch end og touch start
-  const distance = touchendX - touchstartX;
+    // Beregn afstanden mellem touch end og touch start
+    const distance = touchendX - touchstartX;
 
-  // Hvis afstanden er større en swipethreshold, aktiveres de to if statements,
-  if (Math.abs(distance) >= swipeThreshold) {
-    // Hvis slutpunktet er mindre end startpunktet, er det et left swipe og next card vises
-    if (touchendX < touchstartX) {
-      nextCard();
+    // Hvis afstanden er større en swipethreshold, aktiveres de to if statements,
+    if (Math.abs(distance) >= swipeThreshold) {
+        // Hvis slutpunktet er mindre end startpunktet, er det et left swipe og next card vises
+        if (touchendX < touchstartX) {
+            nextCard();
+        }
+        // Hvis slutpunktet er større end startpunktet,er det et right swipe og prev card vises
+        if (touchendX > touchstartX) {
+            previousCard();
+        }
     }
-    // Hvis slutpunktet er større end startpunktet,er det et right swipe og prev card vises
-    if (touchendX > touchstartX) {
-      previousCard();
-    }
-  }
 
-  updateCards();
+    updateCards();
 }
 
 // Indsamler data om berørings start ved hjælp af screenX og gemmer det i variablen touchstartx
 function handleTouchStart(event) {
-  touchstartX = event.changedTouches[0].screenX;
-  console.log(touchstartX);
+    touchstartX = event.changedTouches[0].screenX;
+    console.log(touchstartX);
 }
 
 // Indsamler data om berøring slut ved hjælp af screenX og gemmer det i variablen touchendx
 // Kalder handleSwipe-funktionen
 function handleTouchEnd(event) {
-  touchendX = event.changedTouches[0].screenX;
-  console.log(touchendX);
-  handleSwipe();
+    touchendX = event.changedTouches[0].screenX;
+    console.log(touchendX);
+    handleSwipe();
 }
 
 // Event listeners til carousel sectionen
 const carousel = document.querySelector('.carousel');
 carousel.addEventListener('touchstart', handleTouchStart);
 carousel.addEventListener('touchend', handleTouchEnd);
-
 </script>
 
 <?php if ( astra_page_layout() == 'right-sidebar' ) : ?>

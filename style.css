@@ -9,77 +9,75 @@ License:      GNU General Public License v2 or later
 License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-
 /*Importing Yantramanav font from GoogleFonts*/
-@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap");
 
 /*Importing Open Sans font from GoogleFonts*/
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300&family=Righteous&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300&family=Righteous&display=swap");
 
 :root {
-    --dark_red: #6B1014;
-    --spanish_red: #AD1519;
-    --dark_yellow: #D8AB00;
-    --spanish_yellow: #FABD00;
-    --white: #F9F9F9;
-    --beige: #E5DAC3;
-    --green: #465D52;
-    --dark_green: #123929;
-    --black: #180F0D;
-    --dark_orange: #B45223;
-    --orange: #E3530E;
-    --blue: #6473FF;
-  }
-  
-  h1, h2, h3 {
-    font-family: 'Yantramanav';
-  }
+  --dark_red: #6b1014;
+  --spanish_red: #ad1519;
+  --dark_yellow: #d8ab00;
+  --spanish_yellow: #fabd00;
+  --white: #f9f9f9;
+  --beige: #e5dac3;
+  --green: #465d52;
+  --dark_green: #123929;
+  --black: #180f0d;
+  --dark_orange: #b45223;
+  --orange: #e3530e;
+  --blue: #6473ff;
+}
 
-  h1{
-    font-size: 72px;
-    font-style: normal;
-    font-weight: 900;
-  }
+h1,
+h2,
+h3 {
+  font-family: "Yantramanav";
+}
 
-  h2{
-    font-size: 64px;
-    font-style: normal;
-    font-weight: bold;
-  }
+h1 {
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 900;
+}
 
-  h3{
-    font-size: 56px;
-    font-style: normal;
-    font-weight: 600;
-  }
+h2 {
+  font-size: 64px;
+  font-style: normal;
+  font-weight: bold;
+}
 
-  h4, p{
-    font-family: 'Open Sans';
-  }
+h3 {
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 600;
+}
 
-  h4{
-    font-size: 24px;
-    font-style: normal;
-    font-weight: bold;
-  }
+h4,
+p {
+  font-family: "Open Sans";
+}
 
-  p{
-    font-size: 16px;
-    font-style: normal;
-    font-weight: normal;
-  }
+h4 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: bold;
+}
 
-  ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  h2, .entry-content h2{
-    color:#6B1014;
-    font-size: 102px;
-  }
+p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+}
 
-  /*footer styling*/
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*footer styling*/
 
 .footer_top {
   display: flex;
@@ -142,17 +140,16 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
   border-color: var(--dark_red);
 }
 
-  #footer_logo img{
-    width: 240px;
-  }
+#footer_logo img {
+  width: 240px;
+}
 
-  .footer_bottom{
-    background-color: var(--dark_green);
-    display: flex;
-  }
+.footer_bottom {
+  background-color: var(--dark_green);
+  display: flex;
+}
 
-
- /* #footer{
+/* #footer{
     max-width: 1100px;
   }
 
@@ -208,13 +205,31 @@ flex-direction: column;
 */
 
 /*aren - seværdigheder card styling*/
+body {
+  margin: 0;
+}
+
+#seværdigheder {
+  background-color: var(--green);
+  width: 100%;
+}
+
+#seværdigheder h2 {
+  text-align: center;
+  align-self: center;
+}
+
 .carousel {
   display: flex;
-  overflow-y: hidden;
-  justify-content: center;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 16px;
+  align-items: center;
+  gap: 1rem;
 }
 
 .attractions {
+  max-width: 1240px;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -222,24 +237,58 @@ flex-direction: column;
 }
 
 .card {
-  width: 100%;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-right: 10px;
-  transition: transform 0.3s ease;
-}
-
-.controls {
-  margin-top: 10px;
+  display: flex;
+  flex: 1 0 200px;
+  box-sizing: border-box;
+  height: 32rem;
+  margin: 1rem 0.25em;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  padding: 1rem;
+  border: 0px solid var(--black);
+  background-color: var(--white);
+  box-shadow: 4px 8px 12px 4px #180f0d35;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 #prevButton,
 #nextButton {
-  padding: 5px 10px;
-  font-size: 16px;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 72px;
+  color: var(--black);
 }
 
-.card-image {
-  max-width: 200px;
+#card-image {
+  padding: 8px;
+  object-fit: cover;
+  width: 100%;
+  height: 12rem;
+  align-self: center;
+}
+
+h4.card-title {
+  margin: 4px;
+  text-align: center;
+}
+
+.linebreaker {
+  border-top: 2px solid var(--black);
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  /*seværdigheder*/
+  .carousel {
+    padding: 0rem;
+    gap: 0rem;
+  }
+
+  #nextButton,
+  #prevButton {
+    font-size: 24px;
+  }
 }

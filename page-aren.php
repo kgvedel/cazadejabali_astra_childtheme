@@ -178,32 +178,39 @@ function nextCard() {
 }
 
 
-//tetsinggggggg
-//variables for the touch start and end point
+// Variabler for touch start- og slutpunkt
 let touchstartX = 0;
 let touchendX = 0;
+const swipeThreshold = 90; // for at sikre det kun aktiveres efter en hvis distance
 
-//function that calls previous card or next card depending on swipe dirrection
+// Funktion der håndterer swipe, og kalder enten prev eller next card afhængigt af swipe-retningen
 function handleSwipe() {
-    //if touch end is smaller than touch start, its a leftswipe and next card will be shown
-  if (touchendX < touchstartX) {
-    nextCard();
-  }
- //if touch end point is bigger than touch start point, its a right swipe and previous card will be shown
-  if (touchendX > touchstartX) {
+  // Beregn afstanden mellem touch end og touch start
+  const distance = touchendX - touchstartX;
 
-    previousCard();
+  // Hvis afstanden er større en swipethreshold, aktiveres de to if statements,
+  if (Math.abs(distance) >= swipeThreshold) {
+    // Hvis slutpunktet er mindre end startpunktet, er det et left swipe og next card vises
+    if (touchendX < touchstartX) {
+      nextCard();
+    }
+    // Hvis slutpunktet er større end startpunktet,er det et right swipe og prev card vises
+    if (touchendX > touchstartX) {
+      previousCard();
+    }
   }
 
   updateCards();
 }
-//collects data on the touch start point using screenX, and saves in the variable
+
+// Indsamler data om berørings start ved hjælp af screenX og gemmer det i variablen touchstartx
 function handleTouchStart(event) {
   touchstartX = event.changedTouches[0].screenX;
   console.log(touchstartX);
 }
-//collects data on the touch end point using screenX, and saves in the variable
-//calls handleswipe
+
+// Indsamler data om berøring slut ved hjælp af screenX og gemmer det i variablen touchendx
+// Kalder handleSwipe-funktionen
 function handleTouchEnd(event) {
   touchendX = event.changedTouches[0].screenX;
   console.log(touchendX);
@@ -212,8 +219,6 @@ function handleTouchEnd(event) {
 
 document.addEventListener('touchstart', handleTouchStart);
 document.addEventListener('touchend', handleTouchEnd);
-
-
 </script>
 
 <?php if ( astra_page_layout() == 'right-sidebar' ) : ?>

@@ -65,19 +65,21 @@ h4 {
   font-weight: bold;
 }
 
-  ul{
-    list-style: none; 
-    margin: 0;
-    padding: 0;
-  }
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-  button{
-    padding: 8px 24px !important;
-  }
+.elementor-kit-19 button, .elementor-kit-19 input[type="button"], 
+.elementor-kit-19 input[type="submit"],
+ .elementor-kit-19 .elementor-button {
+  padding: 8px 24px !important;
+ }
 
  /*Generelt form styling*/
- form{
-  background: #E5DAC3;
+ form {
+  background: #e5dac3;
   padding: 8pt 16pt 8pt 16pt;
   margin: 0 auto;
   border: solid;
@@ -87,23 +89,29 @@ h4 {
   box-shadow: 4pt 4pt 8pt rgba(0, 0, 0, 0.113);
 }
 /*Booking jagt styling*/
-#booking_jagt_section, #booking_oplysninger, #booking_oplysninger_foredrag, #booking_info{
+#booking_jagt_section,
+#booking_oplysninger,
+#booking_oplysninger_foredrag,
+#booking_info {
   max-width: 50%;
   margin: 0 auto;
 }
 
-#valg_jagt_form{
+#valg_jagt_form {
   display: flex;
   flex-direction: column;
   gap: 8pt;
 }
 
-#valg_af_deltagere, .ekstra_dage_group, .navn_efternavn, .info_container{
+#valg_af_deltagere,
+.ekstra_dage_group,
+.navn_efternavn,
+.info_container {
   display: flex;
   gap: 8pt;
 }
 
-.label_input{
+.label_input {
   display: flex;
   flex-direction: column;
   gap: 2pt;
@@ -112,54 +120,53 @@ h4 {
 /*Footer styling*/
 
 .footer_top {
-display: flex;
-justify-content: center;
-gap: 24px;
-flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 .footer_middle {
-display: flex;
-gap: 24px;
-flex-wrap: wrap;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 .social {
-display: flex;
-gap: 24px;
-padding: 8px;
+  display: flex;
+  gap: 24px;
+  padding: 8px;
 }
 
 .download {
-display: flex;
-gap: 24px;
-padding: 8px;
+  display: flex;
+  gap: 24px;
+  padding: 8px;
 }
 
 .footer_nyhedsbrev_form {
-display: flex;
-gap: 24px;
-flex-wrap: wrap;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 #sfooter {
-margin: 0 auto;
-border-style: solid;
-border-width: 2px 0px 0px 0px;
-border-color: var(--dark_red);
-padding: 4px;
+  margin: 0 auto;
+  border-style: solid;
+  border-width: 2px 0px 0px 0px;
+  border-color: var(--dark_red);
+  padding: 4px;
 }
 
-#footer_logo img{
+#footer_logo img {
   width: 50%;
 }
 
-.footer_bottom{
+.footer_bottom {
   background-color: var(--dark_green);
   display: flex;
   flex-wrap: wrap;
 }
-
 
 /*aren - seværdigheder card styling*/
 body {

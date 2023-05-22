@@ -71,11 +71,9 @@ ul {
   padding: 0;
 }
 
-.elementor-kit-19 button, .elementor-kit-19 input[type="button"], 
-.elementor-kit-19 input[type="submit"],
- .elementor-kit-19 .elementor-button {
-  padding: 8px 24px !important;
- }
+#button{
+  padding:8px 24px;
+}
 
  /*Generelt form styling*/
  form {

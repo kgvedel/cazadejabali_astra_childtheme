@@ -38,6 +38,7 @@ get_header(); ?>
     #seværdigheder {
         background-color: var(--green);
         width: 100%;
+        margin-bottom:4.5rem;
     }
 
     #seværdigheder h2 {
@@ -67,7 +68,7 @@ get_header(); ?>
     box-sizing: border-box;
     min-height: 40rem;
     max-height: 48rem;
-    margin: 1rem 0.25em;
+    margin: 0.75rem;
     border-radius: 0.25rem;
     overflow: hidden;
     padding: 1rem;
@@ -137,6 +138,9 @@ get_header(); ?>
         .carousel {
             padding: 0rem;
             gap: 0rem;
+        }
+        .card{
+            margin: 0rem;
         }
 
         #nextButton,

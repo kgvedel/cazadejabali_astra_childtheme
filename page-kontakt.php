@@ -27,17 +27,26 @@ get_header(); ?>
     <?php astra_content_page_loop(); ?>
 
     <style>
+#page .site-content {
+    background-image: url(https://www.vildsvinejagt.com/wp-content/uploads/2023/05/topografi_gul.svg);
+    background-size: 63rem;
+    background-position: -50vw 64vh;
+    background-repeat: no-repeat;
+}
+
     #contact_section {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         padding: 0;
         gap: 10rem;
+        flex-wrap:wrap;
+
     }
 
     #graphic_section img {
-        max-width: 10rem;
+        max-width: 20rem;
     }
 
     #form_section {
@@ -48,9 +57,35 @@ get_header(); ?>
         gap: 1.5rem;
     }
 
+    /*this is just the general form styling, copied in dis class in this instance, to make it work, cus wp suxxx*/
+    .form { 
+        background: #e5dac3;
+        padding: 8pt 16pt 8pt 16pt;
+        margin: 0 auto;
+        border: solid;
+        border-width: 0.5px;
+        border-radius: 2px;
+        max-width: 400pt;
+        box-shadow: 4pt 4pt 8pt rgba(0, 0, 0, 0.113);
+    }
+
+    #contact_form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem;
+        gap: 1rem;
+        width: 40rem;
+
+    }
+
+#message{
+    width: 100%;
+    height: 16rem;
+}
 
     @media (max-width: 1024px) {
-        #graphic_section img {
+        #graphic_section {
             display: none;
         }
     }
@@ -64,10 +99,10 @@ get_header(); ?>
 
         <section id="form_section">
             <h2>Kontakt</h2>
-            <h3>Har du nogle spørgsmål?</h3>
+       
             <!-- Contact form section layout -->
-            <form id="contact_form">
-
+            <form id="contact_form" class="form">
+            <h4>Har du nogle spørgsmål?</h4>
                 <div class="form_group">
                     <label for="name">Fulde Navn <span class="required">*</span></label>
                     <input type="text" id="name" name="Name" placeholder="Indtast navn" required="">

@@ -36,7 +36,7 @@ get_header(); ?>
     }
 
     #seværdigheder {
-        background-color: var(--green);
+       /* background-color: var(--green);*/
         width: 100%;
         margin-bottom:4.5rem;
     }

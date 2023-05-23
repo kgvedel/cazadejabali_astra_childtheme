@@ -283,6 +283,8 @@ function updateCards() {
         if (dataIndex == 0) {
 
             cardClone.querySelector('.button-container').classList.add("opacity");
+            attractionLocation.remove();
+            attractionMore.remove();
         }
 
 

@@ -173,91 +173,123 @@ img{
 }
 
 /*aren - seværdigheder card styling*/
-body {
-  margin: 0;
-}
 
 #seværdigheder {
-  width: 100%;
+  /* background-color: var(--green);*/
+   width: 100%;
+   margin-bottom:4.5rem;
 }
 
 #seværdigheder h2 {
-  text-align: center;
-  align-self: center;
+   text-align: center;
+   align-self: center;
 }
 
 .carousel {
-  display: flex;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 16px;
-  align-items: center;
-  gap: 1rem;
+   display: flex;
+   max-width: 1240px;
+   margin: 0 auto;
+   padding: 0 1rem;
+   align-items: center;
+   gap: 1rem;
 }
 
 .attractions {
-  max-width: 1240px;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  transition: transform 0.3s ease;
+   max-width: 1240px;
+   display: flex;
+   justify-content: center;
+   width: 100%;
 }
 
 .card {
-  display: flex;
-  flex: 1 0 200px;
-  box-sizing: border-box;
-  height: 32rem;
-  margin: 1rem 0.25em;
-  border-radius: 0.25rem;
-  overflow: hidden;
-  padding: 1rem;
-  border: 0px solid var(--black);
-  background-color: var(--white);
-  box-shadow: 4px 8px 12px 4px #180f0d35;
-  flex-direction: column;
-  justify-content: flex-start;
-}
+display: flex;
+flex: 1 0 280px;
+box-sizing: border-box;
+min-height: 40rem;
+max-height: 48rem;
+margin: 0.75rem;
+border-radius: 0.25rem;
+overflow: hidden;
+padding: 1rem;
+border: 0px solid var(--black);
+background-color: var(--white);
+box-shadow: 4px 8px 12px 4px #180f0d35;
+flex-direction: column;
+justify-content: space-between;
 
+}
 #prevButton,
 #nextButton {
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  font-size: 72px;
-  color: var(--black);
+   cursor: pointer;
+   background-color: transparent;
+   border: none;
+   font-size: 4.5rem;
+   color: var(--black);
 }
 
+#prevButton:hover,
+#nextButton:hover {
+ color: var(--spanish_red)
+}
+
+
 #card-image {
-  padding: 8px;
-  object-fit: cover;
-  width: 100%;
-  max-width: 100%;
-  height: 12rem;
-  min-height: 12rem;
-  align-self: center;
+   padding: 0.5rem;
+   object-fit: cover;
+   width: 100%;
+   max-width: 100%;
+   height: 12rem;
+   min-height: 12rem;
+   align-self: center;
 }
 
 h4.card-title {
-  margin: 4px;
-  text-align: center;
+   margin: 0.25rem;
+   text-align: center;
+}
+
+#pin-icon{
+   font-size: 1rem;
 }
 
 .linebreaker {
-  border-top: 2px solid var(--black);
-  width: 100%;
-  margin: 0;
+   border-top: 2px solid var(--black);
+   width: 100%;
+   margin: 0.5rem;
 }
 
-@media (max-width: 767px) {
+.button-container{
+background-color: var(--dark_yellow);
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+margin: 1rem -1rem -1rem -1rem;
+padding: 1rem;
+flex-wrap:wrap;
+align-content:center;
+gap:0.5rem;
+}
+
+.opacity{
+   opacity: 0;
+}
+
+  
+@media only screen and (max-width: 767px) {
+
   /*seværdigheder*/
   .carousel {
-    padding: 0rem;
-    gap: 0rem;
+      padding: 0rem;
+      gap: 0rem;
+  }
+  .card{
+      margin: 0rem;
   }
 
   #nextButton,
   #prevButton {
-    font-size: 24px;
+      font-size: 1.5rem;
   }
+
+  
 }

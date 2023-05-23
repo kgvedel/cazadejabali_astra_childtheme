@@ -31,14 +31,10 @@ get_header(); ?>
 
     <?php astra_content_page_loop(); ?>
     <style>
-    body {
-        margin: 0;
-    }
-
+  
     #seværdigheder {
-       /* background-color: var(--green);*/
-        width: 100%;
-        margin-bottom:4.5rem;
+        margin-bottom: 4.5rem;
+        background-color:transparent;
     }
 
     #seværdigheder h2 {
@@ -46,6 +42,20 @@ get_header(); ?>
         align-self: center;
     }
 
+    .carousel_container{
+        padding: 1.5rem 0px;
+        width: 100vw;
+        position: relative;
+        left: calc(-50vw + 50%);
+        background-color: var(--green);
+        background-image: url(https://www.vildsvinejagt.com/wp-content/uploads/2023/05/topografi_gul.svg);
+        background-size: 97rem;
+        background-position: -22vw -69vh;
+        background-repeat: no-repeat;
+    }
+
+
+  
     .carousel {
         display: flex;
         max-width: 1240px;
@@ -63,26 +73,26 @@ get_header(); ?>
     }
 
     .card {
-    display: flex;
-    flex: 1 0 280px;
-    box-sizing: border-box;
-    min-height: 40rem;
-    max-height: 48rem;
-    margin: 0.75rem;
-    border-radius: 0.25rem;
-    overflow: hidden;
-    padding: 1rem;
-    border: 0px solid var(--black);
-    background-color: var(--white);
-    box-shadow: 4px 8px 12px 4px #180f0d35;
-    flex-direction: column;
-    justify-content: space-between;
-   
-}
+        display: flex;
+        flex: 1 0 280px;
+        box-sizing: border-box;
+        min-height: 40rem;
+        max-height: 48rem;
+        margin: 0.75rem;
+        border-radius: 0.25rem;
+        overflow: hidden;
+        padding: 1rem;
+        border: 0px solid var(--black);
+        background-color: var(--white);
+        box-shadow: 4px 8px 12px 4px #180f0d35;
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+
     #prevButton,
     #nextButton {
         cursor: pointer;
-        background-color: transparent;
         border: none;
         font-size: 4.5rem;
         color: var(--black);
@@ -90,7 +100,7 @@ get_header(); ?>
 
     #prevButton:hover,
     #nextButton:hover {
-      color: var(--spanish_red)
+        color: var(--spanish_red)
     }
 
 
@@ -109,7 +119,7 @@ get_header(); ?>
         text-align: center;
     }
 
-    #pin-icon{
+    #pin-icon {
         font-size: 1rem;
     }
 
@@ -119,23 +129,28 @@ get_header(); ?>
         margin: 0.5rem;
     }
 
-    .button-container{
-    background-color: var(--dark_yellow);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 1rem -1rem -1rem -1rem;
-    padding: 1rem;
-    flex-wrap:wrap;
-    align-content:center;
-    gap:0.5rem;
+    .button-container {
+        background-color: var(--dark_yellow);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 1rem -1rem -1rem -1rem;
+        padding: 1rem;
+        flex-wrap: wrap;
+        align-content: center;
+        gap: 0.5rem;
+        min-height: 5rem;
     }
 
-    .opacity{
+    .button-container button{
+        padding-top:0.5rem;
+    }
+
+    .opacity {
         opacity: 0;
     }
 
-  
+
     @media only screen and (max-width: 767px) {
 
         /*seværdigheder*/
@@ -143,26 +158,29 @@ get_header(); ?>
             padding: 0rem;
             gap: 0rem;
         }
-        .card{
+
+        .card {
             margin: 0rem;
         }
 
         #nextButton,
         #prevButton {
-            font-size: 1.5rem;
+            font-size: 4rem;
         }
 
-        
+
     }
     </style>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <section id="seværdigheder">
         <h2>Seværdigheder</h2>
-        <div class="carousel">
-            <button class="fa fa-angle-left controls" id="prevButton"></button>
-            <div class="attractions"></div>
-            <button class="fa fa-angle-right controls" id="nextButton"></button>
+        <div class="carousel_container">
+            <div class="carousel">
+                <button class="fa fa-angle-left controls" id="prevButton"></button>
+                <div class="attractions"></div>
+                <button class="fa fa-angle-right controls" id="nextButton"></button>
+            </div>
         </div>
     </section>
     <template id="cardTemplate">
@@ -172,7 +190,8 @@ get_header(); ?>
             <hr class="linebreaker">
             <p class="card-description"></p>
             <div class="button-container">
-                <button class="btn-location"><i class="material-icons" id="pin-icon" >location_on</i> Se lokation</button>
+                <button class="btn-location"><i class="material-icons" id="pin-icon">location_on</i> Se
+                    lokation</button>
                 <button class="btn-link">Tripadvisor</button>
             </div>
         </div>

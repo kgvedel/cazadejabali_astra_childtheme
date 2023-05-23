@@ -132,7 +132,7 @@ get_header(); ?>
     }
 
   
-    @media (max-width: 767px) {
+    @media only screen and (max-width: 767px) {
 
         /*seværdigheder*/
         .carousel {

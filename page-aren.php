@@ -131,6 +131,10 @@ get_header(); ?>
     gap:0.5rem;
     }
 
+    .opacity{
+        opacity: 0;
+    }
+
   
     @media only screen and (max-width: 767px) {
 
@@ -278,7 +282,7 @@ function updateCards() {
 
         if (dataIndex == 0) {
 
-            cardClone.querySelector('.button-container').remove();
+            cardClone.querySelector('.button-container').classList.add("opacity");
         }
 
 

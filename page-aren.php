@@ -30,7 +30,124 @@ get_header(); ?>
     <?php astra_primary_content_top(); ?>
 
     <?php astra_content_page_loop(); ?>
+    <style>
+    body {
+        margin: 0;
+    }
 
+    #seværdigheder {
+        background-color: var(--green);
+        width: 100%;
+    }
+
+    #seværdigheder h2 {
+        text-align: center;
+        align-self: center;
+    }
+
+    .carousel {
+        display: flex;
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .attractions {
+        max-width: 1240px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .card {
+    display: flex;
+    flex: 1 0 280px;
+    box-sizing: border-box;
+    min-height: 40rem;
+    max-height: 48rem;
+    margin: 1rem 0.25em;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    padding: 1rem;
+    border: 0px solid var(--black);
+    background-color: var(--white);
+    box-shadow: 4px 8px 12px 4px #180f0d35;
+    flex-direction: column;
+    justify-content: space-between;
+   
+}
+    #prevButton,
+    #nextButton {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        font-size: 4.5rem;
+        color: var(--black);
+    }
+
+    #prevButton:hover,
+    #nextButton:hover {
+      color: var(--spanish_red)
+    }
+
+
+    #card-image {
+        padding: 0.5rem;
+        object-fit: cover;
+        width: 100%;
+        max-width: 100%;
+        height: 12rem;
+        min-height: 12rem;
+        align-self: center;
+    }
+
+    h4.card-title {
+        margin: 0.25rem;
+        text-align: center;
+    }
+
+    #pin-icon{
+        font-size: 1rem;
+    }
+
+    .linebreaker {
+        border-top: 2px solid var(--black);
+        width: 100%;
+        margin: 0.5rem;
+    }
+
+    .button-container{
+    background-color: var(--dark_yellow);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 1rem -1rem -1rem -1rem;
+    padding: 1rem;
+    flex-wrap:wrap;
+    align-content:center;
+    gap:0.5rem;
+    }
+
+  
+    @media (max-width: 767px) {
+
+        /*seværdigheder*/
+        .carousel {
+            padding: 0rem;
+            gap: 0rem;
+        }
+
+        #nextButton,
+        #prevButton {
+            font-size: 1.5rem;
+        }
+
+        
+    }
+    </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <section id="seværdigheder">
         <h2>Seværdigheder</h2>
@@ -46,9 +163,9 @@ get_header(); ?>
             <h4 class="card-title"></h4>
             <hr class="linebreaker">
             <p class="card-description"></p>
-            <div class="button_container">
-                <button class="btn-location"><i class="fa fa-map-marker"></i> Find lokation i maps</button>
-                <button class="btn-link">Se mere</button>
+            <div class="button-container">
+                <button class="btn-location"><i class="material-icons" id="pin-icon" >location_on</i> Se lokation</button>
+                <button class="btn-link">Tripadvisor</button>
             </div>
         </div>
     </template>
@@ -157,8 +274,7 @@ function updateCards() {
 
         if (dataIndex == 0) {
 
-            attractionLocation.remove();
-            attractionMore.remove();
+            cardClone.querySelector('.button-container').remove();
         }
 
 

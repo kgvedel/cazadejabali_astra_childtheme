@@ -26,6 +26,36 @@ get_header(); ?>
 
     <?php astra_content_page_loop(); ?>
 
+    <style>
+    #contact_section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        gap: 10rem;
+    }
+
+    #graphic_section img {
+        max-width: 10rem;
+    }
+
+    #form_section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        gap: 1.5rem;
+    }
+
+
+    @media (max-width: 1024px) {
+        #graphic_section img {
+            display: none;
+        }
+    }
+    </style>
+
     <section id="contact_section">
 
         <section id="graphic_section">
@@ -37,7 +67,7 @@ get_header(); ?>
             <h3>Har du nogle spørgsmål?</h3>
             <!-- Contact form section layout -->
             <form id="contact_form">
-                
+
                 <div class="form_group">
                     <label for="name">Fulde Navn <span class="required">*</span></label>
                     <input type="text" id="name" name="Name" placeholder="Indtast navn" required="">
@@ -63,6 +93,8 @@ get_header(); ?>
 
 
 </div><!-- #primary -->
+
+
 
 <?php if ( astra_page_layout() == 'right-sidebar' ) : ?>
 

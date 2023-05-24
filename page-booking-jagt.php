@@ -32,7 +32,19 @@ get_header(); ?>
 	<?php astra_content_page_loop(); ?>
 
 	<?php astra_primary_content_bottom(); ?>
+<style>
+	 /*this is just a bit general form styling, put it here to make it work, cus wp suxxx*/
+	 form {
+        background: #e5dac3;
+        margin: 0 auto;
+        border: solid;
+        border-width: 0.5px;
+        border-radius: 2px;
+        max-width: 400pt;
+        box-shadow: 4pt 4pt 8pt rgba(0, 0, 0, 0.113);
+    }
 
+<<<<<<< HEAD
 
 	<script>
 		"use strict";
@@ -59,6 +71,19 @@ get_header(); ?>
 
 	</script>
 
+=======
+    form input {
+        min-width: 80%;
+        font-family: 'Open Sans';
+
+    }
+
+    label {
+        font-weight: bold;
+        font-family: 'Open Sans';
+    }
+</style>
+>>>>>>> 2b4046048f5e86e0f5ea5aa0b485c9ebd6e7ae54
 	<section id="booking_info">
 		<h2>Booking</h2>
 

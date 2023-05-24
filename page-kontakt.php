@@ -47,7 +47,7 @@ get_header(); ?>
         align-items: center;
         padding: 1rem;
         gap: 3rem;
-        margin: 4.5rem 0;
+        margin: 4.5rem auto;
         max-width:1240px;
     }
 

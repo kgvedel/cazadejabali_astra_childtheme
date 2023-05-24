@@ -78,7 +78,7 @@ get_header(); ?>
     }
 
     form input {
-        min-width: 64%;
+        min-width: 80%;
         font-family: 'Open Sans';
 
     }
@@ -113,7 +113,7 @@ get_header(); ?>
 
     @media only screen and (max-width: 1024px) {
         .page-id-82 #main {
-            padding: 0px 4rem 0rem 4rem;
+            padding: 60px 4rem 0rem 4rem;
         }
 
         #graphic_section {
@@ -132,7 +132,7 @@ get_header(); ?>
         .page-id-82 #main {
     
     background-position: 57vw -9vh;
-    padding: 0px 1.5rem 0rem 1.5rem;
+    padding: 60px 1.5rem 0rem 1.5rem;
 }
 
     }

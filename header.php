@@ -35,6 +35,7 @@ if (!defined('ABSPATH')) {
 	?>
 	<?php wp_head(); ?>
 	<?php astra_head_bottom(); ?>
+	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
 </head>
 
 <body <?php astra_schema_body(); ?> <?php body_class(); ?>>

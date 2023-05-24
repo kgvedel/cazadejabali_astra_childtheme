@@ -4,83 +4,86 @@ Theme URI:    http://example.com/twenty-fifteen-child/
 Description:  this is our child theme
 Author:       Mathilde og katrine
 Template:     astra
-Version:      1.5.3
+Version:      1.6.0
 License:      GNU General Public License v2 or later
 License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-
 /*Importing Yantramanav font from GoogleFonts*/
-@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap");
 
 /*Importing Open Sans font from GoogleFonts*/
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300&family=Righteous&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300&family=Righteous&display=swap");
 
 :root {
-    --dark_red: #6B1014;
-    --spanish_red: #AD1519;
-    --dark_yellow: #D8AB00;
-    --spanish_yellow: #FABD00;
-    --white: #F9F9F9;
-    --beige: #E5DAC3;
-    --green: #465D52;
-    --dark_green: #123929;
-    --black: #180F0D;
-    --dark_orange: #B45223;
-    --orange: #E3530E;
-    --blue: #6473FF;
-  }
-  
-  h1, h2, h3 {
-    font-family: 'Yantramanav';
-  }
+  --dark_red: #6b1014;
+  --spanish_red: #ad1519;
+  --dark_yellow: #d8ab00;
+  --spanish_yellow: #fabd00;
+  --white: #f9f9f9;
+  --beige: #e5dac3;
+  --green: #465d52;
+  --dark_green: #123929;
+  --black: #180f0d;
+  --dark_orange: #b45223;
+  --orange: #e3530e;
+  --blue: #6473ff;
+}
 
-  h1{
-    font-size: 72px;
-    font-style: normal;
-    font-weight: 900;
-  }
+h1,
+h2,
+h3 {
+  font-family: "Yantramanav";
+  color: var(--black);
+}
 
-  h2{
-    font-size: 64px;
-    font-style: normal;
-    font-weight: bold;
-  }
+h1 {
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 900;
+}
 
-  h3{
-    font-size: 56px;
-    font-style: normal;
-    font-weight: 600;
-  }
+h2 {
+  font-size: 64px;
+  font-style: normal;
+  font-weight: bold;
+}
 
-  h4, p{
-    font-family: 'Open Sans';
-  }
+h3 {
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 600;
+}
 
-  h4{
-    font-size: 24px;
-    font-style: normal;
-    font-weight: bold;
-  }
+h4,
+p {
+  font-family: "Open Sans";
+}
 
-  p{
-    font-size: 16px;
-    font-style: normal;
-    font-weight: normal;
-  }
+h4 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: bold;
+}
 
-  ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  h2, .entry-content h2{
-    color:#6B1014;
-    font-size: 102px;
-  }
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button{
+  padding:8px 24px;
+  font-weight: bold;
+}
+
+img{
+  width: 100%;
+}
+
  /*Generelt form styling*/
- form{
-  background: #E5DAC3;
+ form {
+  background: #e5dac3;
   padding: 8pt 16pt 8pt 16pt;
   margin: 0 auto;
   border: solid;
@@ -90,23 +93,29 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
   box-shadow: 4pt 4pt 8pt rgba(0, 0, 0, 0.113);
 }
 /*Booking jagt styling*/
-#booking_jagt_section, #booking_oplysninger, #booking_oplysninger_foredrag, #booking_info{
+#booking_jagt_section,
+#booking_oplysninger,
+#booking_oplysninger_foredrag,
+#booking_info {
   max-width: 50%;
   margin: 0 auto;
 }
 
-#valg_jagt_form{
+#valg_jagt_form {
   display: flex;
   flex-direction: column;
   gap: 8pt;
 }
 
-#valg_af_deltagere, .ekstra_dage_group, .navn_efternavn, .info_container{
+#valg_af_deltagere,
+.ekstra_dage_group,
+.navn_efternavn,
+.info_container {
   display: flex;
   gap: 8pt;
 }
 
-.label_input{
+.label_input {
   display: flex;
   flex-direction: column;
   gap: 2pt;
@@ -115,88 +124,173 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 /*Footer styling*/
 
 .footer_top {
-display: flex;
-justify-content: center;
-gap: 24px;
-flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 .footer_middle {
-display: flex;
-gap: 24px;
-flex-wrap: wrap;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 .social {
-display: flex;
-gap: 24px;
-padding: 8px;
+  display: flex;
+  gap: 24px;
+  padding: 8px;
 }
 
 .download {
-display: flex;
-gap: 24px;
-padding: 8px;
+  display: flex;
+  gap: 24px;
+  padding: 8px;
 }
 
 .footer_nyhedsbrev_form {
-display: flex;
-gap: 24px;
-flex-wrap: wrap;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 #sfooter {
-margin: 0 auto;
-border-style: solid;
-border-width: 2px 0px 0px 0px;
-border-color: var(--dark_red);
-padding: 4px;
+  margin: 0 auto;
+  border-style: solid;
+  border-width: 2px 0px 0px 0px;
+  border-color: var(--dark_red);
+  padding: 4px;
 }
 
-#footer_logo img{
+#footer_logo img {
   width: 50%;
 }
 
-.footer_bottom{
+.footer_bottom {
   background-color: var(--dark_green);
   display: flex;
   flex-wrap: wrap;
 }
 
-
 /*aren - seværdigheder card styling*/
+
+#seværdigheder {
+  /* background-color: var(--green);*/
+   width: 100%;
+   margin-bottom:4.5rem;
+}
+
+#seværdigheder h2 {
+   text-align: center;
+   align-self: center;
+}
+
 .carousel {
-  display: flex;
-  overflow-y: hidden;
-  justify-content: center;
+   display: flex;
+   max-width: 1240px;
+   margin: 0 auto;
+   padding: 0 1rem;
+   align-items: center;
+   gap: 1rem;
 }
 
 .attractions {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  transition: transform 0.3s ease;
+   max-width: 1240px;
+   display: flex;
+   justify-content: center;
+   width: 100%;
 }
 
 .card {
-  width: 100%;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-right: 10px;
-  transition: transform 0.3s ease;
-}
+display: flex;
+flex: 1 0 280px;
+box-sizing: border-box;
+min-height: 40rem;
+max-height: 48rem;
+margin: 0.75rem;
+border-radius: 0.25rem;
+overflow: hidden;
+padding: 1rem;
+border: 0px solid var(--black);
+background-color: var(--white);
+box-shadow: 4px 8px 12px 4px #180f0d35;
+flex-direction: column;
+justify-content: space-between;
 
-.controls {
-  margin-top: 10px;
 }
-
 #prevButton,
 #nextButton {
-  padding: 5px 10px;
-  font-size: 16px;
-  cursor: pointer;
+   cursor: pointer;
+   background-color: transparent;
+   border: none;
+   font-size: 4.5rem;
+   color: var(--black);
 }
 
-.card-image {
-  max-width: 200px;
+#prevButton:hover,
+#nextButton:hover {
+ color: var(--spanish_red)
+}
+
+
+#card-image {
+   padding: 0.5rem;
+   object-fit: cover;
+   width: 100%;
+   max-width: 100%;
+   height: 12rem;
+   min-height: 12rem;
+   align-self: center;
+}
+
+h4.card-title {
+   margin: 0.25rem;
+   text-align: center;
+}
+
+#pin-icon{
+   font-size: 1rem;
+}
+
+.linebreaker {
+   border-top: 2px solid var(--black);
+   width: 100%;
+   margin: 0.5rem;
+}
+
+.button-container{
+  background-color: var(--dark_yellow);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1rem -1rem -1rem -1rem;
+  padding: 1rem;
+  flex-wrap:wrap;
+  align-content:center;
+  gap:0.5rem;
+  min-height: 5rem;
+  }
+
+.opacity{
+   opacity: 0;
+}
+
+  
+@media only screen and (max-width: 767px) {
+
+  /*seværdigheder*/
+  .carousel {
+      padding: 0rem;
+      gap: 0rem;
+  }
+  .card{
+      margin: 0rem;
+  }
+
+  #nextButton,
+  #prevButton {
+      font-size: 1.5rem;
+  }
+
+  
 }

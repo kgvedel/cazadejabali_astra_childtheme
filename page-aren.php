@@ -30,23 +30,179 @@ get_header(); ?>
     <?php astra_primary_content_top(); ?>
 
     <?php astra_content_page_loop(); ?>
+    <style>
+    #seværdigheder {
+        margin-bottom: 4.5rem;
+        background-color: transparent;
+    }
 
+    #seværdigheder h2 {
+        text-align: center;
+        align-self: center;
+    }
+
+    .carousel_container {
+        padding: 1.5rem 0px;
+        width: 100vw;
+        position: relative;
+        left: calc(-50vw + 50%);
+        background-color: var(--green);
+        background-image: url(https://www.vildsvinejagt.com/wp-content/uploads/2023/05/topografi_gul.svg);
+        background-size: 97rem;
+        background-position: -10vw -72vh;
+        background-repeat: no-repeat;
+    }
+
+
+
+    .carousel {
+        display: flex;
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .attractions {
+        max-width: 1240px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .card {
+        display: flex;
+        flex: 1 0 280px;
+        box-sizing: border-box;
+        min-height: 40rem;
+        max-height: 48rem;
+        margin: 0.75rem;
+        border-radius: 0.25rem;
+        overflow: hidden;
+        padding: 1rem;
+        border: 0px solid var(--black);
+        background-color: var(--white);
+        box-shadow: 4px 8px 12px 4px #180f0d35;
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+
+    #prevButton,
+    #nextButton {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        font-size: 4.5rem;
+        color: var(--black);
+        padding: 0rem 1rem;
+    }
+
+    #prevButton:hover,
+    #nextButton:hover {
+        color: var(--spanish_red);
+
+    }
+
+
+    #card-image {
+        padding: 0.5rem;
+        object-fit: cover;
+        width: 100%;
+        max-width: 100%;
+        height: 12rem;
+        min-height: 12rem;
+        align-self: center;
+    }
+
+    h4.card-title {
+        margin: 0.25rem;
+        text-align: center;
+    }
+
+    #pin-icon {
+        font-size: 1rem;
+    }
+
+    .linebreaker {
+        border-top: 2px solid var(--black);
+        width: 100%;
+        margin: 0.5rem;
+    }
+
+    .button-container {
+        background-color: var(--dark_yellow);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 1rem -1rem -1rem -1rem;
+        padding: 1rem;
+        flex-wrap: wrap;
+        align-content: center;
+        gap: 0.5rem;
+        min-height: 5rem;
+    }
+
+    .button-container button {
+        padding-top: 0.5rem;
+    }
+
+    .opacity {
+        opacity: 0;
+    }
+
+    @media only screen and (max-width: 1024px) {
+        .carousel_container {
+            background-position: -43vw -14vh;
+        }
+    }
+
+    @media only screen and (max-width: 767px) {
+
+        /*seværdigheder*/
+        .carousel {
+            padding: 0rem;
+            gap: 0rem;
+        }
+
+        .card {
+            margin: 0rem;
+        }
+
+        #nextButton,
+        #prevButton {
+
+            font-size: 4rem;
+        }
+
+    }
+    </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <div class="carousel">
-        <button class="fa fa-angle-left" id="prevButton"></button>
-        <div class="attractions"></div>
-        <button class="fa fa-angle-right" id="nextButton"></button>
-    </div>
-
+    <section id="seværdigheder">
+        <h2>Seværdigheder</h2>
+        <div class="carousel_container">
+            <div class="carousel">
+                <button class="fa fa-angle-left controls" id="prevButton"></button>
+                <div class="attractions"></div>
+                <button class="fa fa-angle-right controls" id="nextButton"></button>
+            </div>
+        </div>
+    </section>
     <template id="cardTemplate">
         <div class="card">
-            <img class="card-image" src="" alt="">
+            <img id="card-image" class="card-image" src="" alt="">
             <h4 class="card-title"></h4>
+            <hr class="linebreaker">
             <p class="card-description"></p>
+            <div class="button-container">
+                <button class="btn-location"><i class="material-icons" id="pin-icon">location_on</i> Se
+                    lokation</button>
+                <button class="btn-link">Tripadvisor</button>
+            </div>
         </div>
     </template>
-
     <?php astra_primary_content_bottom(); ?>
 
 </div><!-- #primary -->
@@ -135,14 +291,28 @@ function updateCards() {
         //cloner template og laver variabler for de individuelle elementer
         const cardClone = cardTemplate.content.cloneNode(true);
         const card = cardClone.querySelector('.card');
-        const cardImage = cardClone.querySelector('.card-image');
-        const cardTitle = cardClone.querySelector('.card-title');
-        const cardDescription = cardClone.querySelector('.card-description');
+        const attractionImage = cardClone.querySelector('.card-image');
+        const attractionTitle = cardClone.querySelector('.card-title');
+        const attractionDescription = cardClone.querySelector('.card-description');
+        const attractionLocation = cardClone.querySelector('.btn-location');
+        const attractionMore = cardClone.querySelector('.btn-link');
+
 
         //indsætter data baseret på data indexet 
-        cardImage.src = attractions[dataIndex].billede.guid;
-        cardTitle.textContent = attractions[dataIndex].navn;
-        cardDescription.textContent = attractions[dataIndex].beskrivelse;
+        attractionImage.src = attractions[dataIndex].billede.guid;
+        attractionTitle.textContent = attractions[dataIndex].navn;
+        attractionDescription.textContent = attractions[dataIndex].beskrivelse;
+
+        attractionLocation.addEventListener("click", () => window.open(attractions[dataIndex].placering));
+        attractionMore.addEventListener("click", () => window.open(attractions[dataIndex].link));
+
+        if (dataIndex == 0) {
+
+            cardClone.querySelector('.button-container').classList.add("opacity");
+            attractionLocation.remove();
+            attractionMore.remove();
+        }
+
 
         destination.appendChild(cardClone);
     }
@@ -185,43 +355,42 @@ const swipeThreshold = 90; // for at sikre det kun aktiveres efter en hvis dista
 
 // Funktion der håndterer swipe, og kalder enten prev eller next card afhængigt af swipe-retningen
 function handleSwipe() {
-  // Beregn afstanden mellem touch end og touch start
-  const distance = touchendX - touchstartX;
+    // Beregn afstanden mellem touch end og touch start
+    const distance = touchendX - touchstartX;
 
-  // Hvis afstanden er større en swipethreshold, aktiveres de to if statements,
-  if (Math.abs(distance) >= swipeThreshold) {
-    // Hvis slutpunktet er mindre end startpunktet, er det et left swipe og next card vises
-    if (touchendX < touchstartX) {
-      nextCard();
+    // Hvis afstanden er større en swipethreshold, aktiveres de to if statements,
+    if (Math.abs(distance) >= swipeThreshold) {
+        // Hvis slutpunktet er mindre end startpunktet, er det et left swipe og next card vises
+        if (touchendX < touchstartX) {
+            nextCard();
+        }
+        // Hvis slutpunktet er større end startpunktet,er det et right swipe og prev card vises
+        if (touchendX > touchstartX) {
+            previousCard();
+        }
     }
-    // Hvis slutpunktet er større end startpunktet,er det et right swipe og prev card vises
-    if (touchendX > touchstartX) {
-      previousCard();
-    }
-  }
 
-  updateCards();
+    updateCards();
 }
 
 // Indsamler data om berørings start ved hjælp af screenX og gemmer det i variablen touchstartx
 function handleTouchStart(event) {
-  touchstartX = event.changedTouches[0].screenX;
-  console.log(touchstartX);
+    touchstartX = event.changedTouches[0].screenX;
+    console.log(touchstartX);
 }
 
 // Indsamler data om berøring slut ved hjælp af screenX og gemmer det i variablen touchendx
 // Kalder handleSwipe-funktionen
 function handleTouchEnd(event) {
-  touchendX = event.changedTouches[0].screenX;
-  console.log(touchendX);
-  handleSwipe();
+    touchendX = event.changedTouches[0].screenX;
+    console.log(touchendX);
+    handleSwipe();
 }
 
 // Event listeners til carousel sectionen
 const carousel = document.querySelector('.carousel');
 carousel.addEventListener('touchstart', handleTouchStart);
 carousel.addEventListener('touchend', handleTouchEnd);
-
 </script>
 
 <?php if ( astra_page_layout() == 'right-sidebar' ) : ?>

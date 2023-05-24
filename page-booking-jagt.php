@@ -33,6 +33,32 @@ get_header(); ?>
 
 	<?php astra_primary_content_bottom(); ?>
 
+
+	<script>
+		"use strict";
+
+		window.addEventListener("DOMContentLoaded", start);
+
+
+		let bookingInfo = {
+			jagtperiode: "",
+			antaljaegere: "",
+			antalledsagere: "",
+			fullname: "",
+			adress: "",
+			phone: "",
+			email: "",
+			total_price: ""
+		}
+
+		function start() {
+
+			console.log("hej");
+		}
+
+
+	</script>
+
 	<section id="booking_info">
 		<h2>Booking</h2>
 
@@ -72,7 +98,7 @@ get_header(); ?>
 				<h4>Vælg jagt</h4>
 				<div class="label_input">
 					<label for="valg_af_jagt">Jagtperiode</label>
-					<select id="valg_af_jagt" name="valg_af_jagt">
+					<select data-field="" id="valg_af_jagt" name="valg_af_jagt">
 						<option value="periode_et">3-4-5 November 23 (3 jagtdage)</option>
 						<option value="periode_to">10-11-12 November 23 (3 jagtdage)</option>
 						<option value="periode_tre">17-18-19 November 23 (3 jagtdage)</option>

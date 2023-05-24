@@ -27,11 +27,17 @@ get_header(); ?>
     <?php astra_content_page_loop(); ?>
 
     <style>
-    #page .site-content {
-        background-image: url(https://www.vildsvinejagt.com/wp-content/uploads/2023/05/topografi_gul.svg);
-        background-size: 63rem;
-        background-position: -50vw 64vh;
+    .page-id-82 #main {
+        background-color: var(--beige);
+        background-image: url(https://www.vildsvinejagt.com/wp-content/uploads/2023/05/topografi_2_rod.svg);
+        background-size: 90rem;
+        background-position: 60vw -10vh;
         background-repeat: no-repeat;
+        width: 100vw;
+        position: relative;
+        left: calc(-50vw + 50%);
+        margin-top: -60px;
+        padding: 60px 1rem 0rem 1rem;
     }
 
     #contact_section {
@@ -41,11 +47,15 @@ get_header(); ?>
         align-items: center;
         padding: 1rem;
         gap: 3rem;
-        margin-bottom: 4.5rem;
+        margin: 4.5rem 0;
+        max-width:1240px;
     }
 
     #graphic_section img {
-        max-width: 24rem;
+        max-width: 40%;
+    }
+    #graphic_section img {
+        max-width: 100%;
     }
 
     #form_section {
@@ -102,6 +112,10 @@ get_header(); ?>
     }
 
     @media only screen and (max-width: 1024px) {
+        .page-id-82 #main {
+            padding: 0px 4rem 0rem 4rem;
+        }
+
         #graphic_section {
             display: none;
         }
@@ -115,6 +129,11 @@ get_header(); ?>
         #contact_form {
             width: 90vw
         }
+        .page-id-82 #main {
+    
+    background-position: 57vw -9vh;
+    padding: 0px 1.5rem 0rem 1.5rem;
+}
 
     }
     </style>
@@ -126,7 +145,7 @@ get_header(); ?>
         </section>
 
         <section id="form_section">
-            <h2>Kontakt</h2>
+            <h2>Kontaktformular</h2>
 
             <!-- Contact form section layout -->
             <form id="contact_form" class="form">

@@ -31,10 +31,9 @@ get_header(); ?>
 
     <?php astra_content_page_loop(); ?>
     <style>
-  
     #seværdigheder {
         margin-bottom: 4.5rem;
-        background-color:transparent;
+        background-color: transparent;
     }
 
     #seværdigheder h2 {
@@ -42,7 +41,7 @@ get_header(); ?>
         align-self: center;
     }
 
-    .carousel_container{
+    .carousel_container {
         padding: 1.5rem 0px;
         width: 100vw;
         position: relative;
@@ -50,12 +49,12 @@ get_header(); ?>
         background-color: var(--green);
         background-image: url(https://www.vildsvinejagt.com/wp-content/uploads/2023/05/topografi_gul.svg);
         background-size: 97rem;
-        background-position: -22vw -69vh;
+        background-position: -10vw -72vh;
         background-repeat: no-repeat;
     }
 
 
-  
+
     .carousel {
         display: flex;
         max-width: 1240px;
@@ -93,14 +92,17 @@ get_header(); ?>
     #prevButton,
     #nextButton {
         cursor: pointer;
+        background-color: transparent;
         border: none;
         font-size: 4.5rem;
         color: var(--black);
+        padding: 0rem 1rem;
     }
 
     #prevButton:hover,
     #nextButton:hover {
-        color: var(--spanish_red)
+        color: var(--spanish_red);
+
     }
 
 
@@ -142,14 +144,19 @@ get_header(); ?>
         min-height: 5rem;
     }
 
-    .button-container button{
-        padding-top:0.5rem;
+    .button-container button {
+        padding-top: 0.5rem;
     }
 
     .opacity {
         opacity: 0;
     }
 
+    @media only screen and (max-width: 1024px) {
+        .carousel_container {
+            background-position: -43vw -14vh;
+        }
+    }
 
     @media only screen and (max-width: 767px) {
 
@@ -165,9 +172,9 @@ get_header(); ?>
 
         #nextButton,
         #prevButton {
+
             font-size: 4rem;
         }
-
 
     }
     </style>

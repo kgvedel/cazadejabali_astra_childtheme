@@ -48,12 +48,13 @@ get_header(); ?>
         padding: 1rem;
         gap: 3rem;
         margin: 4.5rem auto;
-        max-width:1240px;
+        max-width: 1240px;
     }
 
     #graphic_section img {
         max-width: 40%;
     }
+
     #graphic_section img {
         max-width: 100%;
     }
@@ -68,24 +69,102 @@ get_header(); ?>
 
     /*this is just a bit general form styling, put it here to make it work, cus wp suxxx*/
     form {
-        background: #e5dac3;
+        background: var(--beige);
         margin: 0 auto;
-        border: solid;
-        border-width: 0.5px;
-        border-radius: 2px;
-        max-width: 400pt;
-        box-shadow: 4pt 4pt 8pt rgba(0, 0, 0, 0.113);
+        border-radius: 4px;
+        box-shadow: 4px 8px 12px 4px #180f0d35;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1.5rem;
+        gap: 1rem;
+        max-width: 40rem;
+        width: 90%;
     }
 
     form input {
-        min-width: 80%;
+        min-width: 60%;
         font-family: 'Open Sans';
-
+        min-height: 2rem;
+        margin: 0.5rem 0;
+        outline: none !important;
     }
+
+    form textarea {
+        font-family: 'Open Sans';
+    }
+
 
     label {
         font-weight: bold;
         font-family: 'Open Sans';
+    }
+
+
+
+    form section {
+        display: flex;
+        gap: 2rem;
+        flex-direction: column;
+    }
+
+
+
+    .label_input {
+        position: relative;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        flex: 1 0 48%;
+    }
+
+    /*validation*/
+    input:focus,
+    input[type=text]:focus,
+    input[type=email]:focus,
+    input[type=tel]:focus, textarea:focus{
+
+        border: 2px solid var(--blue);
+    }
+
+
+    .label_input:focus-within::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -10px;
+        width: 3px;
+        background-color: var(--blue);
+        height: 0;
+        transition: height 0.3s ease-in-out;
+    }
+
+    .label_input:focus-within::before {
+        animation: expandLine 0.3s forwards;
+    }
+
+    @keyframes expandLine {
+        0% {
+            height: 0;
+            bottom: 0;
+        }
+
+        100% {
+            height: 100%;
+            bottom: auto;
+            top: 0;
+        }
+    }
+
+    input:invalid:not(:placeholder-shown) {
+        border: 2px solid var(--spanish_red);
+    }
+
+
+    input:valid,
+    select:valid {
+        border: 2px solid #5ef570;
     }
 
     /*specific rules again*/
@@ -99,11 +178,6 @@ get_header(); ?>
 
     }
 
-    .form_group {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
 
 
 
@@ -129,11 +203,12 @@ get_header(); ?>
         #contact_form {
             width: 90vw
         }
+
         .page-id-82 #main {
-    
-    background-position: 57vw -9vh;
-    padding: 60px 1.5rem 0rem 1.5rem;
-}
+
+            background-position: 57vw -9vh;
+            padding: 60px 1.5rem 0rem 1.5rem;
+        }
 
     }
     </style>
@@ -150,22 +225,22 @@ get_header(); ?>
             <!-- Contact form section layout -->
             <form id="contact_form" class="form">
                 <h4>Har du nogle spørgsmål?</h4>
-                <div class="form_group">
+                <div class="label_input">
                     <label for="name">Fulde Navn <span class="required">*</span></label>
                     <input type="text" id="name" name="Name" placeholder="Indtast navn" required="">
                 </div>
 
-                <div class="form_group">
+                <div class="label_input">
                     <label for="email">Email <span class="required">*</span></label>
                     <input type="email" id="email" name="Email" placeholder="Indtast email" required="">
                 </div>
 
-                <div class="form_group">
+                <div class="label_input">
                     <label for="message">Din besked <span class="required">*</span></label>
-                    <textarea id="message" name="Message" required=""></textarea>
+                    <textarea id="message" name="Message" placeholder="Venligst skriv dine spørgsmål her" required=""></textarea>
                 </div>
 
-                <div class="form_group">
+                <div class="label_input">
                     <button type="submit">Send Message</button>
                 </div>
             </form>

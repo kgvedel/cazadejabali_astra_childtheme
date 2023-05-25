@@ -7,148 +7,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test</title>
     <style>
-:root {
-  --dark_red: #6b1014;
-  --spanish_red: #ad1519;
-  --dark_yellow: #d8ab00;
-  --spanish_yellow: #fabd00;
-  --white: #f9f9f9;
-  --beige: #e5dac3;
-  --green: #465d52;
-  --dark_green: #123929;
-  --black: #180f0d;
-  --dark_orange: #b45223;
-  --orange: #e3530e;
-  --blue: #6473ff;
-}
+        :root {
+            --dark_red: #6b1014;
+            --spanish_red: #ad1519;
+            --dark_yellow: #d8ab00;
+            --spanish_yellow: #fabd00;
+            --white: #f9f9f9;
+            --beige: #e5dac3;
+            --green: #465d52;
+            --dark_green: #123929;
+            --black: #180f0d;
+            --dark_orange: #b45223;
+            --orange: #e3530e;
+            --blue: #6473ff;
+        }
 
-    /*this is just a bit general form styling, put it here to make it work, cus wp suxxx*/
-    form {
-        background: #f9f9f9;
-        margin: 0 auto;
-        border: solid;
-        border-width: 0.5px;
-        border-radius: 4px;
-        box-shadow: 4pt 4pt 8pt rgba(0, 0, 0, 0.113);
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        padding: 1.5rem;
-        gap: 1rem;
-        width: 40rem;
-    }
+        #booking_jagt_section {
+            background-color: var(--green);
+            background-image: url(topografi_grøn.svg);
+            background-size: 93rem;
+            background-position: -54vw 23vh;
+            padding: 4.5rem 0;
+        }
 
+        .navn_efternavn {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            width: 100%;
+        }
 
-   form input {
-        min-width: 80%;
-        font-family: 'Open Sans';
-        height:1.5rem;
-        outline: none !important;
+        /*this is just a bit general form styling, put it here to make it work, cus wp suxxx*/
+        form {
+            background: var(--beige);
+            margin: 0 auto;
+            /*   border: solid;
+            border-width: 0.5px; */
+            border-radius: 4px;
+            box-shadow: 4px 8px 12px 4px #180f0d35;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            padding: 1.5rem;
+            gap: 1rem;
+            max-width: 40rem;
+            width: 90%;
+        }
 
-    }
+        form input {
+            min-width: 60%;
+            font-family: 'Open Sans';
+            min-height: 2rem;
+            margin: 0.5rem 0;
+            outline: none !important;
+        }
 
-    label {
-        font-weight: bold;
-        font-family: 'Open Sans';
-    }
-
-  
-
-    form section {
-    display: flex;
-    gap: 2rem;
-    flex-direction: column;
-}
-
-
-
-.label_input {
-  position: relative;
-  display: flex;
-  flex-direction:column;
-}
-
-
-.label_input:focus-within::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -10px; 
-  width: 3px;
-  background-color: var(--blue);
-  height: 0;
-  transition: height 0.3s ease-in-out;
-}
-
-.label_input:focus-within::before {
-  animation: expandLine 0.3s forwards;
-}
-
-@keyframes expandLine {
-  0% {
-    height: 0;
-    bottom: 0;
-  }
-  100% {
-    height: 100%;
-    bottom: auto;
-    top: 0;
-  }
-}
- input:invalid:not(:placeholder-shown) {
-    border: 2px solid var(--spanish_red);
-}
+        form select,
+        form textarea {
+            font-family: 'Open Sans';
+        }
 
 
-input:valid {
-    border: 2px solid #5ef570;
-}
-
-input:invalid:not(:placeholder-shown){
-    border: 1.5px solid #5ef570;
-    background-color: #f9f9f9;
-}
-
-
-input:focus {
-   
-   border: 2px solid var(--blue);
-} 
+        label {
+            font-weight: bold;
+            font-family: 'Open Sans';
+        }
 
 
 
+        form section {
+            display: flex;
+            gap: 2rem;
+            flex-direction: column;
+        }
+
+
+
+        .label_input {
+            position: relative;
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            flex: 1 0 48%;
+        }
+
+
+
+        /*validation*/
+        input:focus,
+        input[type=text]:focus,
+        input[type=email]:focus,
+        input[type=tel]:focus,
+        input[type=number]:focus,
+        select:focus,
+        textarea:focus {
+
+            border: 2px solid var(--blue);
+        }
+
+        .label_input:focus-within::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -10px;
+            width: 3px;
+            background-color: var(--blue);
+            height: 0;
+            transition: height 0.3s ease-in-out;
+        }
+
+        .label_input:focus-within::before {
+            animation: expandLine 0.3s forwards;
+        }
+
+        @keyframes expandLine {
+            0% {
+                height: 0;
+                bottom: 0;
+            }
+
+            100% {
+                height: 100%;
+                bottom: auto;
+                top: 0;
+            }
+        }
+
+        input:invalid:not(:placeholder-shown) {
+            border: 2px solid var(--spanish_red);
+        }
+
+
+        input:valid,
+        select:valid {
+            border: 2px solid #5ef570;
+        }
+
+     
     </style>
 </head>
 
 <body>
 
 
-    <script>
-        "use strict";
 
-        window.addEventListener("DOMContentLoaded", start);
-
-
-        let bookingInfo = {
-            jagtperiode: "",
-            antaljaegere: "",
-            antalledsagere: "",
-            fullname: "",
-            adress: "",
-            phone: "",
-            email: "",
-            total_price: ""
-        }
-
-        function start() {
-
-            console.log("hej");
-
-
-        }
-    
-    </script>
 
     <section id="booking_info">
         <h2>Booking</h2>
@@ -183,13 +186,15 @@ input:focus {
     </section>
 
     <section id="booking_jagt_section">
-        <form id="valg_jagt_form">
+
+        <!--        <form id="valg_jagt_form">
 
             <section id="jagt_dropdown">
                 <h4>Vælg jagt</h4>
                 <div class="label_input">
                     <label for="valg_af_jagt">Jagtperiode</label>
-                    <select data-field="" id="valg_af_jagt" name="valg_af_jagt">
+                    <select data-field="" id="valg_af_jagt" name="valg_af_jagt" required>
+                        <option value="" disabled selected>Vælg jagt</option>
                         <option value="periode_et">3-4-5 November 23 (3 jagtdage)</option>
                         <option value="periode_to">10-11-12 November 23 (3 jagtdage)</option>
                         <option value="periode_tre">17-18-19 November 23 (3 jagtdage)</option>
@@ -250,20 +255,22 @@ input:focus {
                 <button class="videre_btn" type="submit">Videre</button>
             </div>
         </form>
-    </section>
+  -->
 
-    <section id="booking_oplysninger">
+
         <form id="booking_oplysning">
             <section id="oplysninger">
                 <h4>Dine oplysninger</h4>
                 <div class="navn_efternavn">
                     <div class="label_input">
                         <label for="fornavn">Fornavn</label>
-                        <input type="text" name="fornavn" id="fornavn" minlength="2" placeholder="Indtast fornavn" required>
-                      </div>
+                        <input type="text" name="fornavn" id="fornavn" minlength="2" placeholder="Indtast fornavn"
+                            required>
+                    </div>
                     <div class="label_input">
                         <label for="efternavn">Efternavn</label>
-                        <input type="text" name="efternavn" id="efternavn" minlength="2" placeholder="Indtast efternavn" required>
+                        <input type="text" name="efternavn" id="efternavn" minlength="2" placeholder="Indtast efternavn"
+                            required>
                     </div>
                 </div>
 
@@ -273,7 +280,8 @@ input:focus {
                 </div>
                 <div class="label_input">
                     <label for="number">Mobil/telefon nummer</label>
-                    <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+" placeholder="Indtast telefonnummer" required>
+                    <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+"
+                        placeholder="Indtast telefonnummer" required>
                 </div>
             </section>
 
@@ -293,7 +301,32 @@ input:focus {
 
         </form>
     </section>
+    <script>
+        "use strict";
 
+        window.addEventListener("DOMContentLoaded", start);
+
+
+        let bookingInfo = {
+            jagtperiode: "",
+            antaljaegere: "",
+            antalledsagere: "",
+            fullname: "",
+            adress: "",
+            phone: "",
+            email: "",
+            total_price: ""
+        }
+
+        function start() {
+
+            console.log("hej");
+
+
+        }
+       
+
+    </script>
 </body>
 
 </html>

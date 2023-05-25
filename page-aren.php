@@ -132,7 +132,7 @@ get_header(); ?>
     }
 
     .button-container {
-        background-color: var(--dark_yellow);
+        background-color: var(--spanish_red);
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -146,6 +146,13 @@ get_header(); ?>
 
     .button-container button {
         padding-top: 0.5rem;
+        background-color: var(--spanish_yellow);
+        color: var(--black);
+
+    }
+
+    .button-container button:hover{
+        background-color: var(--dark_yellow);
     }
 
     .opacity {

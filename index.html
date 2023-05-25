@@ -7,117 +7,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test</title>
     <style>
-:root {
-  --dark_red: #6b1014;
-  --spanish_red: #ad1519;
-  --dark_yellow: #d8ab00;
-  --spanish_yellow: #fabd00;
-  --white: #f9f9f9;
-  --beige: #e5dac3;
-  --green: #465d52;
-  --dark_green: #123929;
-  --black: #180f0d;
-  --dark_orange: #b45223;
-  --orange: #e3530e;
-  --blue: #6473ff;
-}
+        :root {
+            --dark_red: #6b1014;
+            --spanish_red: #ad1519;
+            --dark_yellow: #d8ab00;
+            --spanish_yellow: #fabd00;
+            --white: #f9f9f9;
+            --beige: #e5dac3;
+            --green: #465d52;
+            --dark_green: #123929;
+            --black: #180f0d;
+            --dark_orange: #b45223;
+            --orange: #e3530e;
+            --blue: #6473ff;
+        }
 
-    /*this is just a bit general form styling, put it here to make it work, cus wp suxxx*/
-    form {
-        background: #f9f9f9;
-        margin: 0 auto;
-        border: solid;
-        border-width: 0.5px;
-        border-radius: 4px;
-        box-shadow: 4pt 4pt 8pt rgba(0, 0, 0, 0.113);
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        padding: 1.5rem;
-        gap: 1rem;
-        width: 40rem;
-    }
+        /*this is just a bit general form styling, put it here to make it work, cus wp suxxx*/
+        form {
+            background: #f9f9f9;
+            margin: 0 auto;
+            border: solid;
+            border-width: 0.5px;
+            border-radius: 4px;
+            box-shadow: 4pt 4pt 8pt rgba(0, 0, 0, 0.113);
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            padding: 1.5rem;
+            gap: 1rem;
+            width: 40rem;
+        }
 
 
-   form input {
-        min-width: 80%;
-        font-family: 'Open Sans';
-        height:1.5rem;
-        outline: none !important;
+        form input {
+            min-width: 80%;
+            font-family: 'Open Sans';
+            height: 1.5rem;
+            outline: none !important;
 
-    }
+        }
 
-    label {
-        font-weight: bold;
-        font-family: 'Open Sans';
-    }
-
-  
-
-    form section {
-    display: flex;
-    gap: 2rem;
-    flex-direction: column;
-}
+        label {
+            font-weight: bold;
+            font-family: 'Open Sans';
+        }
 
 
 
-.label_input {
-  position: relative;
-  display: flex;
-  flex-direction:column;
-}
-
-
-.label_input:focus-within::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -10px; 
-  width: 3px;
-  background-color: var(--blue);
-  height: 0;
-  transition: height 0.3s ease-in-out;
-}
-
-.label_input:focus-within::before {
-  animation: expandLine 0.3s forwards;
-}
-
-@keyframes expandLine {
-  0% {
-    height: 0;
-    bottom: 0;
-  }
-  100% {
-    height: 100%;
-    bottom: auto;
-    top: 0;
-  }
-}
- input:invalid:not(:placeholder-shown) {
-    border: 2px solid var(--spanish_red);
-}
-
-
-input:valid {
-    border: 2px solid #5ef570;
-}
-
-input:invalid:not(:placeholder-shown){
-    border: 1.5px solid #5ef570;
-    background-color: #f9f9f9;
-}
-
-
-input:focus {
-   
-   border: 2px solid var(--blue);
-} 
+        form section {
+            display: flex;
+            gap: 2rem;
+            flex-direction: column;
+        }
 
 
 
+        .label_input {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .label_input:focus-within::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -10px;
+            width: 3px;
+            background-color: var(--blue);
+            height: 0;
+            transition: height 0.3s ease-in-out;
+        }
+
+        .label_input:focus-within::before {
+            animation: expandLine 0.3s forwards;
+        }
+
+        @keyframes expandLine {
+            0% {
+                height: 0;
+                bottom: 0;
+            }
+
+            100% {
+                height: 100%;
+                bottom: auto;
+                top: 0;
+            }
+        }
+
+        input:invalid:not(:placeholder-shown) {
+            border: 2px solid var(--spanish_red);
+        }
+
+
+        input:valid {
+            border: 2px solid #5ef570;
+        }
+
+        input:invalid:not(:placeholder-shown) {
+            border: 1.5px solid #5ef570;
+            background-color: #f9f9f9;
+        }
+
+
+        input:focus {
+
+            border: 2px solid var(--blue);
+        }
     </style>
 </head>
 
@@ -142,7 +141,6 @@ input:focus {
 
         function start() {
 
-<<<<<<< HEAD
             const form = document.querySelector("form");
             document.getElementById("booking_jagt_form").addEventListener("submit", saveCostumerOrder);
         }
@@ -169,13 +167,8 @@ input:focus {
             nyBookingInfo.telefon = telefon;
             nyBookingInfo.dinBesked = dinBesked;
             console.log(nyBookingInfo);
-=======
-            console.log("hej");
-
-
->>>>>>> db1a14d84f91acbbed89786bd4949ad2a6112574
         }
-    
+
     </script>
 
     <section id="booking_info">
@@ -243,11 +236,13 @@ input:focus {
                 <div class="navn_efternavn">
                     <div class="label_input">
                         <label for="fornavn">Fornavn</label>
-                        <input type="text" name="fornavn" id="fornavn" minlength="2" placeholder="Indtast fornavn" required>
-                      </div>
+                        <input type="text" name="fornavn" id="fornavn" minlength="2" placeholder="Indtast fornavn"
+                            required>
+                    </div>
                     <div class="label_input">
                         <label for="efternavn">Efternavn</label>
-                        <input type="text" name="efternavn" id="efternavn" minlength="2" placeholder="Indtast efternavn" required>
+                        <input type="text" name="efternavn" id="efternavn" minlength="2" placeholder="Indtast efternavn"
+                            required>
                     </div>
                 </div>
 
@@ -256,13 +251,13 @@ input:focus {
                     <input type="email" id="mail" name="mail" placeholder="Indtast email" required>
                 </div>
                 <div class="label_input">
-<<<<<<< HEAD
-                    <label for="phone">Mobil/telefon nummer</label>
-                    <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+">
-=======
-                    <label for="number">Mobil/telefon nummer</label>
-                    <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+" placeholder="Indtast telefonnummer" required>
->>>>>>> db1a14d84f91acbbed89786bd4949ad2a6112574
+                    <<<<<<< HEAD <label for="phone">Mobil/telefon nummer</label>
+                        <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+">
+                        =======
+                        <label for="number">Mobil/telefon nummer</label>
+                        <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+"
+                            placeholder="Indtast telefonnummer" required>
+                        >>>>>>> db1a14d84f91acbbed89786bd4949ad2a6112574
                 </div>
             </section>
 

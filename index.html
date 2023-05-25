@@ -122,10 +122,10 @@
 
 <body>
 
+    //jagtperiode 4 er 2 dags jagt
 
     <script>
         "use strict";
-
         window.addEventListener("DOMContentLoaded", start);
 
         let bookingInfo = {
@@ -142,18 +142,19 @@
         function start() {
 
             const form = document.querySelector("form");
-            document.getElementById("booking_jagt_form").addEventListener("submit", saveCostumerOrder);
+            //document.getElementById("booking_jagt_form").addEventListener("submit", saveCostumerOrder);
+            saveCostumerOrder();
         }
 
         function saveCostumerOrder() {
             const costumerForm = document.querySelector("#booking_jagt_form");
-            const jagtPeriode = costumerForm.elements.valgjagt.value;
-            const antalJaegere = costumerForm.elements.jaegere.value;
-            const antalLedsagere = costumerForm.elements.ledsagere.value;
-            const fuldeNavn = costumerForm.elements.fornavn.value + "  " + costumerForm.elements.efternavn.value;
-            const email = costumerForm.elements.mail.value;
-            const telefon = costumerForm.elements.phone.value;
-            const dinBesked = costumerForm.elements.besked.value;
+            const jagtPeriode = "Jagtperiode: " + costumerForm.elements.valgjagt.value;
+            const antalJaegere = "Antal jægere: " + costumerForm.elements.jaegere.value;
+            const antalLedsagere = "Antal ledsagere: " + costumerForm.elements.ledsagere.value;
+            const fuldeNavn = "Fulde navn: " + costumerForm.elements.fornavn.value + "  " + costumerForm.elements.efternavn.value;
+            const email = "Email: " + costumerForm.elements.mail.value;
+            const telefon = "Telefonnummer: " + costumerForm.elements.phone.value;
+            const dinBesked = "Deres besked" + costumerForm.elements.besked.value;
 
             //create new order object from Orderinfo template
             let nyBookingInfo = Object.create(bookingInfo);
@@ -202,6 +203,57 @@
             </div>
         </div>
     </section>
+
+    <template id="cart">
+        <tbody>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Subtotal</th>
+            </tr>
+            <tr>
+                <td data-field="cart_regu_ticket"></td>
+                <td data-field="cart_regu_quantity"></td>
+                <td data-field="cart_regu_price"></td>
+                <td data-field="cart_regu_total"></td>
+            </tr>
+
+            <tr>
+                <td data-field="cart_vip_ticket"></td>
+                <td data-field="cart_vip_quantity"></td>
+                <td data-field="cart_vip_price"></td>
+                <td data-field="cart_vip_total"></td>
+            </tr>
+            <tr>
+                <td data-field="cart_two_tent"></td>
+                <td data-field="cart_two_tent_quantity"></td>
+                <td data-field="cart_two_tent_price"></td>
+                <td data-field="cart_two_tent_total"></td>
+            </tr>
+            <tr>
+                <td data-field="cart_four_tent"></td>
+                <td data-field="cart_four_tent_quantity"></td>
+                <td data-field="cart_four_tent_price"></td>
+                <td data-field="cart_four_tent_total"></td>
+            </tr>
+            <tr>
+                <td data-field="cart_booking">Fixed Booking Fee</td>
+                <td data-field="cart_booking_quantity">1x</td>
+                <td data-field="cart_booking_price">99</td>
+                <td data-field="cart_booking_total">99 DKK</td>
+            </tr>
+
+
+            <tr class="total_border">
+                <td data-field="card_total_title"><strong>Total</strong></td>
+                <td></td>
+                <td></td>
+                <td data-field="cart_total_total"></td>
+            </tr>
+
+        </tbody>
+    </template>
 
     <section id="booking_jagt_section">
         <form id="booking_jagt_form">

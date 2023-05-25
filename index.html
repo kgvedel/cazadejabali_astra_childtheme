@@ -24,7 +24,7 @@
 
         #booking_jagt_section {
             background-color: var(--green);
-            background-image: url(topografi_grøn.svg);
+            background-image: url(https://www.vildsvinejagt.com/wp-content/uploads/2023/05/topografi_gron.svg);
             background-size: 93rem;
             background-position: -54vw 23vh;
             padding: 4.5rem 0;
@@ -38,7 +38,7 @@
         }
 
         /*this is just a bit general form styling, put it here to make it work, cus wp suxxx*/
-   
+
         form {
             background: #f9f9f9;
             margin: 0 auto;
@@ -59,8 +59,8 @@
             min-width: 60%;
             font-family: 'Open Sans';
             min-height: 2rem;
-            margin: 0.5rem 0;
             outline: none !important;
+            border: 1px solid var(--black);
         }
 
         form select,
@@ -106,7 +106,7 @@
             border: 2px solid var(--blue);
         }
 
-       
+
 
         .label_input:focus-within::before {
             content: '';
@@ -142,13 +142,10 @@
         }
 
 
-        input:valid,
-        select:valid {
+        input:focus:valid, input:required:valid,
+        select:required:valid {
             border: 2px solid #5ef570;
         }
-
-     
-
 
         input:focus {
 
@@ -299,7 +296,7 @@
                 <h4>Vælg jagt</h4>
                 <div class="label_input">
                     <label for="valgjagt">Jagtperiode</label>
-                    <select id="valgjagt" name="valgjagt">
+                    <select id="valgjagt" name="valgjagt" required>
                         <option value="0">3-4-5 November 23 (3 jagtdage)</option>
                         <option value="1">10-11-12 November 23 (3 jagtdage)</option>
                         <option value="2">17-18-19 November 23 (3 jagtdage)</option>
@@ -313,11 +310,11 @@
             <section id="valg_af_deltagere">
                 <div class="label_input">
                     <label for="jaegere">Jægere</label>
-                    <input type="number" id="jaegere" name="jaegere" min="10" max="16" required>
+                    <input type="number" id="jaegere" name="jaegere" min="10" max="16" placeholder="Indtast antal jægere" required>
                 </div>
                 <div class="label_input">
                     <label for="ledsagere">Ledsagere</label>
-                    <input type="number" id="ledsagere" name="ledsagere" min="0" max="10">
+                    <input type="number" id="ledsagere" name="ledsagere" placeholder="Indtast antal jægere" min="0" max="10">
                 </div>
             </section>
             <section id="oplysninger">
@@ -340,12 +337,9 @@
                     <input type="email" id="mail" name="mail" placeholder="Indtast email" required>
                 </div>
                 <div class="label_input">
-                  <label for="phone">Mobil/telefon nummer</label>
-                        <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+">
-                        <label for="number">Mobil/telefon nummer</label>
-                        <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+"
-                            placeholder="Indtast telefonnummer" required>
-                        
+                    <label for="number">Mobil/telefon nummer</label>
+                    <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+"
+                        placeholder="Indtast telefonnummer" required>
                 </div>
             </section>
 

@@ -38,13 +38,14 @@
         }
 
         /*this is just a bit general form styling, put it here to make it work, cus wp suxxx*/
+   
         form {
-            background: var(--beige);
+            background: #f9f9f9;
             margin: 0 auto;
-            /*   border: solid;
-            border-width: 0.5px; */
+            border: solid;
+            border-width: 0.5px;
             border-radius: 4px;
-            box-shadow: 4px 8px 12px 4px #180f0d35;
+            box-shadow: 4pt 4pt 8pt rgba(0, 0, 0, 0.113);
             display: flex;
             flex-direction: column;
             align-items: stretch;
@@ -105,6 +106,8 @@
             border: 2px solid var(--blue);
         }
 
+       
+
         .label_input:focus-within::before {
             content: '';
             position: absolute;
@@ -145,13 +148,66 @@
         }
 
      
+
+
+        input:focus {
+
+            border: 2px solid var(--blue);
+        }
     </style>
 </head>
 
 <body>
 
+    //jagtperiode 4 er 2 dags jagt
 
+    <script>
+        "use strict";
+        window.addEventListener("DOMContentLoaded", start);
 
+        let bookingInfo = {
+            jagtperiode: "",
+            jaegere: "",
+            ledsagere: "",
+            fuldenavn: "",
+            email: "",
+            telefon: "",
+            besked: "",
+            total_pris: ""
+        }
+
+        function start() {
+
+            const form = document.querySelector("form");
+            //document.getElementById("booking_jagt_form").addEventListener("submit", saveCostumerOrder);
+            saveCostumerOrder();
+        }
+
+        function saveCostumerOrder() {
+            const costumerForm = document.querySelector("#booking_jagt_form");
+            const jagtPeriode = "Jagtperiode: " + costumerForm.elements.valgjagt.value;
+            const antalJaegere = "Antal jægere: " + costumerForm.elements.jaegere.value;
+            const antalLedsagere = "Antal ledsagere: " + costumerForm.elements.ledsagere.value;
+            const fuldeNavn = "Fulde navn: " + costumerForm.elements.fornavn.value + "  " + costumerForm.elements.efternavn.value;
+            const email = "Email: " + costumerForm.elements.mail.value;
+            const telefon = "Telefonnummer: " + costumerForm.elements.phone.value;
+            const dinBesked = "Deres besked" + costumerForm.elements.besked.value;
+
+            //create new order object from Orderinfo template
+            let nyBookingInfo = Object.create(bookingInfo);
+
+            //combining all the information from tickets and reservation in the order object, by using spread
+            nyBookingInfo.jagtperiode = jagtPeriode;
+            nyBookingInfo.antalJaegere = antalJaegere;
+            nyBookingInfo.antalLedsagere = antalLedsagere;
+            nyBookingInfo.fuldeNavn = fuldeNavn;
+            nyBookingInfo.email = email;
+            nyBookingInfo.telefon = telefon;
+            nyBookingInfo.dinBesked = dinBesked;
+            console.log(nyBookingInfo);
+        }
+
+    </script>
 
     <section id="booking_info">
         <h2>Booking</h2>
@@ -185,22 +241,71 @@
         </div>
     </section>
 
-    <section id="booking_jagt_section">
+    <template id="cart">
+        <tbody>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Subtotal</th>
+            </tr>
+            <tr>
+                <td data-field="cart_regu_ticket"></td>
+                <td data-field="cart_regu_quantity"></td>
+                <td data-field="cart_regu_price"></td>
+                <td data-field="cart_regu_total"></td>
+            </tr>
 
-        <!--        <form id="valg_jagt_form">
+            <tr>
+                <td data-field="cart_vip_ticket"></td>
+                <td data-field="cart_vip_quantity"></td>
+                <td data-field="cart_vip_price"></td>
+                <td data-field="cart_vip_total"></td>
+            </tr>
+            <tr>
+                <td data-field="cart_two_tent"></td>
+                <td data-field="cart_two_tent_quantity"></td>
+                <td data-field="cart_two_tent_price"></td>
+                <td data-field="cart_two_tent_total"></td>
+            </tr>
+            <tr>
+                <td data-field="cart_four_tent"></td>
+                <td data-field="cart_four_tent_quantity"></td>
+                <td data-field="cart_four_tent_price"></td>
+                <td data-field="cart_four_tent_total"></td>
+            </tr>
+            <tr>
+                <td data-field="cart_booking">Fixed Booking Fee</td>
+                <td data-field="cart_booking_quantity">1x</td>
+                <td data-field="cart_booking_price">99</td>
+                <td data-field="cart_booking_total">99 DKK</td>
+            </tr>
+
+
+            <tr class="total_border">
+                <td data-field="card_total_title"><strong>Total</strong></td>
+                <td></td>
+                <td></td>
+                <td data-field="cart_total_total"></td>
+            </tr>
+
+        </tbody>
+    </template>
+
+    <section id="booking_jagt_section">
+        <form id="booking_jagt_form">
 
             <section id="jagt_dropdown">
                 <h4>Vælg jagt</h4>
                 <div class="label_input">
-                    <label for="valg_af_jagt">Jagtperiode</label>
-                    <select data-field="" id="valg_af_jagt" name="valg_af_jagt" required>
-                        <option value="" disabled selected>Vælg jagt</option>
-                        <option value="periode_et">3-4-5 November 23 (3 jagtdage)</option>
-                        <option value="periode_to">10-11-12 November 23 (3 jagtdage)</option>
-                        <option value="periode_tre">17-18-19 November 23 (3 jagtdage)</option>
-                        <option value="periode_fire">24-25-26 November 23 (3 jagtdage)</option>
-                        <option value="periode_fem">2-3 December 23 (2 jagtdage)</option>
-                        <option value="periode_seks">12-13-14 Januar 24 (3 jagtdage)</option>
+                    <label for="valgjagt">Jagtperiode</label>
+                    <select id="valgjagt" name="valgjagt">
+                        <option value="0">3-4-5 November 23 (3 jagtdage)</option>
+                        <option value="1">10-11-12 November 23 (3 jagtdage)</option>
+                        <option value="2">17-18-19 November 23 (3 jagtdage)</option>
+                        <option value="3">24-25-26 November 23 (3 jagtdage)</option>
+                        <option value="4">2-3 December 23 (2 jagtdage)</option>
+                        <option value="5">12-13-14 Januar 24 (3 jagtdage)</option>
                     </select>
                 </div>
             </section>
@@ -215,50 +320,6 @@
                     <input type="number" id="ledsagere" name="ledsagere" min="0" max="10">
                 </div>
             </section>
-
-            <section id="ophold">
-                <h4>Tilvælg enkeltværelse</h4>
-                <p>Tilvalg af enkeltværelser er €50 pr nat</p>
-                <label for="enkeltvaereslse">Ja tak</label>
-                <input type="radio" id="enkeltvaereslse" name="enkeltvaereslse">
-                <div class="label_input">
-                    <label for="antal_vaerelser">Antal enkeltværelser</label>
-                    <input type="number" id="antal_vaerelser" name="antal_jaegere" min="1" max="16">
-                </div>
-            </section>
-
-            <section id="forlaenge">
-                <h4>Ønskes i at forlænge opholdet og opleve Spanien?</h4>
-                <p>Ekstra dage er €65 pr nat (uden forplejning) </p>
-                <div class="forlaeng_radio_group">
-                    <label for="forlaeng_ja">Ja tak</label>
-                    <input type="radio" id="forlaeng_ja" name="forlaeng_ja">
-                    <label for="forlaeng_nej">Nej tak</label>
-                    <input type="radio" id="forlaeng_nej" name="forlaeng_nej">
-                </div>
-
-                <div class="ekstra_dage">
-                    <h4>Tilføj antal ekstradage</h4>
-                    <div class="ekstra_dage_group">
-                        <div class="label_input">
-                            <label for="ekstra_start">Ekstra dage i starten</label>
-                            <input type="number" id="ekstra_start" name="ekstra_start" min="0" max="10">
-                        </div>
-                        <div class="label_input">
-                            <label for="ekstra_slut">Ekstra dage i slutningen</label>
-                            <input type="number" id="ekstra_slut" name="ekstra_slut" min="0" max="10">
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div class="videre_btn">
-                <button class="videre_btn" type="submit">Videre</button>
-            </div>
-        </form>
-  -->
-
-
-        <form id="booking_oplysning">
             <section id="oplysninger">
                 <h4>Dine oplysninger</h4>
                 <div class="navn_efternavn">
@@ -279,9 +340,12 @@
                     <input type="email" id="mail" name="mail" placeholder="Indtast email" required>
                 </div>
                 <div class="label_input">
-                    <label for="number">Mobil/telefon nummer</label>
-                    <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+"
-                        placeholder="Indtast telefonnummer" required>
+                  <label for="phone">Mobil/telefon nummer</label>
+                        <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+">
+                        <label for="number">Mobil/telefon nummer</label>
+                        <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+"
+                            placeholder="Indtast telefonnummer" required>
+                        
                 </div>
             </section>
 
@@ -301,32 +365,7 @@
 
         </form>
     </section>
-    <script>
-        "use strict";
 
-        window.addEventListener("DOMContentLoaded", start);
-
-
-        let bookingInfo = {
-            jagtperiode: "",
-            antaljaegere: "",
-            antalledsagere: "",
-            fullname: "",
-            adress: "",
-            phone: "",
-            email: "",
-            total_price: ""
-        }
-
-        function start() {
-
-            console.log("hej");
-
-
-        }
-       
-
-    </script>
 </body>
 
 </html>

@@ -31,13 +31,10 @@ get_header(); ?>
         background-color: var(--beige);
         background-image: url(https://www.vildsvinejagt.com/wp-content/uploads/2023/05/topografi_2_rod.svg);
         background-size: 90rem;
-        background-position: 60vw -10vh;
+        background-position: 60vw 2vh;
         background-repeat: no-repeat;
-        width: 100vw;
-        position: relative;
-        left: calc(-50vw + 50%);
-        margin-top: -60px;
-        padding: 60px 1rem 0rem 1rem;
+        background-attachment: fixed;
+        border-bottom: 2px solid var(--spanish_red);
     }
 
     #contact_section {
@@ -78,8 +75,6 @@ get_header(); ?>
         align-items: stretch;
         padding: 1.5rem;
         gap: 1rem;
-        max-width: 40rem;
-        width: 90%;
     }
 
     form input {
@@ -122,7 +117,8 @@ get_header(); ?>
     input:focus,
     input[type=text]:focus,
     input[type=email]:focus,
-    input[type=tel]:focus, textarea:focus{
+    input[type=tel]:focus,
+    textarea:focus {
 
         border: 2px solid var(--blue);
     }
@@ -171,11 +167,10 @@ get_header(); ?>
     #contact_form {
         display: flex;
         flex-direction: column;
-        align-items: stretch;
+        align-items: flex-start;
         padding: 1.5rem;
         gap: 1rem;
         width: 40rem;
-
     }
 
 
@@ -187,7 +182,8 @@ get_header(); ?>
 
     @media only screen and (max-width: 1024px) {
         .page-id-82 #main {
-            padding: 60px 4rem 0rem 4rem;
+            background-position: 60vw 82vh;
+
         }
 
         #graphic_section {
@@ -205,9 +201,8 @@ get_header(); ?>
         }
 
         .page-id-82 #main {
+            background-position: 15vw 82vh;
 
-            background-position: 57vw -9vh;
-            padding: 60px 1.5rem 0rem 1.5rem;
         }
 
     }
@@ -237,12 +232,13 @@ get_header(); ?>
 
                 <div class="label_input">
                     <label for="message">Din besked <span class="required">*</span></label>
-                    <textarea id="message" name="Message" placeholder="Venligst skriv dine spørgsmål her" required=""></textarea>
+                    <textarea id="message" name="Message" placeholder="Venligst skriv dine spørgsmål her"
+                        required=""></textarea>
                 </div>
 
-                <div class="label_input">
-                    <button type="submit">Send Message</button>
-                </div>
+
+                <button type="submit">Send Message</button>
+
             </form>
         </section>
 

@@ -43,14 +43,14 @@ get_header(); ?>
 
     .carousel_container {
         padding: 1.5rem 0px;
-        width: 100vw;
-        position: relative;
-        left: calc(-50vw + 50%);
         background-color: var(--green);
         background-image: url(https://www.vildsvinejagt.com/wp-content/uploads/2023/05/topografi_gul.svg);
         background-size: 97rem;
         background-position: -10vw -72vh;
         background-repeat: no-repeat;
+        background-attachment: fixed;
+        border-top: 2px solid var(--spanish_yellow);
+        border-bottom: 2px solid var(--spanish_yellow);
     }
 
 
@@ -88,6 +88,10 @@ get_header(); ?>
         justify-content: space-between;
 
     }
+
+    p.card-description {
+    height: 100%;
+}
 
     #prevButton,
     #nextButton {
@@ -128,11 +132,11 @@ get_header(); ?>
     .linebreaker {
         border-top: 2px solid var(--black);
         width: 100%;
-        margin: 0.5rem;
+        margin: 1rem auto;
     }
 
     .button-container {
-        background-color: var(--spanish_red);
+        background-color: var(--dark_red);
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -199,9 +203,11 @@ get_header(); ?>
     </section>
     <template id="cardTemplate">
         <div class="card">
+            <div class="img_title">
             <img id="card-image" class="card-image" src="" alt="">
             <h4 class="card-title"></h4>
             <hr class="linebreaker">
+            </div>
             <p class="card-description"></p>
             <div class="button-container">
                 <button class="btn-location"><i class="material-icons" id="pin-icon">location_on</i> Se
@@ -313,9 +319,8 @@ function updateCards() {
         attractionLocation.addEventListener("click", () => window.open(attractions[dataIndex].placering));
         attractionMore.addEventListener("click", () => window.open(attractions[dataIndex].link));
 
-        if (dataIndex == 0) {
-
-            cardClone.querySelector('.button-container').classList.add("opacity");
+        if (attractions[dataIndex].navn == "Oplev dyrelivet") {
+            
             attractionLocation.remove();
             attractionMore.remove();
         }

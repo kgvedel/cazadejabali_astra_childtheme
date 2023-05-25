@@ -21,177 +21,180 @@ get_header(); ?>
 
 <?php if (astra_page_layout() == 'left-sidebar'): ?>
 
-	<?php get_sidebar(); ?>
+<?php get_sidebar(); ?>
 
 <?php endif ?>
 
 <div id="primary" <?php astra_primary_class(); ?>>
 
-	<?php astra_primary_content_top(); ?>
+    <?php astra_primary_content_top(); ?>
 
-	<?php astra_content_page_loop(); ?>
+    <?php astra_content_page_loop(); ?>
 
-	<?php astra_primary_content_bottom(); ?>
+    <?php astra_primary_content_bottom(); ?>
     <style>
-        :root {
-            --dark_red: #6b1014;
-            --spanish_red: #ad1519;
-            --dark_yellow: #d8ab00;
-            --spanish_yellow: #fabd00;
-            --white: #f9f9f9;
-            --beige: #e5dac3;
-            --green: #465d52;
-            --dark_green: #123929;
-            --black: #180f0d;
-            --dark_orange: #b45223;
-            --orange: #e3530e;
-            --blue: #6473ff;
-        }
+    :root {
+        --dark_red: #6b1014;
+        --spanish_red: #ad1519;
+        --dark_yellow: #d8ab00;
+        --spanish_yellow: #fabd00;
+        --white: #f9f9f9;
+        --beige: #e5dac3;
+        --green: #465d52;
+        --dark_green: #123929;
+        --black: #180f0d;
+        --dark_orange: #b45223;
+        --orange: #e3530e;
+        --blue: #6473ff;
+    }
 
-       #booking_jagt_section {
-    background-color: var(--green);
-    background-image: url(https://www.vildsvinejagt.com/wp-content/uploads/2023/05/topografi_gron.svg);
-    background-size: 93rem;
-    background-position: -54vw 23vh;
-    padding: 4.5rem 0;
-    width: 100%;
-    max-width: 100%;
-}
+    #booking_jagt_section {
+        background-color: var(--green);
+        background-image: url(https://www.vildsvinejagt.com/wp-content/uploads/2023/05/topografi_gron.svg);
+        background-size: 93rem;
+        background-position: -54vw 23vh;
+        padding: 4.5rem 0;
+        width: 100%;
+        max-width: 100%;
+    }
 
-        .navn_efternavn {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            width: 100%;
-        }
+    .navn_efternavn {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        width: 100%;
+    }
 
-        /*this is just a bit general form styling, put it here to make it work, cus wp suxxx*/
+    /*this is just a bit general form styling, put it here to make it work, cus wp suxxx*/
 
-        form {
-            background: var(--beige);
-            margin: 0 auto;
-            border: solid;
-            border-width: 0.5px;
-            border-radius: 4px;
-            box-shadow: 4pt 4pt 8pt rgba(0, 0, 0, 0.113);
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            padding: 1.5rem;
-            gap: 1rem;
-            max-width: 40rem;
-            width: 90%;
-        }
+    form {
+        background: var(--beige);
+        margin: 0 auto;
+        border: solid;
+        border-width: 0.5px;
+        border-radius: 4px;
+        box-shadow: 4pt 4pt 8pt rgba(0, 0, 0, 0.113);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1.5rem;
+        gap: 1rem;
+        max-width: 40rem;
+        width: 90%;
+    }
 
-        form input {
-            min-width: 60%;
-            font-family: 'Open Sans';
-            min-height: 2rem;
-			
-        }
-		  input:focus,
-        input[type=text],
-        input[type=email],
-        input[type=tel],
-        input[type=number],
-        select,
-        textarea {
-border: 2px solid var(--green);
-			border-radius:4px;
-            outline: none !important;
+    form input {
+        min-width: 60%;
+        font-family: 'Open Sans';
+        min-height: 2rem;
 
-        }
+    }
 
-        form select,
-        form textarea {
-            font-family: 'Open Sans';
-        }
+    input:focus,
+    input[type=text],
+    input[type=email],
+    input[type=tel],
+    input[type=number],
+    select,
+    textarea {
+        border: 2px solid var(--green);
+        border-radius: 4px;
+        outline: none !important;
 
+    }
 
-        label {
-            font-weight: bold;
-            font-family: 'Open Sans';
-        }
+    form select,
+    form textarea {
+        font-family: 'Open Sans';
+    }
 
 
-
-        form section {
-            display: flex;
-            gap: 2rem;
-            flex-direction: column;
-        }
+    label {
+        font-weight: bold;
+        font-family: 'Open Sans';
+    }
 
 
 
-        .label_input {
-            position: relative;
-            display: flex;
-            width: 100%;
-            flex-direction: column;
-            flex: 1 0 48%;
-        }
+    form section {
+        display: flex;
+        gap: 2rem;
+        flex-direction: column;
+    }
 
 
 
-        /*validation*/
-        input:focus,
-        input[type=text]:focus,
-        input[type=email]:focus,
-        input[type=tel]:focus,
-        input[type=number]:focus,
-        select:focus,
-        textarea:focus {
-
-            border: 2px solid var(--blue);
-        }
+    .label_input {
+        position: relative;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        flex: 1 0 48%;
+		gap:0pt;
+    }
 
 
 
-        .label_input:focus-within::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: -10px;
-            width: 3px;
-            background-color: var(--blue);
+    /*validation*/
+    input:focus,
+    input[type=text]:focus,
+    input[type=email]:focus,
+    input[type=tel]:focus,
+    input[type=number]:focus,
+    select:focus,
+    textarea:focus {
+
+        border: 2px solid var(--blue);
+    }
+
+
+
+    .label_input:focus-within::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -10px;
+        width: 3px;
+        background-color: var(--blue);
+        height: 0;
+        transition: height 0.3s ease-in-out;
+    }
+
+    .label_input:focus-within::before {
+        animation: expandLine 0.3s forwards;
+    }
+
+    @keyframes expandLine {
+        0% {
             height: 0;
-            transition: height 0.3s ease-in-out;
+            bottom: 0;
         }
 
-        .label_input:focus-within::before {
-            animation: expandLine 0.3s forwards;
+        100% {
+            height: 100%;
+            bottom: auto;
+            top: 0;
         }
+    }
 
-        @keyframes expandLine {
-            0% {
-                height: 0;
-                bottom: 0;
-            }
-
-            100% {
-                height: 100%;
-                bottom: auto;
-                top: 0;
-            }
-        }
-
-        input:invalid:not(:placeholder-shown) {
-            border: 2px solid var(--spanish_red);
-        }
+    input:invalid:not(:placeholder-shown) {
+        border: 2px solid var(--spanish_red);
+    }
 
 
-        input:focus:valid, input:required:valid,
-        select:required:valid {
-            border: 2px solid #5ef570;
-        }
+    input:focus:valid,
+ input:required:valid,
+    select:required:valid {
+        border: 2px solid #5ef570;
+    }
 
-        input:focus {
+    input:focus {
 
-            border: 2px solid var(--blue);
-        }
+        border: 2px solid var(--blue);
+    }
     </style>
-	  <section id="booking_info">
+    <section id="booking_info">
         <h2>Booking</h2>
 
         <div class="btn_jagtforedrag_group">
@@ -295,11 +298,13 @@ border: 2px solid var(--green);
             <section id="valg_af_deltagere">
                 <div class="label_input">
                     <label for="jaegere">Jægere</label>
-                    <input type="number" id="jaegere" name="jaegere" min="10" max="16" placeholder="Indtast antal jægere" required>
+                    <input type="number" id="jaegere" name="jaegere" min="10" max="16"
+                        placeholder="Indtast antal jægere" required>
                 </div>
                 <div class="label_input">
                     <label for="ledsagere">Ledsagere</label>
-                    <input type="number" id="ledsagere" name="ledsagere" placeholder="Indtast antal ledsagere" min="0" max="10">
+                    <input type="number" id="ledsagere" name="ledsagere" placeholder="Indtast antal ledsagere" min="0"
+                        max="10">
                 </div>
             </section>
             <section id="oplysninger">
@@ -312,8 +317,8 @@ border: 2px solid var(--green);
                     </div>
                     <div class="label_input">
                         <label for="efternavn">Efternavn</label>
-                        <input type="text" name="efternavn" id="efternavn" minlength="2" placeholder="Indtast dit efternavn"
-                            required>
+                        <input type="text" name="efternavn" id="efternavn" minlength="2"
+                            placeholder="Indtast dit efternavn" required>
                     </div>
                 </div>
 
@@ -346,57 +351,57 @@ border: 2px solid var(--green);
     </section>
 
 </div><!-- #primary -->
-  <script>
-        "use strict";
-        window.addEventListener("DOMContentLoaded", start);
+<script>
+"use strict";
+window.addEventListener("DOMContentLoaded", start);
 
-        let bookingInfo = {
-            jagtperiode: "",
-            jaegere: "",
-            ledsagere: "",
-            fuldenavn: "",
-            email: "",
-            telefon: "",
-            besked: "",
-            total_pris: ""
-        }
+let bookingInfo = {
+    jagtperiode: "",
+    jaegere: "",
+    ledsagere: "",
+    fuldenavn: "",
+    email: "",
+    telefon: "",
+    besked: "",
+    total_pris: ""
+}
 
-        function start() {
+function start() {
 
-            const form = document.querySelector("form");
-            //document.getElementById("booking_jagt_form").addEventListener("submit", saveCostumerOrder);
-            saveCostumerOrder();
-        }
+    const form = document.querySelector("form");
+    //document.getElementById("booking_jagt_form").addEventListener("submit", saveCostumerOrder);
+    saveCostumerOrder();
+}
 
-        function saveCostumerOrder() {
-            const costumerForm = document.querySelector("#booking_jagt_form");
-            const jagtPeriode = "Jagtperiode: " + costumerForm.elements.valgjagt.value;
-            const antalJaegere = "Antal jægere: " + costumerForm.elements.jaegere.value;
-            const antalLedsagere = "Antal ledsagere: " + costumerForm.elements.ledsagere.value;
-            const fuldeNavn = "Fulde navn: " + costumerForm.elements.fornavn.value + "  " + costumerForm.elements.efternavn.value;
-            const email = "Email: " + costumerForm.elements.mail.value;
-            const telefon = "Telefonnummer: " + costumerForm.elements.phone.value;
-            const dinBesked = "Deres besked" + costumerForm.elements.besked.value;
+function saveCostumerOrder() {
+    const costumerForm = document.querySelector("#booking_jagt_form");
+    const jagtPeriode = "Jagtperiode: " + costumerForm.elements.valgjagt.value;
+    const antalJaegere = "Antal jægere: " + costumerForm.elements.jaegere.value;
+    const antalLedsagere = "Antal ledsagere: " + costumerForm.elements.ledsagere.value;
+    const fuldeNavn = "Fulde navn: " + costumerForm.elements.fornavn.value + "  " + costumerForm.elements.efternavn
+        .value;
+    const email = "Email: " + costumerForm.elements.mail.value;
+    const telefon = "Telefonnummer: " + costumerForm.elements.phone.value;
+    const dinBesked = "Deres besked" + costumerForm.elements.besked.value;
 
-            //create new order object from Orderinfo template
-            let nyBookingInfo = Object.create(bookingInfo);
+    //create new order object from Orderinfo template
+    let nyBookingInfo = Object.create(bookingInfo);
 
-            //combining all the information from tickets and reservation in the order object, by using spread
-            nyBookingInfo.jagtperiode = jagtPeriode;
-            nyBookingInfo.antalJaegere = antalJaegere;
-            nyBookingInfo.antalLedsagere = antalLedsagere;
-            nyBookingInfo.fuldeNavn = fuldeNavn;
-            nyBookingInfo.email = email;
-            nyBookingInfo.telefon = telefon;
-            nyBookingInfo.dinBesked = dinBesked;
-            console.log(nyBookingInfo);
-        }
-
-    </script>
+    //combining all the information from tickets and reservation in the order object, by using spread
+    nyBookingInfo.jagtperiode = jagtPeriode;
+    nyBookingInfo.antalJaegere = antalJaegere;
+    nyBookingInfo.antalLedsagere = antalLedsagere;
+    nyBookingInfo.fuldeNavn = fuldeNavn;
+    nyBookingInfo.email = email;
+    nyBookingInfo.telefon = telefon;
+    nyBookingInfo.dinBesked = dinBesked;
+    console.log(nyBookingInfo);
+}
+</script>
 
 <?php if (astra_page_layout() == 'right-sidebar'): ?>
 
-	<?php get_sidebar(); ?>
+<?php get_sidebar(); ?>
 
 <?php endif ?>
 

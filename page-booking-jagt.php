@@ -44,34 +44,6 @@ get_header(); ?>
         box-shadow: 4pt 4pt 8pt rgba(0, 0, 0, 0.113);
     }
 
-<<<<<<< HEAD
-
-	<script>
-		"use strict";
-
-		window.addEventListener("DOMContentLoaded", start);
-
-
-		let bookingInfo = {
-			jagtperiode: "",
-			antaljaegere: "",
-			antalledsagere: "",
-			fullname: "",
-			adress: "",
-			phone: "",
-			email: "",
-			total_price: ""
-		}
-
-		function start() {
-
-			console.log("hej");
-		}
-
-
-	</script>
-
-=======
     form input {
         min-width: 80%;
         font-family: 'Open Sans';
@@ -83,7 +55,6 @@ get_header(); ?>
         font-family: 'Open Sans';
     }
 </style>
->>>>>>> 2b4046048f5e86e0f5ea5aa0b485c9ebd6e7ae54
 	<section id="booking_info">
 		<h2>Booking</h2>
 

@@ -206,50 +206,30 @@
 
     <template id="cart">
         <tbody>
+            <h2>Hej</h2>
             <tr>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Subtotal</th>
+                <th>Jagtperiode plus pris for enkelte periode</th>
+                <th>Antal jægere</th>
+                <th>Antal ledsagere</th>
+                <th>Pris i alt for jagten</th>
             </tr>
             <tr>
-                <td data-field="cart_regu_ticket"></td>
-                <td data-field="cart_regu_quantity"></td>
-                <td data-field="cart_regu_price"></td>
-                <td data-field="cart_regu_total"></td>
-            </tr>
-
-            <tr>
-                <td data-field="cart_vip_ticket"></td>
-                <td data-field="cart_vip_quantity"></td>
-                <td data-field="cart_vip_price"></td>
-                <td data-field="cart_vip_total"></td>
-            </tr>
-            <tr>
-                <td data-field="cart_two_tent"></td>
-                <td data-field="cart_two_tent_quantity"></td>
-                <td data-field="cart_two_tent_price"></td>
-                <td data-field="cart_two_tent_total"></td>
-            </tr>
-            <tr>
-                <td data-field="cart_four_tent"></td>
-                <td data-field="cart_four_tent_quantity"></td>
-                <td data-field="cart_four_tent_price"></td>
-                <td data-field="cart_four_tent_total"></td>
-            </tr>
-            <tr>
-                <td data-field="cart_booking">Fixed Booking Fee</td>
-                <td data-field="cart_booking_quantity">1x</td>
-                <td data-field="cart_booking_price">99</td>
-                <td data-field="cart_booking_total">99 DKK</td>
+                <td data-field="cart_jagt_periode"></td>
+                <td data-field="cart_jagt_periode_pris"></td>
             </tr>
 
+            <tr>
+                <td data-field="cart_jaegere_antal"></td>
+            </tr>
+            <tr>
+                <td data-field="cart_ledsagere_antal"></td>
+            </tr>
 
             <tr class="total_border">
-                <td data-field="card_total_title"><strong>Total</strong></td>
+                <td data-field="card_total_title"><strong>Pris</strong></td>
                 <td></td>
                 <td></td>
-                <td data-field="cart_total_total"></td>
+                <td data-field="cart_total_pris"></td>
             </tr>
 
         </tbody>

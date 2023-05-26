@@ -52,10 +52,12 @@ get_header(); ?>
         background-color: var(--green);
         background-image: url(https://www.vildsvinejagt.com/wp-content/uploads/2023/05/topografi_gron.svg);
         background-size: 93rem;
-        background-position: -54vw 23vh;
+        background-position: -54vw 16vh;
         padding: 4.5rem 0;
         width: 100%;
         max-width: 100%;
+        background-attachment: fixed;
+        border-top: 2px solid var(--dark_green);
     }
 
     .navn_efternavn {
@@ -70,9 +72,8 @@ get_header(); ?>
     form {
         background: var(--beige);
         margin: 0 auto;
-        border: solid;
-        border-width: 0.5px;
         border-radius: 4px;
+        border-width: 0px;
         box-shadow: 4pt 4pt 8pt rgba(0, 0, 0, 0.113);
         display: flex;
         flex-direction: column;
@@ -97,7 +98,7 @@ get_header(); ?>
     input[type=number],
     select,
     textarea {
-        border: 2px solid var(--green);
+        border: 2px solid transparent;
         border-radius: 4px;
         outline: none !important;
 
@@ -130,7 +131,7 @@ get_header(); ?>
         width: 100%;
         flex-direction: column;
         flex: 1 0 48%;
-		gap:0pt;
+        gap: 0pt;
     }
 
 
@@ -184,7 +185,7 @@ get_header(); ?>
 
 
     input:focus:valid,
- input:required:valid,
+    input:required:valid,
     select:required:valid {
         border: 2px solid #5ef570;
     }
@@ -198,8 +199,8 @@ get_header(); ?>
         <h2>Booking</h2>
 
         <div class="btn_jagtforedrag_group">
-            <button>Jagt</button>
-            <button>Foredrag</button>
+            <button id="jagt_knap">Jagt</button>
+            <button id="foredrag_knap">Foredrag</button>
         </div>
 
         <div class="info_container">
@@ -324,7 +325,7 @@ get_header(); ?>
 
                 <div class="label_input">
                     <label for="mail">Email*</label>
-                    <input type="email" id="mail" name="mail" placeholder="dinemail@mail.com" required>
+                    <input type="email" id="mail" name="mail" placeholder="Indtast email" required>
                 </div>
                 <div class="label_input">
                     <label for="number">Mobil/telefon nummer</label>
@@ -397,6 +398,8 @@ function saveCostumerOrder() {
     nyBookingInfo.dinBesked = dinBesked;
     console.log(nyBookingInfo);
 }
+document.querySelector("#foredrag_knap").addEventListener("click", () => window.location.href =
+    "https://www.vildsvinejagt.com/index.php/booking-foredrag/");
 </script>
 
 <?php if (astra_page_layout() == 'right-sidebar'): ?>

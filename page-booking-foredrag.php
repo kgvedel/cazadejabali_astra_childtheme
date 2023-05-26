@@ -36,116 +36,152 @@ get_header(); ?>
 	<section id="booking_info">
 
 	<style>
-		    form {
-            background: var(--beige);
-            margin: 0 auto;
-            border-radius: 4px;
-            box-shadow: 4px 8px 12px 4px #180f0d35;
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            padding: 1.5rem;
-            gap: 1rem;
-            max-width: 40rem;
-            width: 90%;
-        }
 
-        form input {
-            min-width: 60%;
-            font-family: 'Open Sans';
-            min-height: 2rem;
-            margin: 0.5rem 0;
-            outline: none !important;
-        }
+     #booking_oplysninger_foredrag {
+        background-color: var(--green);
+        background-image: url(https://www.vildsvinejagt.com/wp-content/uploads/2023/05/topografi_gron.svg);
+        background-size: 93rem;
+        background-position: -54vw 16vh;
+        
+        padding: 4.5rem 0;
+        width: 100%;
+        max-width: 100%;
+        background-attachment: fixed;
+        border-top: 2px solid var(--dark_green);
+    }
 
-        form textarea {
-            font-family: 'Open Sans';
-        }
+     form {
+        background: var(--beige);
+        margin: 0 auto;
+        border-radius: 4px;
+        border-width: 0px;
+        box-shadow: 4pt 4pt 8pt rgba(0, 0, 0, 0.113);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1.5rem;
+        gap: 1rem;
+        max-width: 40rem;
+        width: 90%;
+    }
 
+    form input {
+        min-width: 60%;
+        font-family: 'Open Sans';
+        min-height: 2rem;
 
-        label {
-            font-weight: bold;
-            font-family: 'Open Sans';
-        }
+    }
 
+    input:focus,
+    input[type=text],
+    input[type=email],
+    input[type=tel],
+    input[type=number],
+    select,
+    textarea {
+        border: 2px solid transparent;
+        border-radius: 4px;
+        outline: none !important;
 
+    }
 
-        form section {
-            display: flex;
-            gap: 2rem;
-            flex-direction: column;
-        }
-
-
-
-        .label_input {
-            position: relative;
-            display: flex;
-            width: 100%;
-            flex-direction: column;
-            flex: 1 0 48%;
-        }
-
-		.navn_efternavn {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            width: 100%;
-        }
+    form select,
+    form textarea {
+        font-family: 'Open Sans';
+    }
 
 
-       /*validation*/
-       input:focus,
-        select:focus {
+    label {
+        font-weight: bold;
+        font-family: 'Open Sans';
+    }
 
-            border: 2px solid var(--blue);
-        }
 
-        .label_input:focus-within::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: -10px;
-            width: 3px;
-            background-color: var(--blue);
+
+    form section {
+        display: flex;
+        gap: 2rem;
+        flex-direction: column;
+    }
+
+
+
+    .label_input {
+        position: relative;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        flex: 1 0 48%;
+        gap: 0pt;
+    }
+
+
+
+    /*validation*/
+    input:focus,
+    input[type=text]:focus,
+    input[type=email]:focus,
+    input[type=tel]:focus,
+    input[type=number]:focus,
+    select:focus,
+    textarea:focus {
+
+        border: 2px solid var(--blue);
+    }
+
+
+
+    .label_input:focus-within::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -10px;
+        width: 3px;
+        background-color: var(--blue);
+        height: 0;
+        transition: height 0.3s ease-in-out;
+    }
+
+    .label_input:focus-within::before {
+        animation: expandLine 0.3s forwards;
+    }
+
+    @keyframes expandLine {
+        0% {
             height: 0;
-            transition: height 0.3s ease-in-out;
+            bottom: 0;
         }
 
-        .label_input:focus-within::before {
-            animation: expandLine 0.3s forwards;
+        100% {
+            height: 100%;
+            bottom: auto;
+            top: 0;
         }
+    }
 
-        @keyframes expandLine {
-            0% {
-                height: 0;
-                bottom: 0;
-            }
-
-            100% {
-                height: 100%;
-                bottom: auto;
-                top: 0;
-            }
-        }
-
-        input:invalid:not(:placeholder-shown) {
-            border: 2px solid var(--spanish_red);
-        }
+    input:invalid:not(:placeholder-shown) {
+        border: 2px solid var(--spanish_red);
+    }
 
 
-        input:valid,
-        select:valid {
-            border: 2px solid #5ef570;
-        }
+    input:focus:valid,
+    input:required:valid,
+    select:required:valid {
+        border: 2px solid #5ef570;
+    }
+
+    input:focus {
+
+        border: 2px solid var(--blue);
+    }
 
 	</style>
 		<h2>Booking</h2>
 
 		<div class="btn_jagtforedrag_group">
-			<button>Jagt</button>
-			<button>Foredrag</button>
+			<button id="jagt_knap">Jagt</button>
+			<button id="foredrag_knap">Foredrag</button>
 		</div>
 
 		<div class="info_container">
@@ -181,21 +217,21 @@ get_header(); ?>
 				<div class="navn_efternavn">
 					<div class="label_input">
 						<label for="fornavn">Fornavn</label>
-						<input type="text" name="fornavn" id="fornavn" required>
+						<input type="text" name="fornavn" id="fornavn" placeholder="Indtast fornavn" required>
 					</div>
 					<div class="label_input">
 						<label for="efternavn">Efternavn</label>
-						<input type="text" name="efternavn" id="efternavn" required>
+						<input type="text" name="efternavn" id="efternavn" placeholder="Indtast efternavn" required>
 					</div>
 				</div>
 
 				<div class="label_input">
 					<label for="mail">Email*</label>
-					<input type="email" id="mail" name="mail" required>
+					<input type="email" id="mail" name="mail" placeholder="Indtast email" required>
 				</div>
 				<div class="label_input">
 					<label for="number">Mobil/telefon nummer</label>
-					<input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+">
+					<input type="tel" id="phone" name="phone" maxlength="8" placeholder="Indtast mobilnummer" pattern="[0-9]+">
 				</div>
 			</section>
 
@@ -217,6 +253,12 @@ get_header(); ?>
 
 
 </div><!-- #primary -->
+
+<script>
+
+document.querySelector("#jagt_knap").addEventListener("click", () => window.location.href =
+    "https://www.vildsvinejagt.com/index.php/booking-jagt/");
+</script>
 
 <?php if (astra_page_layout() == 'right-sidebar'): ?>
 

@@ -22,9 +22,27 @@
             --blue: #6473ff;
         }
 
+        #booking_jagt_section {
+            background-color: var(--green);
+            background-image: url(https://www.vildsvinejagt.com/wp-content/uploads/2023/05/topografi_gron.svg);
+            background-size: 93rem;
+            background-position: -54vw 23vh;
+            padding: 4.5rem 0;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .navn_efternavn {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            width: 100%;
+        }
+
         /*this is just a bit general form styling, put it here to make it work, cus wp suxxx*/
+
         form {
-            background: #f9f9f9;
+            background: var(--beige);
             margin: 0 auto;
             border: solid;
             border-width: 0.5px;
@@ -35,17 +53,35 @@
             align-items: stretch;
             padding: 1.5rem;
             gap: 1rem;
-            width: 40rem;
+            max-width: 40rem;
+            width: 90%;
         }
 
-
         form input {
-            min-width: 80%;
+            min-width: 60%;
             font-family: 'Open Sans';
-            height: 1.5rem;
+            min-height: 2rem;
+
+        }
+
+        input:focus,
+        input[type=text],
+        input[type=email],
+        input[type=tel],
+        input[type=number],
+        select,
+        textarea {
+            border: 2px solid var(--green);
+            border-radius: 4px;
             outline: none !important;
 
         }
+
+        form select,
+        form textarea {
+            font-family: 'Open Sans';
+        }
+
 
         label {
             font-weight: bold;
@@ -65,8 +101,25 @@
         .label_input {
             position: relative;
             display: flex;
+            width: 100%;
             flex-direction: column;
+            flex: 1 0 48%;
         }
+
+
+
+        /*validation*/
+        input:focus,
+        input[type=text]:focus,
+        input[type=email]:focus,
+        input[type=tel]:focus,
+        input[type=number]:focus,
+        select:focus,
+        textarea:focus {
+
+            border: 2px solid var(--blue);
+        }
+
 
 
         .label_input:focus-within::before {
@@ -103,15 +156,11 @@
         }
 
 
-        input:valid {
+        input:focus:valid,
+        input:required:valid,
+        select:required:valid {
             border: 2px solid #5ef570;
         }
-
-        input:invalid:not(:placeholder-shown) {
-            border: 1.5px solid #5ef570;
-            background-color: #f9f9f9;
-        }
-
 
         input:focus {
 
@@ -179,7 +228,6 @@
             <button>Jagt</button>
             <button>Foredrag</button>
         </div>
-
         <div class="info_container">
             <div class="info_wrapper">
                 <h4>Betalingsbetingelser</h4>
@@ -286,7 +334,7 @@
                     <<<<<<< HEAD <label for="phone">Mobil/telefon nummer</label>
                         <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+">
                         =======
-                        <label for="number">Mobil/telefon nummer</label>
+                        <label for="phone">Mobil/telefon nummer</label>
                         <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+"
                             placeholder="Indtast telefonnummer" required>
                         >>>>>>> db1a14d84f91acbbed89786bd4949ad2a6112574
@@ -310,6 +358,8 @@
         </form>
     </section>
 
+    </form>
+    </section>
 </body>
 
 </html>

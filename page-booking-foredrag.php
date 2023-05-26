@@ -34,6 +34,113 @@ get_header(); ?>
 	<?php astra_primary_content_bottom(); ?>
 
 	<section id="booking_info">
+
+	<style>
+		    form {
+            background: var(--beige);
+            margin: 0 auto;
+            border-radius: 4px;
+            box-shadow: 4px 8px 12px 4px #180f0d35;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            padding: 1.5rem;
+            gap: 1rem;
+            max-width: 40rem;
+            width: 90%;
+        }
+
+        form input {
+            min-width: 60%;
+            font-family: 'Open Sans';
+            min-height: 2rem;
+            margin: 0.5rem 0;
+            outline: none !important;
+        }
+
+        form textarea {
+            font-family: 'Open Sans';
+        }
+
+
+        label {
+            font-weight: bold;
+            font-family: 'Open Sans';
+        }
+
+
+
+        form section {
+            display: flex;
+            gap: 2rem;
+            flex-direction: column;
+        }
+
+
+
+        .label_input {
+            position: relative;
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            flex: 1 0 48%;
+        }
+
+		.navn_efternavn {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            width: 100%;
+        }
+
+
+       /*validation*/
+       input:focus,
+        select:focus {
+
+            border: 2px solid var(--blue);
+        }
+
+        .label_input:focus-within::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -10px;
+            width: 3px;
+            background-color: var(--blue);
+            height: 0;
+            transition: height 0.3s ease-in-out;
+        }
+
+        .label_input:focus-within::before {
+            animation: expandLine 0.3s forwards;
+        }
+
+        @keyframes expandLine {
+            0% {
+                height: 0;
+                bottom: 0;
+            }
+
+            100% {
+                height: 100%;
+                bottom: auto;
+                top: 0;
+            }
+        }
+
+        input:invalid:not(:placeholder-shown) {
+            border: 2px solid var(--spanish_red);
+        }
+
+
+        input:valid,
+        select:valid {
+            border: 2px solid #5ef570;
+        }
+
+	</style>
 		<h2>Booking</h2>
 
 		<div class="btn_jagtforedrag_group">
@@ -97,7 +204,7 @@ get_header(); ?>
 				<div class="label_input">
 					<label for="besked">Besked</label>
 					<textarea name="besked" id="besked" cols="30" rows="10"
-						placeholder="Tilføj din kommentar her"></textarea>
+						placeholder="Tilføj din kommentar her" required></textarea>
 				</div>
 			</section>
 

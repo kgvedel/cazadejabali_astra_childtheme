@@ -217,6 +217,29 @@
             nyBookingInfo.telefon = telefon;
             nyBookingInfo.dinBesked = dinBesked;
             console.log(nyBookingInfo);
+
+            showCart();
+        }
+
+        function showCart() {
+            const costumerForm = document.querySelector("#booking_jagt_form");
+            const template = document.getElementById('cart');
+            const clone = template.content.cloneNode(true);
+
+            console.log("hej");
+
+            const antalJaegere = costumerForm.elements.jaegere.value;
+
+            const cart_jagt_periode = "€" + 2380 * antalJaegere;
+
+
+
+
+
+            clone.querySelector("[data-field=cart_jagt_periode]").textContent = cart_jagt_periode;
+
+            document.querySelector("#cart_table").appendChild(clone);
+
         }
 
     </script>
@@ -283,6 +306,10 @@
         </tbody>
     </template>
 
+    <table id="cart_table">
+
+    </table>
+
     <section id="booking_jagt_section">
         <form id="booking_jagt_form">
 
@@ -300,7 +327,7 @@
                     </select>
                 </div>
             </section>
-            <h4>Vælg deltagere</h4>
+            <h3>Vælg deltagere</h3>
             <section id="valg_af_deltagere">
                 <div class="label_input">
                     <label for="jaegere">Jægere</label>

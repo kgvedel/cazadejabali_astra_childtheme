@@ -136,20 +136,20 @@ get_header(); ?>
     }
 
     .button-container {
-        background-color: var(--dark_red);
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin: 1rem -1rem -1rem -1rem;
-        padding: 1rem;
-        flex-wrap: wrap;
-        align-content: center;
-        gap: 0.5rem;
-        min-height: 5rem;
-    }
+    background-color: var(--dark_red);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0rem -1rem -1rem -1rem;
+    padding: 1rem 1rem;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 0.5rem;
+    min-height: 6rem;
+
+}
 
     .button-container button {
-        padding-top: 0.5rem;
         background-color: var(--spanish_yellow);
         color: var(--black);
 

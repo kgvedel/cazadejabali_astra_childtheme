@@ -69,6 +69,7 @@ get_header(); ?>
         background: var(--beige);
         margin: 0 auto;
         border-radius: 4px;
+        border-width: 0px;
         box-shadow: 4px 8px 12px 4px #180f0d35;
         display: flex;
         flex-direction: column;
@@ -104,6 +105,14 @@ get_header(); ?>
     }
 
 
+    input[type=text],
+    input[type=email],
+    textarea {
+        border: 2px solid transparent;
+        border-radius: 4px;
+        outline: none !important;
+
+    }
 
     .label_input {
         position: relative;
@@ -117,7 +126,6 @@ get_header(); ?>
     input:focus,
     input[type=text]:focus,
     input[type=email]:focus,
-    input[type=tel]:focus,
     textarea:focus {
 
         border: 2px solid var(--blue);
@@ -182,8 +190,8 @@ get_header(); ?>
 
     @media only screen and (max-width: 1024px) {
         .page-id-82 #main {
-            background-position: 60vw 82vh;
-
+            background-position: -12vw 56vh;
+            background-attachment: scroll;
         }
 
         #graphic_section {
@@ -198,11 +206,6 @@ get_header(); ?>
 
         #contact_form {
             width: 90vw
-        }
-
-        .page-id-82 #main {
-            background-position: 15vw 82vh;
-
         }
 
     }
@@ -232,7 +235,7 @@ get_header(); ?>
 
                 <div class="label_input">
                     <label for="message">Din besked <span class="required">*</span></label>
-                    <textarea id="message" name="Message" placeholder="Venligst skriv dine spørgsmål her"
+                    <textarea id="message" name="Message" placeholder="Skriv dine spørgsmål her"
                         required=""></textarea>
                 </div>
 

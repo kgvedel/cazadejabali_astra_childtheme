@@ -22,371 +22,233 @@
             --blue: #6473ff;
         }
 
-        #booking_jagt_section {
-            background-color: var(--green);
-            background-image: url(https://www.vildsvinejagt.com/wp-content/uploads/2023/05/topografi_gron.svg);
-            background-size: 93rem;
-            background-position: -54vw 23vh;
-            padding: 4.5rem 0;
-            width: 100%;
-            max-width: 100%;
+
+        .footer_menu a {
+            color: var(--white);
         }
 
-        .navn_efternavn {
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer_top {
+            display: flex;
+            justify-content: space-around;
+            /* gap: 48px; */
+            padding-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .right {
+            width: 260px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        #footer_logo {
+            width: 240px;
+        }
+
+        #footer_logo img {
+            width: 100%;
+            object-fit: contain;
+            width: 100%;
+        }
+
+        .download {
+            display: flex;
+            gap: 24px;
+            padding: 8px;
+        }
+
+        .footer_nyhedsbrev_form {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        #sfooter {
+            max-width: 100%;
+            margin: 0 auto;
+            border-style: solid;
+            border-width: 2px 0px 0px 0px;
+            border-color: var(--dark_red);
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
+            padding: 0;
+        }
+
+        section.middle {
+
             gap: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-content: space-between;
+        }
+
+        .footer_social {
+            display: flex;
+            gap: 64px;
+            flex-wrap: wrap;
+            padding: 8px;
+        }
+
+        .social {
+            display: flex;
+            gap: 1rem;
+            padding: 8px;
+        }
+
+        #footer_nyhedsbrev_section {
+            width: 100%;
+            padding: 24px 0px 24px 0px;
+        }
+
+        #footer_nyhedsbrev_section>section:nth-child(1) {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer_form_group {
+            width: 400px;
+        }
+
+        .footer_input {
             width: 100%;
         }
 
-        /*this is just a bit general form styling, put it here to make it work, cus wp suxxx*/
-
-        form {
-            background: var(--beige);
-            margin: 0 auto;
-            border: solid;
-            border-width: 0.5px;
-            border-radius: 4px;
-            box-shadow: 4pt 4pt 8pt rgba(0, 0, 0, 0.113);
+        .footer_nyhedsbrev_form {
             display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            padding: 1.5rem;
-            gap: 1rem;
-            max-width: 40rem;
-            width: 90%;
+            gap: 8px align-items center;
+            flex-wrap: wrap;
         }
 
-        form input {
-            min-width: 60%;
-            font-family: 'Open Sans';
-            min-height: 2rem;
-
-        }
-
-        input:focus,
-        input[type=text],
-        input[type=email],
-        input[type=tel],
-        input[type=number],
-        select,
-        textarea {
-            border: 2px solid var(--green);
-            border-radius: 4px;
-            outline: none !important;
-
-        }
-
-        form select,
-        form textarea {
-            font-family: 'Open Sans';
-        }
-
-
-        label {
-            font-weight: bold;
-            font-family: 'Open Sans';
-        }
-
-
-
-        form section {
-            display: flex;
-            gap: 2rem;
-            flex-direction: column;
-        }
-
-
-
-        .label_input {
-            position: relative;
+        .footer_bottom {
+            background-color: var(--dark_green);
             display: flex;
             width: 100%;
-            flex-direction: column;
-            flex: 1 0 48%;
+            flex-direction: row;
+            align-items: center;
+            padding: 1rem;
+
         }
 
-
-
-        /*validation*/
-        input:focus,
-        input[type=text]:focus,
-        input[type=email]:focus,
-        input[type=tel]:focus,
-        input[type=number]:focus,
-        select:focus,
-        textarea:focus {
-
-            border: 2px solid var(--blue);
+        .footer_menu {
+            width: 100%;
         }
 
-
-
-        .label_input:focus-within::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: -10px;
-            width: 3px;
-            background-color: var(--blue);
-            height: 0;
-            transition: height 0.3s ease-in-out;
-        }
-
-        .label_input:focus-within::before {
-            animation: expandLine 0.3s forwards;
-        }
-
-        @keyframes expandLine {
-            0% {
-                height: 0;
-                bottom: 0;
-            }
-
-            100% {
-                height: 100%;
-                bottom: auto;
-                top: 0;
-            }
-        }
-
-        input:invalid:not(:placeholder-shown) {
-            border: 2px solid var(--spanish_red);
-        }
-
-
-        input:focus:valid,
-        input:required:valid,
-        select:required:valid {
-            border: 2px solid #5ef570;
-        }
-
-        input:focus {
-
-            border: 2px solid var(--blue);
+        .footer_menu>ul:nth-child(1) {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            width: 100%;
+            padding: 2rem;
         }
     </style>
-</head>
 
-<body>
-
-    //jagtperiode 4 er 2 dags jagt
-
-    <script>
-        "use strict";
-        window.addEventListener("DOMContentLoaded", start);
-
-        let bookingInfo = {
-            jagtperiode: "",
-            jaegere: "",
-            ledsagere: "",
-            fuldenavn: "",
-            email: "",
-            telefon: "",
-            besked: "",
-            total_pris: ""
-        }
-
-        function start() {
-
-            const form = document.querySelector("form");
-            //document.getElementById("booking_jagt_form").addEventListener("submit", saveCostumerOrder);
-            saveCostumerOrder();
-        }
-
-        function saveCostumerOrder() {
-            const costumerForm = document.querySelector("#booking_jagt_form");
-            const jagtPeriode = "Jagtperiode: " + costumerForm.elements.valgjagt.value;
-            const antalJaegere = "Antal jægere: " + costumerForm.elements.jaegere.value;
-            const antalLedsagere = "Antal ledsagere: " + costumerForm.elements.ledsagere.value;
-            const fuldeNavn = "Fulde navn: " + costumerForm.elements.fornavn.value + "  " + costumerForm.elements.efternavn.value;
-            const email = "Email: " + costumerForm.elements.mail.value;
-            const telefon = "Telefonnummer: " + costumerForm.elements.phone.value;
-            const dinBesked = "Deres besked" + costumerForm.elements.besked.value;
-
-            //create new order object from Orderinfo template
-            let nyBookingInfo = Object.create(bookingInfo);
-
-            //combining all the information from tickets and reservation in the order object, by using spread
-            nyBookingInfo.jagtperiode = jagtPeriode;
-            nyBookingInfo.antalJaegere = antalJaegere;
-            nyBookingInfo.antalLedsagere = antalLedsagere;
-            nyBookingInfo.fuldeNavn = fuldeNavn;
-            nyBookingInfo.email = email;
-            nyBookingInfo.telefon = telefon;
-            nyBookingInfo.dinBesked = dinBesked;
-            console.log(nyBookingInfo);
-
-            showCart();
-        }
-
-        function showCart() {
-            const costumerForm = document.querySelector("#booking_jagt_form");
-            const template = document.getElementById('cart');
-            const clone = template.content.cloneNode(true);
-
-            console.log("hej");
-
-            const antalJaegere = costumerForm.elements.jaegere.value;
-
-            const cart_jagt_periode = "€" + 2380 * antalJaegere;
-
-
-
-
-
-            clone.querySelector("[data-field=cart_jagt_periode]").textContent = cart_jagt_periode;
-
-            document.querySelector("#cart_table").appendChild(clone);
-
-        }
-
-    </script>
-
-    <section id="booking_info">
-        <h2>Booking</h2>
-
-        <div class="btn_jagtforedrag_group">
-            <button>Jagt</button>
-            <button>Foredrag</button>
-        </div>
-        <div class="info_container">
-            <div class="info_wrapper">
-                <h4>Betalingsbetingelser</h4>
-                <p>Der indbetales €250 depositum ved bestilling som modregnes ved afregning. Ved afbestilling vil dette
-                    beløb
-                    tilbagebetales indtil 5 måneder før første jagtdag. 4 måneder før første jagtdag betales €640. Ved
-                    afbestilling vil dette beløb tilbagebetales indtil 3 måneder før første jagtdag.
-                    Ved ankomsten til Arén og inden indkvartering skal restbeløbet på €1.000 være modtaget på vores
-                    bankkonto
-                    eller erlægges kontant. (SEPA betalinger i EUR er gratis indenfor EU)</p>
-                <h5>Tillæg:</h5>
-                <p>Vi gør opmærksom på at der er tillæg for jagt licens på €35 for Aragon og €47 for Katalonien. Da
-                    nogle
-                    jagter
-                    kun er i en region og andre er i begge, kan vi derfor ikke inkludere dem i den samlede pris. Vær
-                    derfor
-                    opmærksom på et €35 - €82 stigning i forhold til den sanmlede pris.</p>
-            </div>
-            <div class="info_wrapper">
-                <h2>Billede</h2>
-            </div>
-        </div>
-    </section>
-
-    <template id="cart">
-        <tbody>
-            <h2>Hej</h2>
-            <tr>
-                <th>Jagtperiode plus pris for enkelte periode</th>
-                <th>Antal jægere</th>
-                <th>Antal ledsagere</th>
-                <th>Pris i alt for jagten</th>
-            </tr>
-            <tr>
-                <td data-field="cart_jagt_periode"></td>
-                <td data-field="cart_jagt_periode_pris"></td>
-            </tr>
-
-            <tr>
-                <td data-field="cart_jaegere_antal"></td>
-            </tr>
-            <tr>
-                <td data-field="cart_ledsagere_antal"></td>
-            </tr>
-
-            <tr class="total_border">
-                <td data-field="card_total_title"><strong>Pris</strong></td>
-                <td></td>
-                <td></td>
-                <td data-field="cart_total_pris"></td>
-            </tr>
-
-        </tbody>
-    </template>
-
-    <table id="cart_table">
-
-    </table>
-
-    <section id="booking_jagt_section">
-        <form id="booking_jagt_form">
-
-            <section id="jagt_dropdown">
-                <h4>Vælg jagt</h4>
-                <div class="label_input">
-                    <label for="valgjagt">Jagtperiode</label>
-                    <select id="valgjagt" name="valgjagt">
-                        <option value="0">3-4-5 November 23 (3 jagtdage)</option>
-                        <option value="1">10-11-12 November 23 (3 jagtdage)</option>
-                        <option value="2">17-18-19 November 23 (3 jagtdage)</option>
-                        <option value="3">24-25-26 November 23 (3 jagtdage)</option>
-                        <option value="4">2-3 December 23 (2 jagtdage)</option>
-                        <option value="5">12-13-14 Januar 24 (3 jagtdage)</option>
-                    </select>
-                </div>
-            </section>
-            <h3>Vælg deltagere</h3>
-            <section id="valg_af_deltagere">
-                <div class="label_input">
-                    <label for="jaegere">Jægere</label>
-                    <input type="number" id="jaegere" name="jaegere" min="10" max="16" required>
-                </div>
-                <div class="label_input">
-                    <label for="ledsagere">Ledsagere</label>
-                    <input type="number" id="ledsagere" name="ledsagere" min="0" max="10">
-                </div>
-            </section>
-            <section id="oplysninger">
-                <h4>Dine oplysninger</h4>
-                <div class="navn_efternavn">
-                    <div class="label_input">
-                        <label for="fornavn">Fornavn</label>
-                        <input type="text" name="fornavn" id="fornavn" minlength="2" placeholder="Indtast fornavn"
-                            required>
+    <footer>
+        <section id="sfooter">
+            <section class="footer_top">
+                <section class="left">
+                    <div id="footer_logo">
+                        <img src="https://www.vildsvinejagt.com/wp-content/uploads/2023/05/green.svg"
+                            alt="grafik_logo_vildsvin">
                     </div>
-                    <div class="label_input">
-                        <label for="efternavn">Efternavn</label>
-                        <input type="text" name="efternavn" id="efternavn" minlength="2" placeholder="Indtast efternavn"
-                            required>
+
+                </section>
+
+                <section class="middle">
+                    <div class="footer_contact">
+                        <ul class="contact">
+                            <li><a href="https://goo.gl/maps/swjEAjDChhDWmxaz7" target="_blank"><span
+                                        class="material-icons">location_on</span>CazadeJabalí, Calle San Miguel 37A,
+                                    22583
+                                    Arén, España</a></li>
+                            <li><a href="tel:+34638731397"><span class="material-icons">phone</span>+34 638 731
+                                    397</a>
+                            </li>
+                            <li><a href="tel:+4530647409"><span class="material-icons">phone</span>+45 30 64 74
+                                    09</a>
+                            </li>
+                            <li><a href="mailto:tom@cazadejabali.com" target="_blank"><span
+                                        class="material-icons">email</span>Tom@cazadejabali.com</a></li>
+                        </ul>
                     </div>
-                </div>
+                    <div class="footer_social">
+                        <ul class="social">
+                            <li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-official"
+                                        style="font-size:24px;color:var(--dark_green);"></i></a></li>
+                            <li><a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"
+                                        style="font-size:24px;color:var(--dark_green);"></i></a>
+                            </li>
+                            <li><a href="https://www.youtube.com" target="_blank"><i class="fa fa-youtube"
+                                        style="font-size:24px;color:var(--dark_green);"></i></a>
+                            </li>
+                        </ul>
+                </section>
 
-                <div class="label_input">
-                    <label for="mail">Email*</label>
-                    <input type="email" id="mail" name="mail" placeholder="Indtast email" required>
-                </div>
-                <div class="label_input">
-                    <<<<<<< HEAD <label for="phone">Mobil/telefon nummer</label>
-                        <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+">
-                        =======
-                        <label for="phone">Mobil/telefon nummer</label>
-                        <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+"
-                            placeholder="Indtast telefonnummer" required>
-                        >>>>>>> db1a14d84f91acbbed89786bd4949ad2a6112574
+
+
+                <section class="right">
+                    <div class="footer_download">
+                        <h5>Download vores program, flyer og plakat</h5>
+                        <ul class="download">
+                            <li><a target="_blank" class="jp-btn"
+                                    href="https://www.vildsvinejagt.com/wp-content/uploads/2023/05/Cazadejabali_jagtprogram.pdf">Jagtprogram</a>
+                            </li>
+                            <li><a target="_blank" class="jp-btn"
+                                    href="https://www.vildsvinejagt.com/wp-content/uploads/2023/05/CazadeJabali_flyer-1.pdf">Flyer</a>
+                            </li>
+                            <li><a target="_blank" class="jp-btn" href="https://www.google.com">Plakat</a></li>
+                        </ul>
+                    </div>
+                    <section id="footer_nyhedsbrev_section">
+                        <section id="nyhedsbrev">
+                            <div id="tekst">
+                                <h5>Tilmeld nyhedsbrev</h5>
+                            </div>
+                            <form class="footer_nyhedsbrev_form">
+                                <div class="footer_form_group">
+                                    <label for="email">Email <span class="required">*</span></label>
+                                    <input class="footer_input" type="email" id="email" name="Email"
+                                        placeholder="Indtast email" required>
+                                </div>
+
+                                <div class="sign_btn">
+                                    <button id="sign_up" type="submit">Tilmeld Nyhedsbrev</button>
+                                </div>
+                            </form>
+                        </section>
+                    </section>
+
+                </section>
+            </section>
+            <section class="footer_bottom">
+                <div class="footer_menu">
+                    <ul>
+                        <li><a href="https://www.vildsvinejagt.com/">Hjem</a></li>
+                        <li><a href="https://www.vildsvinejagt.com/index.php/jagtprogram-2/">Jagtprogram</a></li>
+                        <li><a href="https://www.vildsvinejagt.com/index.php/aren/">Arén</a></li>
+                        <li><a href="https://www.vildsvinejagt.com/index.php/galleri-2/">Galleri</a></li>
+                        <li><a href="https://www.vildsvinejagt.com/index.php/kontakt/">Kontakt</a></li>
+                        <li><a href="https://www.vildsvinejagt.com/index.php/faq/">FAQ</a></li>
+                    </ul>
                 </div>
             </section>
 
-            <section id="kommentar">
-                <h4>Kommentar til din booking</h4>
-                <div class="label_input">
-                    <label for="besked">Besked</label>
-                    <textarea name="besked" id="besked" cols="30" rows="10"
-                        placeholder="Tilføj din kommentar her"></textarea>
-                </div>
-            </section>
-
-            <div class="send_btn">
-                <button class="send_btn" type="submit">Send</button>
-            </div>
+        </section>
+    </footer>
 
 
-        </form>
-    </section>
 
-    </form>
-    </section>
-</body>
+    </body>
 
 </html>

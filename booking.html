@@ -204,7 +204,7 @@ td {
             besked: "",
             total_pris: ""
         }
-        
+
     let nyBookingInfo;
     let customerForm;
     
@@ -247,21 +247,6 @@ td {
         }
     }
     
-    
-    
-    //updating the booking object based on the latest input from the user
-    function updateCustomerOrder() {
-        console.log("updating the order");
-    
-    
-        //only saving the values into the booking object if the input is valid
-        if (customerForm.elements.jaegere.checkValidity()) {
-            nyBookingInfo.antalJaegere = customerForm.elements.jaegere.value;
-    
-        }
-
-
-
         //updating the booking object based on the latest input from the user
         function updateCustomerOrder() {
             console.log("updating the order");
@@ -325,6 +310,7 @@ td {
             document.querySelector("#cart_table").appendChild(clone);
 
         }
+    }
 
 
 //updating the cart display based on the updated information

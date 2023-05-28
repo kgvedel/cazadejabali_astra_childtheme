@@ -2,7 +2,7 @@
   "name": "cazadejabali_astra_childtheme",
   "version": "1.0.0",
   "description": "",
-  "main": "booking.js",
+  "main": "nyhedsbrev.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -169,16 +169,18 @@
 
 
         table{
+            padding: 16px;
+            background-color: #123929;
+            border-radius: 4px;
   margin: 0 auto;
-  width: 100%;
+  width: 40rem;
 }
 
 th {
-  font-family: "Righteous", cursive;
-  font-size: 1.05rem;
+    color: var(--white);
   margin: 0 auto;
-  padding-right: 0.2rem;
-  border-bottom: 2px solid var(--font_color_black);
+  padding: 8px 0px 8px 0px;
+  border-bottom: 2px solid var(--white);
 }
 
 td {
@@ -286,7 +288,7 @@ td {
             const template = document.getElementById('cart');
             const clone = template.content.cloneNode(true);
 
-            console.log("show cart");
+            console.log("jagtperiodeText");
 
             //udregner jagtpris fra periode af 3dages og 2dages jagttur
             const prisJagtTo = 1890;
@@ -315,7 +317,8 @@ td {
 
 //updating the cart display based on the updated information
         function updateCart() {
-
+            const customerForm = document.querySelector("#booking_jagt_form");
+            const jagtperiodeText = customerForm.elements.valgjagt.textContent;
             
             const antalJaegere = nyBookingInfo.antalJaegere;
             const antalLedsagere = nyBookingInfo.antalLedsagere;
@@ -324,6 +327,7 @@ td {
             let jagt_total_pris = jagtpris * antalJaegere;
 
             nyBookingInfo.total_pris = jagt_total_pris;
+            clone.querySelector("[data-field=cart_jagt_periode]").textContent = jagtperiodeText;
 
     
     

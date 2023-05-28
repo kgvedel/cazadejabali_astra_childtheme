@@ -166,13 +166,30 @@
 
             border: 2px solid var(--blue);
         }
+
+
+        table{
+  margin: 0 auto;
+  width: 100%;
+}
+
+th {
+  font-family: "Righteous", cursive;
+  font-size: 1.05rem;
+  margin: 0 auto;
+  padding-right: 0.2rem;
+  border-bottom: 2px solid var(--font_color_black);
+}
+
+td {
+  font-size: 0.8rem;
+  vertical-align: bottom;
+  text-align: center;
+}
     </style>
 </head>
 
 <body>
-
-    //jagtperiode 4 er 2 dags jagt
-
     <script>
         "use strict";
         window.addEventListener("DOMContentLoaded", start);
@@ -251,7 +268,7 @@
             }
 
 
-//calling update cart
+            //calling update cart
             updateCart();
 
         }
@@ -275,18 +292,20 @@
 
         }
 
-//showing the cart, this happens before input, so it only shows the initial base price.
+        //showing the cart, this happens before input, so it only shows the initial base price.
         function showCart() {
 
+            const customerForm = document.querySelector("#booking_jagt_form");
             const template = document.getElementById('cart');
             const clone = template.content.cloneNode(true);
 
             console.log("show cart");
 
-            //udregner jagtpris
+            //udregner jagtpris fra periode af 3dages og 2dages jagttur
             const prisJagtTo = 1890;
             const prisJagtTre = 2380;
             let jagtpris = jagtPrisen();
+            const jagtperiodeText = customerForm.elements.valgjagt.textContent;
 
             const jagtPeriode = nyBookingInfo.jagtperiode;
 
@@ -299,6 +318,7 @@
             //displaying the basis jagtpris
 
             clone.querySelector("[data-field=cart_jagt_periode_pris]").textContent = "€" + jagtpris + " pr. Jæger";
+            clone.querySelector("[data-field=cart_jagt_periode]").textContent = jagtperiodeText;
 
             document.querySelector("#cart_table").appendChild(clone);
 
@@ -308,6 +328,7 @@
 //updating the cart display based on the updated information
         function updateCart() {
 
+            
             const antalJaegere = nyBookingInfo.antalJaegere;
             const antalLedsagere = nyBookingInfo.antalLedsagere;
             const jagtPeriode = nyBookingInfo.jagtperiode;
@@ -363,29 +384,6 @@
 
     </script>
 
-
-    <tr>
-        <td data-field="cart_jagt_periode"></td>
-        <td data-field="cart_jagt_periode_pris"></td>
-    </tr>
-
-    <tr>
-        <td data-field="cart_jaegere_antal"></td>
-    </tr>
-    <tr>
-        <td data-field="cart_ledsagere_antal"></td>
-    </tr>
-
-    <tr class="total_border">
-        <td data-field="card_total_title"><strong>Pris</strong></td>
-        <td></td>
-        <td></td>
-        <td data-field="cart_total_pris"></td>
-    </tr>
-
-
-
-
     <section id="booking_info">
         <h2>Booking</h2>
 
@@ -421,21 +419,17 @@
         <tbody>
             <h2>Hej</h2>
             <tr>
-                <th>Jagtperiode plus pris for enkelte periode</th>
+                <th>Jagtperiode</th>
                 <th>Antal jægere</th>
                 <th>Antal ledsagere</th>
-                <th>Pris i alt for jagten</th>
             </tr>
             <tr>
                 <td data-field="cart_jagt_periode"></td>
-                <td data-field="cart_jagt_periode_pris"></td>
-            </tr>
-
-            <tr>
                 <td data-field="cart_jaegere_antal"></td>
+                <td data-field="cart_ledsagere_antal"></td>
             </tr>
             <tr>
-                <td data-field="cart_ledsagere_antal"></td>
+                <td data-field="cart_jagt_periode_pris"></td>
             </tr>
 
             <tr class="total_border">

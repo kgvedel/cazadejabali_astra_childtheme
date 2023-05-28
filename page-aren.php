@@ -155,6 +155,10 @@ get_header(); ?>
 
     }
 
+    .btn-location i{
+        color: var(--black);
+    }
+
     .button-container button:hover{
         background-color: var(--dark_yellow);
     }

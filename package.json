@@ -1,0 +1,22 @@
+{
+  "name": "cazadejabali_astra_childtheme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "nyhedsbrev.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kgvedel/cazadejabali_astra_childtheme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kgvedel/cazadejabali_astra_childtheme/issues"
+  },
+  "homepage": "https://github.com/kgvedel/cazadejabali_astra_childtheme#readme",
+  "dependencies": {
+    "sib-api-v3-sdk": "^8.5.0"
+  }
+}

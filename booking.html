@@ -166,27 +166,47 @@
 
             border: 2px solid var(--blue);
         }
+
+
+        table{
+            padding: 16px;
+            background-color: #123929;
+            border-radius: 4px;
+  margin: 0 auto;
+  width: 40rem;
+}
+
+th {
+    color: var(--white);
+  margin: 0 auto;
+  padding: 8px 0px 8px 0px;
+  border-bottom: 2px solid var(--white);
+}
+
+td {
+  font-size: 0.8rem;
+  vertical-align: bottom;
+  text-align: center;
+}
     </style>
 </head>
 
 <body>
+    <script>
+        "use strict";
+        window.addEventListener("DOMContentLoaded", start);
 
-    //jagtperiode 4 er 2 dags jagt
+        let bookingInfo = {
+            jagtperiode: "",
+            jaegere: "",
+            ledsagere: "",
+            fuldenavn: "",
+            email: "",
+            telefon: "",
+            besked: "",
+            total_pris: ""
+        }
 
-  <script>
-    "use strict";
-    window.addEventListener("DOMContentLoaded", start);
-    
-    let bookingInfo = {
-        jagtperiode: "",
-        jaegere: "",
-        ledsagere: "",
-        fuldenavn: "",
-        email: "",
-        telefon: "",
-        besked: "",
-        total_pris: ""
-    }
     let nyBookingInfo;
     let customerForm;
     
@@ -229,18 +249,29 @@
         }
     }
     
-    
-    
-    //updating the booking object based on the latest input from the user
-    function updateCustomerOrder() {
-        console.log("updating the order");
-    
-    
-        //only saving the values into the booking object if the input is valid
-        if (customerForm.elements.jaegere.checkValidity()) {
-            nyBookingInfo.antalJaegere = customerForm.elements.jaegere.value;
-    
-        }
+        //updating the booking object based on the latest input from the user
+        function updateCustomerOrder() {
+            console.log("updating the order");
+
+
+            //only saving the values into the booking object if the input is valid
+            if (customerForm.elements.jaegere.checkValidity()) {
+                nyBookingInfo.antalJaegere = customerForm.elements.jaegere.value;
+
+            }
+            if (customerForm.elements.valgjagt.checkValidity()) {
+                nyBookingInfo.jagtperiode = customerForm.elements.valgjagt.value;
+
+            }
+            if (customerForm.elements.ledsagere.checkValidity()) {
+                nyBookingInfo.antalLedsagere = customerForm.elements.ledsagere.value;
+
+            }
+
+
+            //calling update cart
+            updateCart();
+
         if (customerForm.elements.valgjagt.checkValidity()) {
             nyBookingInfo.jagtperiode = customerForm.elements.valgjagt.value;
     
@@ -249,6 +280,55 @@
             nyBookingInfo.antalLedsagere = customerForm.elements.ledsagere.value;
     
         }
+
+        //showing the cart, this happens before input, so it only shows the initial base price.
+        function showCart() {
+
+            const customerForm = document.querySelector("#booking_jagt_form");
+            const template = document.getElementById('cart');
+            const clone = template.content.cloneNode(true);
+
+            console.log("jagtperiodeText");
+
+            //udregner jagtpris fra periode af 3dages og 2dages jagttur
+            const prisJagtTo = 1890;
+            const prisJagtTre = 2380;
+            let jagtpris = jagtPrisen();
+            const jagtperiodeText = customerForm.elements.valgjagt.textContent;
+
+            const jagtPeriode = nyBookingInfo.jagtperiode;
+
+            if (jagtPeriode == 4) {
+                jagtpris = prisJagtTo;
+            } else {
+                jagtpris = prisJagtTre;
+            }
+
+            //displaying the basis jagtpris
+
+            clone.querySelector("[data-field=cart_jagt_periode_pris]").textContent = "€" + jagtpris + " pr. Jæger";
+            clone.querySelector("[data-field=cart_jagt_periode]").textContent = jagtperiodeText;
+
+            document.querySelector("#cart_table").appendChild(clone);
+
+        }
+    }
+
+
+//updating the cart display based on the updated information
+        function updateCart() {
+            const customerForm = document.querySelector("#booking_jagt_form");
+            const jagtperiodeText = customerForm.elements.valgjagt.textContent;
+            
+            const antalJaegere = nyBookingInfo.antalJaegere;
+            const antalLedsagere = nyBookingInfo.antalLedsagere;
+            const jagtPeriode = nyBookingInfo.jagtperiode;
+            let jagtpris = jagtPrisen();
+            let jagt_total_pris = jagtpris * antalJaegere;
+
+            nyBookingInfo.total_pris = jagt_total_pris;
+            clone.querySelector("[data-field=cart_jagt_periode]").textContent = jagtperiodeText;
+
     
     
     //calling update cart
@@ -362,29 +442,6 @@
     
     </script>
 
-
-    <tr>
-        <td data-field="cart_jagt_periode"></td>
-        <td data-field="cart_jagt_periode_pris"></td>
-    </tr>
-
-    <tr>
-        <td data-field="cart_jaegere_antal"></td>
-    </tr>
-    <tr>
-        <td data-field="cart_ledsagere_antal"></td>
-    </tr>
-
-    <tr class="total_border">
-        <td data-field="card_total_title"><strong>Pris</strong></td>
-        <td></td>
-        <td></td>
-        <td data-field="cart_total_pris"></td>
-    </tr>
-
-
-
-
     <section id="booking_info">
         <h2>Booking</h2>
 
@@ -420,21 +477,17 @@
         <tbody>
             <h2>Hej</h2>
             <tr>
-                <th>Jagtperiode plus pris for enkelte periode</th>
+                <th>Jagtperiode</th>
                 <th>Antal jægere</th>
                 <th>Antal ledsagere</th>
-                <th>Pris i alt for jagten</th>
             </tr>
             <tr>
                 <td data-field="cart_jagt_periode"></td>
-                <td data-field="cart_jagt_periode_pris"></td>
-            </tr>
-
-            <tr>
                 <td data-field="cart_jaegere_antal"></td>
+                <td data-field="cart_ledsagere_antal"></td>
             </tr>
             <tr>
-                <td data-field="cart_ledsagere_antal"></td>
+                <td data-field="cart_jagt_periode_pris"></td>
             </tr>
 
             <tr class="total_border">

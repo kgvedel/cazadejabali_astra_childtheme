@@ -187,69 +187,179 @@
             besked: "",
             total_pris: ""
         }
+        let nyBookingInfo;
+        let customerForm;
 
         function start() {
 
-            const form = document.querySelector("form");
-            //document.getElementById("booking_jagt_form").addEventListener("submit", saveCostumerOrder);
-            saveCostumerOrder();
-            showCart();
+            customerForm = document.querySelector("#booking_jagt_form");
+
+
+            //creating new booking object
+            nyBookingInfo = Object.create(bookingInfo);
+            //calling my eventhandler
+            eventhandler();
+
+            function eventhandler() {
+                //calling function for showing the cart
+                showCart();
+
+                //eventlisteners for input fields that effect the cart display
+                const jagtperiodeselect = customerForm.elements.valgjagt;
+                const jaegereinput = customerForm.elements.jaegere;
+                const ledsagerinput = customerForm.elements.ledsagere;
+
+                jagtperiodeselect.addEventListener('input', updateCustomerOrder);
+                jaegereinput.addEventListener('input', updateCustomerOrder);
+                ledsagerinput.addEventListener('input', updateCustomerOrder);
+
+                //here i add click eventlistener, if form is valid it prevents default submit, and calls proceed to cart
+                //its to make sure that form is still checked for validity, and only prevents default (refresh) once everything IS valid
+                document.querySelector(".send_btn").addEventListener("click", function (event) {
+                    console.log("submit clicked");
+                    if (customerForm.checkValidity()) {
+
+                        event.preventDefault();
+                        saveCustomerOrder();
+
+                    } else {
+                        console.log("not valid yet");
+                    }
+                });
+            }
         }
 
-        function saveCostumerOrder() {
-            const costumerForm = document.querySelector("#booking_jagt_form");
-            const jagtPeriode = "Jagtperiode: " + costumerForm.elements.valgjagt.value;
-            const antalJaegere = "Antal jægere: " + costumerForm.elements.jaegere.value;
-            const antalLedsagere = "Antal ledsagere: " + costumerForm.elements.ledsagere.value;
-            const fuldeNavn = "Fulde navn: " + costumerForm.elements.fornavn.value + "  " + costumerForm.elements.efternavn.value;
-            const email = "Email: " + costumerForm.elements.mail.value;
-            const telefon = "Telefonnummer: " + costumerForm.elements.phone.value;
-            const dinBesked = "Deres besked" + costumerForm.elements.besked.value;
 
-            //create new order object from Orderinfo template
-            let nyBookingInfo = Object.create(bookingInfo);
 
-            //combining all the information from tickets and reservation in the order object, by using spread
-            nyBookingInfo.jagtperiode = jagtPeriode;
-            nyBookingInfo.antalJaegere = antalJaegere;
-            nyBookingInfo.antalLedsagere = antalLedsagere;
-            nyBookingInfo.fuldeNavn = fuldeNavn;
-            nyBookingInfo.email = email;
-            nyBookingInfo.telefon = telefon;
-            nyBookingInfo.dinBesked = dinBesked;
-            console.log(nyBookingInfo);
-        }
+        //updating the booking object based on the latest input from the user
+        function updateCustomerOrder() {
+            console.log("updating the order");
 
-        function showCart() {
-            const costumerForm = document.querySelector("#booking_jagt_form");
-            const template = document.getElementById('cart');
-            const clone = template.content.cloneNode(true);
 
-            console.log("hej");
+            //only saving the values into the booking object if the input is valid
+            if (customerForm.elements.jaegere.checkValidity()) {
+                nyBookingInfo.antalJaegere = customerForm.elements.jaegere.value;
 
-            const prisJagtTo = 1890;
-            const prisJagtTre = 2380;
+            }
+            if (customerForm.elements.valgjagt.checkValidity()) {
+                nyBookingInfo.jagtperiode = customerForm.elements.valgjagt.value;
 
-            const antalJaegere = costumerForm.elements.jaegere.value;
-            const antalLedsagere = costumerForm.elements.ledsagere.value;
-            const jagtPeriode = costumerForm.elements.valgjagt.value;
-            const cart_jagt_total_pris = "€" + prisJagtTre * antalJaegere;
+            }
+            if (customerForm.elements.ledsagere.checkValidity()) {
+                nyBookingInfo.antalLedsagere = customerForm.elements.ledsagere.value;
 
-            if (jagtPeriode == 4) {
-                cart_jagt_total_pris = "€" + prisJagtTo * antalJaegere;
             }
 
 
+//calling update cart
+            updateCart();
+
+        }
+
+        //calculating the base prise of the jagt
+        function jagtPrisen() {
+            const prisJagtTo = 1890;
+            const prisJagtTre = 2380;
+            let jagtpris;
 
 
+            //udregner jagtpris 
+            if (nyBookingInfo.jagtperiode == 4) {
+                jagtpris = prisJagtTo;
+            } else {
+                jagtpris = prisJagtTre;
 
-            clone.querySelector("[data-field=cart_total_pris]").textContent = cart_jagt_total_pris;
-            clone.querySelector("[data-field=cart_jaegere_antal]").textContent = antalJaegere;
-            clone.querySelector("[data-field=cart_ledsagere_antal]").textContent = antalLedsagere;
+            }
+
+            return (jagtpris);
+
+        }
+
+//showing the cart, this happens before input, so it only shows the initial base price.
+        function showCart() {
+
+            const template = document.getElementById('cart');
+            const clone = template.content.cloneNode(true);
+
+            console.log("show cart");
+
+            //udregner jagtpris
+            const prisJagtTo = 1890;
+            const prisJagtTre = 2380;
+            let jagtpris = jagtPrisen();
+
+            const jagtPeriode = nyBookingInfo.jagtperiode;
+
+            if (jagtPeriode == 4) {
+                jagtpris = prisJagtTo;
+            } else {
+                jagtpris = prisJagtTre;
+            }
+
+            //displaying the basis jagtpris
+
+            clone.querySelector("[data-field=cart_jagt_periode_pris]").textContent = "€" + jagtpris + " pr. Jæger";
 
             document.querySelector("#cart_table").appendChild(clone);
 
         }
+
+
+//updating the cart display based on the updated information
+        function updateCart() {
+
+            const antalJaegere = nyBookingInfo.antalJaegere;
+            const antalLedsagere = nyBookingInfo.antalLedsagere;
+            const jagtPeriode = nyBookingInfo.jagtperiode;
+            let jagtpris = jagtPrisen();
+            let jagt_total_pris = jagtpris * antalJaegere;
+
+            nyBookingInfo.total_pris = jagt_total_pris;
+
+            console.log(nyBookingInfo);
+
+            // Update the cart with the latest information
+            const cart = document.querySelector("#cart_table");
+            cart.querySelector("[data-field=cart_jagt_periode_pris]").textContent = "€" + jagtpris + " pr. Jæger";
+            cart.querySelector("[data-field=cart_total_pris]").textContent = "€" + nyBookingInfo.total_pris;
+            cart.querySelector("[data-field=cart_jaegere_antal]").textContent = antalJaegere;
+            cart.querySelector("[data-field=cart_ledsagere_antal]").textContent = antalLedsagere;
+        }
+
+//saves all the information form the forms inputs (that has not already been saved at ) into the booking object
+//this function can only be called when the form is valid
+// the first 3 elements (jagtperiode, jægere, ledsagere) have already been saved earlier at updateCustomerOrder
+        function saveCustomerOrder() {
+            console.log("save_customer_order function");
+            customerForm = document.querySelector("#booking_jagt_form");
+
+            let fuldeNavn = customerForm.elements.fornavn.value + "  " + customerForm.elements.efternavn.value;
+            let email = customerForm.elements.mail.value;
+            let telefon = customerForm.elements.phone.value;
+            let dinBesked = customerForm.elements.besked.value;
+
+
+
+
+            //combining all of the new the information into the new booking object
+            nyBookingInfo.fuldeNavn = fuldeNavn;
+            nyBookingInfo.email = email;
+            nyBookingInfo.telefon = telefon;
+            nyBookingInfo.dinBesked = dinBesked;
+
+
+
+            console.log(customerForm.checkValidity());
+            if (customerForm.checkValidity()) {
+                console.log("woohoo order confirmed yo");
+                console.log(nyBookingInfo);
+
+            } else {
+                console.log("naaah");
+            }
+
+        }
+
 
     </script>
 
@@ -349,7 +459,7 @@
                 <h4>Vælg jagt</h4>
                 <div class="label_input">
                     <label for="valgjagt">Jagtperiode</label>
-                    <select id="valgjagt" name="valgjagt">
+                    <select id="valgjagt" name="valgjagt" required>
                         <option value="0">3-4-5 November 23 (3 jagtdage)</option>
                         <option value="1">10-11-12 November 23 (3 jagtdage)</option>
                         <option value="2">17-18-19 November 23 (3 jagtdage)</option>
@@ -363,11 +473,12 @@
             <section id="valg_af_deltagere">
                 <div class="label_input">
                     <label for="jaegere">Jægere</label>
-                    <input type="number" id="jaegere" name="jaegere" min="10" max="16" required>
+                    <input type="number" id="jaegere" name="jaegere" min="10" max="16" placeholder="Antal jægere"
+                        required>
                 </div>
                 <div class="label_input">
                     <label for="ledsagere">Ledsagere</label>
-                    <input type="number" id="ledsagere" name="ledsagere" min="0" max="10">
+                    <input type="number" id="ledsagere" name="ledsagere" placeholder="Antal ledsagere" min="0" max="10">
                 </div>
             </section>
             <section id="oplysninger">
@@ -390,13 +501,10 @@
                     <input type="email" id="mail" name="mail" placeholder="Indtast email" required>
                 </div>
                 <div class="label_input">
-                    <<<<<<< HEAD <label for="phone">Mobil/telefon nummer</label>
-                        <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+">
-                        =======
-                        <label for="phone">Mobil/telefon nummer</label>
-                        <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+"
-                            placeholder="Indtast telefonnummer" required>
-                        >>>>>>> db1a14d84f91acbbed89786bd4949ad2a6112574
+                    <label for="phone">Mobil/telefon nummer</label>
+                    <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+"
+                        placeholder="Indtast telefonnummer" required>
+
                 </div>
             </section>
 

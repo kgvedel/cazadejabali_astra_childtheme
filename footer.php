@@ -1,3 +1,4 @@
+<?php
 /**
  * The template for displaying the footer.
  *
@@ -9,7 +10,7 @@
  * @since 1.0.0
  */
 
-if (!defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
@@ -351,8 +352,8 @@ if (!defined('ABSPATH')) {
                     <form class="footer_nyhedsbrev_form">
                         <h5>Tilmeld nyhedsbrev</h5>
                         <div class="footer_form_group">
-                            <label for="email">Email <span class="required">*</span></label>
-                            <input class="footer_input" type="email" id="email" name="Email"
+                            <label for="mail">Email <span class="required">*</span></label>
+                            <input class="footer_input" type="mail" id="mail" name="mail"
                                 placeholder="Indtast email" required>
                         </div>
 
@@ -374,7 +375,7 @@ if (!defined('ABSPATH')) {
 
         </section>
     </footer>
-
+   
 
 </div><!-- #page -->
 
@@ -382,6 +383,9 @@ if (!defined('ABSPATH')) {
 astra_body_bottom();
 wp_footer();
 ?>
+
+
 </body>
+<script src="nyhedsbrev.js"></script>
 
 </html>

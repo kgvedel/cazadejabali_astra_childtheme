@@ -386,6 +386,6 @@ wp_footer();
 
 
 </body>
-<script src="nyhedsbrev.js"></script>
+
 
 </html>

@@ -54,12 +54,10 @@ get_header(); ?>
         background-color: var(--green);
         background-image: url(https://www.vildsvinejagt.com/wp-content/uploads/2023/05/topografi_gron.svg);
         background-size: 93rem;
-        background-position: -54vw 16vh;
+        background-position: -54vw 23vh;
         padding: 4.5rem 0;
         width: 100%;
         max-width: 100%;
-        background-attachment: fixed;
-        border-top: 2px solid var(--dark_green);
     }
 
     .navn_efternavn {
@@ -74,8 +72,9 @@ get_header(); ?>
     form {
         background: var(--beige);
         margin: 0 auto;
+        border: solid;
+        border-width: 0.5px;
         border-radius: 4px;
-        border-width: 0px;
         box-shadow: 4pt 4pt 8pt rgba(0, 0, 0, 0.113);
         display: flex;
         flex-direction: column;
@@ -100,7 +99,7 @@ get_header(); ?>
     input[type=number],
     select,
     textarea {
-        border: 2px solid transparent;
+        border: 2px solid var(--green);
         border-radius: 4px;
         outline: none !important;
 
@@ -133,7 +132,6 @@ get_header(); ?>
         width: 100%;
         flex-direction: column;
         flex: 1 0 48%;
-        gap: 0pt;
     }
 
 
@@ -196,7 +194,39 @@ get_header(); ?>
 
         border: 2px solid var(--blue);
     }
+
+
+    table {
+        padding: 16px;
+        background-color: var(--black);
+        border-radius: 4px;
+        margin: 0 auto;
+        border-style: solid;
+        border-color: var(--spanish_red);
+    }
+
+    .jagtperiodeWrapper,
+    .antaljaegereWrapper,
+    .antalledsagereWrapper,
+    .total_border {
+        color: white;
+    }
+
+    .info {
+        display: flex;
+        gap: 40px;
+    }
+
+    .total_border {
+        border-top: 1px solid var(--white);
+        display: flex;
+    }
+
+    .hidden {
+        display: none;
+    }
     </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <section id="booking_info">
         <h2>Booking</h2>
 
@@ -323,7 +353,8 @@ get_header(); ?>
             </section>
 
             <div class="send_btn">
-                <button class="send_btn" type="submit" type="submit" name="submit" value="Submit">Send forespørgsel</button>
+                <button class="send_btn" type="submit" type="submit" name="send" value="submit">Send
+                    forespørgsel <i class="fa fa-angle-left"></i></button>
             </div>
 
 
@@ -377,17 +408,17 @@ function start() {
 
         //here i add click eventlistener, if form is valid it prevents default submit, and calls proceed to cart
         //its to make sure that form is still checked for validity, and only prevents default (refresh) once everything IS valid
-     /*    document.querySelector(".send_btn").addEventListener("click", function(event) {
+        document.querySelector(".send_btn").addEventListener("click", function(event) {
             console.log("submit clicked");
             if (customerForm.checkValidity()) {
+                event.preventDefault(); // Prevent default form submission
 
-              // event.preventDefault();
-                saveCustomerOrder();
+                sendFormData();
 
             } else {
                 console.log("not valid yet");
             }
-        }); */
+        });
     }
 }
 
@@ -422,9 +453,8 @@ function jagtPrisen() {
     const prisJagtTre = 2380;
     let jagtpris;
 
-
     //udregner jagtpris 
-    if (nyBookingInfo.jagtperiode == 4) {
+    if (nyBookingInfo.jagtperiode == "2-3 December 23 (2 jagtdage)") {
         jagtpris = prisJagtTo;
     } else {
         jagtpris = prisJagtTre;
@@ -467,7 +497,8 @@ function showCart() {
 
 //updating the cart display based on the updated information
 function updateCart() {
-
+    console.log("updateCart");
+    console.log(nyBookingInfo.jagtperiode);
     //Here we get the value from the select and are only getting the text string from the options instead of the value
     let t = document.getElementById('valgjagt_periode');
     let jagtperiodeText = t.options[t.selectedIndex].text;
@@ -496,42 +527,56 @@ function updateCart() {
 //saves all the information form the forms inputs (that has not already been saved at ) into the booking object
 //this function can only be called when the form is valid
 // the first 3 elements (jagtperiode, jægere, ledsagere) have already been saved earlier at updateCustomerOrder
-function saveCustomerOrder() {
-    console.log("save_customer_order function");
+function sendFormData() {
+
+    //formdata bliver læst direkte fra form fra nu af så php kan modtage det!!! 
+    //dette kode er bruges ikke lige nu
+
+    console.log("sending form data");
+
     customerForm = document.querySelector("#booking_jagt_form");
+    /*
+            let fuldeNavn = customerForm.elements.fornavn.value + "  " + customerForm.elements.efternavn.value;
+            let email = customerForm.elements.mail.value;
+            let telefon = customerForm.elements.phone.value;
+            let dinBesked = customerForm.elements.besked.value;
 
-    let fuldeNavn = customerForm.elements.fornavn.value + "  " + customerForm.elements.efternavn.value;
-    let email = customerForm.elements.mail.value;
-    let telefon = customerForm.elements.phone.value;
-    let dinBesked = customerForm.elements.besked.value;
+            //combining all of the new the information into the new booking object
+            nyBookingInfo.fuldeNavn = fuldeNavn;
+            nyBookingInfo.email = email;
+            nyBookingInfo.telefon = telefon;
+            nyBookingInfo.dinBesked = dinBesked;
 
-    //combining all of the new the information into the new booking object
-    nyBookingInfo.fuldeNavn = fuldeNavn;
-    nyBookingInfo.email = email;
-    nyBookingInfo.telefon = telefon;
-    nyBookingInfo.dinBesked = dinBesked;
+         */
 
 
+    var formData = new FormData(customerForm);
 
-    console.log(customerForm.checkValidity());
-    if (customerForm.checkValidity()) {
-        console.log("woohoo order confirmed yo");
-        console.log(nyBookingInfo);
-        
+    // Create and send an AJAX request
+    var request = new XMLHttpRequest();
+    request.open('POST', ''); // Submit to the same file
 
-    } else {
-        console.log("naaah");
-    }
+    request.send(formData);
 
+    displayConfirmation();
 }
 
-document.getElementById('#booking_jagt_form').addEventListener('submit', function(event) {
-        var selectField = document.getElementById('valgjagt_periode');
-        var selectedOption = selectField.options[selectField.selectedIndex];
-        var selectedOptionText = selectedOption.textContent;
 
-        selectField.value = selectedOptionText;
-    });
+
+function displayConfirmation() {
+    customerForm = document.querySelector("#booking_jagt_form");
+
+   
+var elements = customerForm.elements;
+
+for (var i = 0, element; element = elements[i++];) {
+   element.classList.add("hidden");
+}
+    customerForm.innerHTML = '<h4>Tak for din forespørgsel</h4>';
+    customerForm.innerHTML +=
+        '<p>Tak for din bestilling! Din forespørgsel er modtaget, og vi vil personligt kontakte dig inden for kort tid for at drøfte detaljerne nærmere. Vi ser frem til at tale med dig!</p>';
+
+}
 </script>
 
 
@@ -544,39 +589,54 @@ document.getElementById('#booking_jagt_form').addEventListener('submit', functio
 
 <?php get_footer(); ?>
 
-
-
 <?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Set the recipient email address
+    $to = 'mathildeengb@gmail.com';
 
-if (isset($_POST['submit'])) {
+   
 
+    // Retrieve the form data
+    $valgjagt = $_POST['valgjagt'];
+    $jaegere = $_POST['jaegere'];
+    $ledsagere = $_POST['ledsagere'];
+    $fornavn = $_POST['fornavn'];
+    $efternavn = $_POST['efternavn'];
+    $mail = $_POST['mail'];
+    $phone = $_POST['phone'];
+    $besked = $_POST['besked'];
 
-    
-   // Set the recipient email address
-	$to = 'mathildeengb@gmail.com';
+    // Perform your calculations or any other necessary operations
 
-	// Set the email subject
-	$subject = 'Ny Bestiling forespørgsel';
+    $pris;
 
+    if ($valgjagt == 4) {
+        $pris = 1890;
+      } else {
+        $pris = 2380;
+      }
+      
+   
 
-    $result = 1890 * $jaegere;
+    $fuldpris =  $pris * $jaegere;
 
-	// Build the email content
-	$message = 'New booking information:' . "\r\n\r\n";
-	$message .= 'Jagtperiode: ' . $_POST['valgjagt'] . "\r\n";
-	$message .= 'Antal jægere: ' . $_POST['jaegere'] . "\r\n";
-	$message .= 'Antal ledsagere: ' . $_POST['ledsagere'] . "\r\n";
-	$message .= 'Fuldnavn: ' . $_POST['fornavn'] . ' ' . $_POST['efternavn'] . "\r\n";
-	$message .= 'Email: ' . $_POST['mail'] . "\r\n";
-	$message .= 'Telefon: ' . $_POST['phone'] . "\r\n";
-	$message .= 'Besked: ' . $_POST['besked'] . "\r\n";
+    // Build the email content
+    $message = 'Ny bestillings forespørgsel: ' . "\r\n\r\n";
+    $message .= 'Jagtperiode: ' . $valgjagt . "\r\n";
+    $message .= 'Antal jægere: ' . $jaegere . "\r\n";
+    $message .= 'Den samlede jagtpris: £' . $fuldpris . "\r\n";
+    $message .= 'Antal ledsagere: ' . $ledsagere . "\r\n";
+    $message .= 'Fuldnavn: ' . $fornavn . ' ' . $efternavn . "\r\n";
+    $message .= 'Email: ' . $mail . "\r\n";
+    $message .= 'Telefon: ' . $phone . "\r\n";
+    $message .= 'Besked: ' . $besked . "\r\n";
+   
 
+     // Set the email subject
+     $subject = 'Ny Bestiling forespørgsel fra '  . $fornavn . ' ' . $efternavn . "\r\n";
 
-   $message .= 'Calculation result: ' . $result1 . "\r\n";
-
-
-	   // Headers
-       $headers = array(
+    // Headers
+    $headers = array(
         'Content-Type: text/html; charset=UTF-8',
     );
 
@@ -590,6 +650,3 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
-
-
-

@@ -525,6 +525,13 @@ function saveCustomerOrder() {
 
 }
 
+document.getElementById('#booking_jagt_form').addEventListener('submit', function(event) {
+        var selectField = document.getElementById('valgjagt_periode');
+        var selectedOption = selectField.options[selectField.selectedIndex];
+        var selectedOptionText = selectedOption.textContent;
+
+        selectField.value = selectedOptionText;
+    });
 </script>
 
 
@@ -542,12 +549,34 @@ function saveCustomerOrder() {
 <?php
 
 if (isset($_POST['submit'])) {
-    $to = 'mathildeengb@gmail.com';
-    $subject = 'Helloooo';
-    $message = 'Hallojsa';
 
-    // Headers
-    $headers = array(
+
+    
+   // Set the recipient email address
+	$to = 'mathildeengb@gmail.com';
+
+	// Set the email subject
+	$subject = 'Ny Bestiling forespørgsel';
+
+
+    $result = 1890 * $jaegere;
+
+	// Build the email content
+	$message = 'New booking information:' . "\r\n\r\n";
+	$message .= 'Jagtperiode: ' . $_POST['valgjagt'] . "\r\n";
+	$message .= 'Antal jægere: ' . $_POST['jaegere'] . "\r\n";
+	$message .= 'Antal ledsagere: ' . $_POST['ledsagere'] . "\r\n";
+	$message .= 'Fuldnavn: ' . $_POST['fornavn'] . ' ' . $_POST['efternavn'] . "\r\n";
+	$message .= 'Email: ' . $_POST['mail'] . "\r\n";
+	$message .= 'Telefon: ' . $_POST['phone'] . "\r\n";
+	$message .= 'Besked: ' . $_POST['besked'] . "\r\n";
+
+
+   $message .= 'Calculation result: ' . $result1 . "\r\n";
+
+
+	   // Headers
+       $headers = array(
         'Content-Type: text/html; charset=UTF-8',
     );
 

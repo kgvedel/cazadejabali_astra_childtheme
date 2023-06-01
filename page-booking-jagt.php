@@ -50,15 +50,54 @@ get_header(); ?>
         --blue: #6473ff;
     }
 
+    h1,
+    h2,
+    h3 {
+        font-family: "Yantramanav";
+        color: var(--black);
+    }
+
+    h1 {
+        font-size: 72px;
+        font-style: normal;
+        font-weight: 900;
+    }
+
+    h2 {
+        font-size: 64px;
+        font-style: normal;
+        font-weight: bold;
+    }
+
+    h3 {
+        font-size: 56px;
+        font-style: normal;
+        font-weight: 600;
+    }
+
+    h4,
+    p {
+        font-family: "Open Sans";
+    }
+
+    h4 {
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: bold;
+    }
+
     #booking_jagt_section {
         background-color: var(--green);
         background-image: url(https://www.vildsvinejagt.com/wp-content/uploads/2023/05/topografi_gron.svg);
         background-size: 93rem;
         background-position: -54vw 23vh;
-        padding: 4.5rem 0;
+        padding: 2rem 1rem;
         width: 100%;
         max-width: 100%;
+        border-top: 2px solid var(--dark_green);
     }
+
+   
 
     .navn_efternavn {
         display: flex;
@@ -71,10 +110,9 @@ get_header(); ?>
 
     form {
         background: var(--beige);
-        margin: 0 auto;
-        border: solid;
-        border-width: 0.5px;
-        border-radius: 4px;
+        margin: 1rem auto;
+        border-radius: 0.25rem;
+        border: 0.25rem solid var(--spanish_red);
         box-shadow: 4pt 4pt 8pt rgba(0, 0, 0, 0.113);
         display: flex;
         flex-direction: column;
@@ -82,7 +120,6 @@ get_header(); ?>
         padding: 1.5rem;
         gap: 1rem;
         max-width: 40rem;
-        width: 90%;
     }
 
     form input {
@@ -99,11 +136,15 @@ get_header(); ?>
     input[type=number],
     select,
     textarea {
-        border: 2px solid var(--green);
-        border-radius: 4px;
+        border: 2px solid transparent;
+        border-radius: 0.25rem;
         outline: none !important;
 
     }
+
+    option:disabled {
+    background-color: #e5e2e2;
+}
 
     form select,
     form textarea {
@@ -120,8 +161,9 @@ get_header(); ?>
 
     form section {
         display: flex;
-        gap: 2rem;
+        gap: 1rem;
         flex-direction: column;
+        margin-bottom: 2rem;
     }
 
 
@@ -134,6 +176,10 @@ get_header(); ?>
         flex: 1 0 48%;
     }
 
+
+    .req_field{
+        color:var(--spanish_red);
+    }
 
 
     /*validation*/
@@ -192,71 +238,69 @@ get_header(); ?>
 
     input:focus {
 
-        border: 2px solid var(--blue);
+        border: 0.125rem solid var(--blue);
     }
 
 
     table {
-        padding: 16px;
-        background-color: var(--black);
-        border-radius: 4px;
+        background-color: var(--white);
+        border-radius: 0.25rem;
         margin: 0 auto;
-        border-style: solid;
-        border-color: var(--spanish_red);
+        padding: 1.5rem;
+        border: 0.25rem solid var(--spanish_red);
+    }
+
+    #cart_table {
+        max-width: 40rem;
     }
 
     .jagtperiodeWrapper,
     .antaljaegereWrapper,
     .antalledsagereWrapper,
     .total_border {
-        color: white;
+        color: var(--black);
     }
 
     .info {
         display: flex;
-        gap: 40px;
+        justify-content: space-between;
+        gap: 0.5rem;
+    }
+
+    .info h4 {
+        font-size: 1rem;
+        padding-bottom: 0.5rem;
     }
 
     .total_border {
-        border-top: 1px solid var(--white);
+        border-top: 1px solid var(--black);
         display: flex;
+        padding-top: 0.5rem;
+    }
+
+    .jagtperiodeWrapper {
+        max-width: 16rem;
+    }
+
+    .total_border>p:nth-child(1) {
+        font-weight: bold;
+    }
+
+
+    /*desktop*/
+    @media only screen and (min-width: 1024px) {
+        #booking_oplysninger_oplaeg {
+            background-attachment: fixed;
+        }
+
     }
 
     .hidden {
         display: none;
     }
     </style>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <section id="booking_info">
-        <h2>Booking</h2>
 
-        <div class="btn_jagtforedrag_group">
-            <button>Jagt</button>
-            <button id="foredrag_knap">Foredrag</button>
-        </div>
-        <div class="info_container">
-            <div class="info_wrapper">
-                <h4>Betalingsbetingelser</h4>
-                <p>Der indbetales €250 depositum ved bestilling som modregnes ved afregning. Ved afbestilling vil dette
-                    beløb
-                    tilbagebetales indtil 5 måneder før første jagtdag. 4 måneder før første jagtdag betales €640. Ved
-                    afbestilling vil dette beløb tilbagebetales indtil 3 måneder før første jagtdag.
-                    Ved ankomsten til Arén og inden indkvartering skal restbeløbet på €1.000 være modtaget på vores
-                    bankkonto
-                    eller erlægges kontant. (SEPA betalinger i EUR er gratis indenfor EU)</p>
-                <h5>Tillæg:</h5>
-                <p>Vi gør opmærksom på at der er tillæg for jagt licens på €35 for Aragon og €47 for Katalonien. Da
-                    nogle
-                    jagter
-                    kun er i en region og andre er i begge, kan vi derfor ikke inkludere dem i den samlede pris. Vær
-                    derfor
-                    opmærksom på et €35 - €82 stigning i forhold til den sanmlede pris.</p>
-            </div>
-            <div class="info_wrapper">
-                <h2>Billede</h2>
-            </div>
-        </div>
-    </section>
+
 
     <section id="booking_jagt_section">
         <template id="cart">
@@ -292,22 +336,22 @@ get_header(); ?>
             <section id="jagt_dropdown">
                 <h4>Vælg jagt</h4>
                 <div class="label_input">
-                    <label for="valgjagt">Jagtperiode</label>
+                    <label for="valgjagt">Jagtperiode<span class="req_field"> *</span></label>
                     <select id="valgjagt_periode" name="valgjagt" required>
                         <option value="" disabled selected>Vælg jagtperiode</option>
                         <option value="0">3-4-5 November 23 (3 jagtdage)</option>
-                        <option value="1">10-11-12 November 23 (3 jagtdage)</option>
-                        <option value="2">17-18-19 November 23 (3 jagtdage)</option>
+                        <option value="1" disabled>10-11-12 November 23 (3 jagtdage)</option>
+                        <option value="2" disabled>17-18-19 November 23 (3 jagtdage)</option>
                         <option value="3">24-25-26 November 23 (3 jagtdage)</option>
                         <option value="4">2-3 December 23 (2 jagtdage)</option>
-                        <option value="5">12-13-14 Januar 24 (3 jagtdage)</option>
+                        <option value="5" disabled>12-13-14 Januar 24 (3 jagtdage)</option>
                     </select>
                 </div>
             </section>
-            <h3>Vælg deltagere</h3>
+            <h4>Vælg deltagere</h4>
             <section id="valg_af_deltagere">
                 <div class="label_input">
-                    <label for="jaegere">Jægere</label>
+                    <label for="jaegere">Jægere<span class="req_field"> *</span></label>
                     <input type="number" id="jaegere" name="jaegere" min="10" max="16" placeholder="Antal jægere"
                         required>
                 </div>
@@ -320,23 +364,23 @@ get_header(); ?>
                 <h4>Dine oplysninger</h4>
                 <div class="navn_efternavn">
                     <div class="label_input">
-                        <label for="fornavn">Fornavn</label>
+                        <label for="fornavn">Fornavn<span class="req_field"> *</span></label>
                         <input type="text" name="fornavn" id="fornavn" minlength="2" placeholder="Indtast fornavn"
                             required>
                     </div>
                     <div class="label_input">
-                        <label for="efternavn">Efternavn</label>
+                        <label for="efternavn">Efternavn<span class="req_field"> *</span></label>
                         <input type="text" name="efternavn" id="efternavn" minlength="2" placeholder="Indtast efternavn"
                             required>
                     </div>
                 </div>
 
                 <div class="label_input">
-                    <label for="mail">Email*</label>
+                    <label for="mail">Email <span class="req_field"> *</span></label>
                     <input type="email" id="mail" name="mail" placeholder="Indtast email" required>
                 </div>
                 <div class="label_input">
-                    <label for="phone">Mobil/telefon nummer</label>
+                    <label for="phone">Mobil/telefon nummer <span class="req_field"> *</span></label>
                     <input type="tel" id="phone" name="phone" maxlength="8" pattern="[0-9]+"
                         placeholder="Indtast telefonnummer" required>
 
@@ -344,17 +388,17 @@ get_header(); ?>
             </section>
 
             <section id="kommentar">
-                <h4>Kommentar til din booking</h4>
+                <h4>Kommentar til din bestilling</h4>
                 <div class="label_input">
                     <label for="besked">Besked</label>
                     <textarea name="besked" id="besked" cols="30" rows="10"
-                        placeholder="Tilføj din kommentar her"></textarea>
+                        placeholder="Tilføj kommentarer til din forespørgsel her"></textarea>
                 </div>
             </section>
 
             <div class="send_btn">
                 <button class="send_btn" type="submit" type="submit" name="send" value="submit">Send
-                    forespørgsel <i class="fa fa-angle-left"></i></button>
+                    forespørgsel</button>
             </div>
 
 
@@ -391,8 +435,6 @@ function start() {
     eventhandler();
 
     function eventhandler() {
-        document.querySelector("#foredrag_knap").addEventListener("click", () => window.location.href =
-            "https://www.vildsvinejagt.com/index.php/booking-foredrag/");
 
         //calling function for showing the cart
         showCart();
@@ -480,6 +522,7 @@ function showCart() {
 
     const jagtPeriode = nyBookingInfo.jagtperiode;
 
+    
     if (jagtPeriode === 4) {
         jagtpris = prisJagtTo;
     } else {
@@ -524,36 +567,23 @@ function updateCart() {
     cart.querySelector("[data-field=cart_ledsagere_antal]").textContent = antalLedsagere;
 }
 
-//saves all the information form the forms inputs (that has not already been saved at ) into the booking object
+
 //this function can only be called when the form is valid
-// the first 3 elements (jagtperiode, jægere, ledsagere) have already been saved earlier at updateCustomerOrder
+
 function sendFormData() {
 
-    //formdata bliver læst direkte fra form fra nu af så php kan modtage det!!! 
-    //dette kode er bruges ikke lige nu
+    //formdata bliver læst direkte fra form fra nu af så php kan modtage det!!!!!
+
 
     console.log("sending form data");
 
     customerForm = document.querySelector("#booking_jagt_form");
-    /*
-            let fuldeNavn = customerForm.elements.fornavn.value + "  " + customerForm.elements.efternavn.value;
-            let email = customerForm.elements.mail.value;
-            let telefon = customerForm.elements.phone.value;
-            let dinBesked = customerForm.elements.besked.value;
-
-            //combining all of the new the information into the new booking object
-            nyBookingInfo.fuldeNavn = fuldeNavn;
-            nyBookingInfo.email = email;
-            nyBookingInfo.telefon = telefon;
-            nyBookingInfo.dinBesked = dinBesked;
-
-         */
 
 
-    var formData = new FormData(customerForm);
+    let formData = new FormData(customerForm);
 
     // Create and send an AJAX request
-    var request = new XMLHttpRequest();
+    let request = new XMLHttpRequest();
     request.open('POST', ''); // Submit to the same file
 
     request.send(formData);
@@ -566,15 +596,18 @@ function sendFormData() {
 function displayConfirmation() {
     customerForm = document.querySelector("#booking_jagt_form");
 
-   
-var elements = customerForm.elements;
+    let cartTable = document.querySelector("#cart_table");
 
-for (var i = 0, element; element = elements[i++];) {
-   element.classList.add("hidden");
-}
-    customerForm.innerHTML = '<h4>Tak for din forespørgsel</h4>';
+    cartTable.classList.add("hidden");
+
+    let elements = customerForm.elements;
+
+    for (let i = 0, element; element = elements[i++];) {
+        element.classList.add("hidden");
+    }
+    customerForm.innerHTML = '<h4>Tak for din forespørgsel!</h4>';
     customerForm.innerHTML +=
-        '<p>Tak for din bestilling! Din forespørgsel er modtaget, og vi vil personligt kontakte dig inden for kort tid for at drøfte detaljerne nærmere. Vi ser frem til at tale med dig!</p>';
+        '<p>Tak for din bestilling. Din forespørgsel er modtaget, og vi vil personligt kontakte dig inden for kort tid for at drøfte detaljerne nærmere. Vi ser frem til at tale med dig!</p>';
 
 }
 </script>

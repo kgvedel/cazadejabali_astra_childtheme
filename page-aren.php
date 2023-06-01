@@ -46,9 +46,10 @@ get_header(); ?>
         background-color: var(--green);
         background-image: url(https://www.vildsvinejagt.com/wp-content/uploads/2023/05/topografi_gul.svg);
         background-size: 97rem;
-        background-position: -10vw -72vh;
+        background-position: -43vw -14vh;
+
         background-repeat: no-repeat;
-        background-attachment: fixed;
+
         border-top: 2px solid var(--spanish_yellow);
         border-bottom: 2px solid var(--spanish_yellow);
     }
@@ -59,9 +60,9 @@ get_header(); ?>
         display: flex;
         max-width: 1240px;
         margin: 0 auto;
-        padding: 0 1rem;
+        padding: 0;
         align-items: center;
-        gap: 1rem;
+        gap: 0rem;
     }
 
     .attractions {
@@ -77,7 +78,7 @@ get_header(); ?>
         box-sizing: border-box;
         min-height: 40rem;
         max-height: 48rem;
-        margin: 0.75rem;
+        margin: 0rem;
         border-radius: 0.25rem;
         overflow: hidden;
         padding: 1rem;
@@ -90,8 +91,8 @@ get_header(); ?>
     }
 
     p.card-description {
-    height: 100%;
-}
+        height: 100%;
+    }
 
     #prevButton,
     #nextButton {
@@ -136,18 +137,18 @@ get_header(); ?>
     }
 
     .button-container {
-    background-color: var(--dark_red);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 0rem -1rem -1rem -1rem;
-    padding: 1rem 1rem;
-    flex-wrap: wrap;
-    align-content: center;
-    gap: 0.5rem;
-    min-height: 6rem;
+        background-color: var(--dark_red);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 0rem -1rem -1rem -1rem;
+        padding: 1rem 1rem;
+        flex-wrap: wrap;
+        align-content: center;
+        gap: 0.5rem;
+        min-height: 6rem;
 
-}
+    }
 
     .button-container button {
         background-color: var(--spanish_yellow);
@@ -155,11 +156,11 @@ get_header(); ?>
 
     }
 
-    .btn-location i{
+    .btn-location i {
         color: var(--black);
     }
 
-    .button-container button:hover{
+    .button-container button:hover {
         background-color: var(--dark_yellow);
     }
 
@@ -167,28 +168,28 @@ get_header(); ?>
         opacity: 0;
     }
 
-    @media only screen and (max-width: 1024px) {
+    /*desktop*/
+    @media only screen and (min-width: 1024px) {
         .carousel_container {
-            background-position: -43vw -14vh;
+            background-position: -10vw -72vh;
+            background-attachment: fixed;
         }
     }
 
-    @media only screen and (max-width: 767px) {
+    /*tablet*/
+    @media only screen and (min-width: 767px) {
+
+
+
 
         /*seværdigheder*/
         .carousel {
-            padding: 0rem;
-            gap: 0rem;
+            padding: 0 1rem;
+            gap: 1rem;
         }
 
         .card {
-            margin: 0rem;
-        }
-
-        #nextButton,
-        #prevButton {
-
-            font-size: 4rem;
+            margin: 1rem;
         }
 
     }
@@ -208,9 +209,9 @@ get_header(); ?>
     <template id="cardTemplate">
         <div class="card">
             <div class="img_title">
-            <img id="card-image" class="card-image" src="" alt="">
-            <h4 class="card-title"></h4>
-            <hr class="linebreaker">
+                <img id="card-image" class="card-image" src="" alt="">
+                <h4 class="card-title"></h4>
+                <hr class="linebreaker">
             </div>
             <p class="card-description"></p>
             <div class="button-container">
@@ -324,7 +325,7 @@ function updateCards() {
         attractionMore.addEventListener("click", () => window.open(attractions[dataIndex].link));
 
         if (attractions[dataIndex].navn == "Oplev dyrelivet") {
-            
+
             attractionLocation.remove();
             attractionMore.remove();
         }

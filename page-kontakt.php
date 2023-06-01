@@ -27,43 +27,25 @@ get_header(); ?>
     <?php astra_content_page_loop(); ?>
 
     <style>
-    .page-id-82 #main {
-        background-color: var(--beige);
-        background-image: url(https://www.vildsvinejagt.com/wp-content/uploads/2023/05/topografi_2_rod.svg);
-        background-size: 90rem;
-        background-position: 60vw 2vh;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        border-bottom: 2px solid var(--spanish_red);
-    }
 
-    #contact_section {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        padding: 1rem;
-        gap: 3rem;
-        margin: 4.5rem auto;
-        max-width: 1240px;
-    }
+button#wpforms-submit-2298 {
+    background-color: var(--spanish_red);
+}
 
-    #graphic_section img {
-        max-width: 40%;
-    }
+div#wpforms-confirmation-2298 {
+    background-color: transparent;
+    /* outline: none; */
+    border: none;
+    font-family: 'Open Sans';
+    padding: 0rem;
+}
 
-    #graphic_section img {
-        max-width: 100%;
-    }
+		div.wpforms-container-full .wpforms-field-label{
+			margin:0px;
+		}
 
-    #form_section {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0;
-        gap: 1.5rem;
-    }
 
+  
     /*this is just a bit general form styling, put it here to make it work, cus wp suxxx*/
     form {
         background: var(--beige);
@@ -75,7 +57,6 @@ get_header(); ?>
         flex-direction: column;
         align-items: stretch;
         padding: 1.5rem;
-        gap: 1rem;
     }
 
     form input {
@@ -105,34 +86,46 @@ get_header(); ?>
     }
 
 
-    input[type=text],
-    input[type=email],
-    textarea {
+    div.wpforms-container-full input[type=text],
+    div.wpforms-container-full input[type=email],
+    div.wpforms-container-full textarea{
         border: 2px solid transparent;
         border-radius: 4px;
         outline: none !important;
 
     }
 
-    .label_input {
+.elementor-element.elementor-element-855e489.elementor-widget__width-initial.elementor-widget-tablet__width-initial.elementor-widget.elementor-widget-wpforms {
+    max-height: 28rem;
+}
+
+.wpforms-container .wpforms-field {
+    padding: 0px;
+	margin-bottom: 1rem;
+}
+
+  .wpforms-field {
         position: relative;
         display: flex;
         width: 100%;
         flex-direction: column;
         flex: 1 0 48%;
+
     }
+
+
 
     /*validation*/
     input:focus,
-    input[type=text]:focus,
-    input[type=email]:focus,
-    textarea:focus {
+   div.wpforms-container-full input[type=text]:focus,
+    div.wpforms-container-full input[type=email]:focus,
+    div.wpforms-container-full textarea:focus {
 
         border: 2px solid var(--blue);
     }
 
 
-    .label_input:focus-within::before {
+   .wpforms-field:focus-within::before {
         content: '';
         position: absolute;
         top: 0;
@@ -144,7 +137,7 @@ get_header(); ?>
         transition: height 0.3s ease-in-out;
     }
 
-    .label_input:focus-within::before {
+   .wpforms-field:focus-within::before  {
         animation: expandLine 0.3s forwards;
     }
 
@@ -161,95 +154,18 @@ get_header(); ?>
         }
     }
 
-    input:invalid:not(:placeholder-shown) {
+     div.wpforms-container-full input[type=text]:invalid:not(:placeholder-shown), div.wpforms-container-full input[type=email]:invalid:not(:placeholder-shown) {
         border: 2px solid var(--spanish_red);
     }
 
 
-    input:valid,
-    select:valid {
+    div.wpforms-container-full input[type=text]:valid,
+ div.wpforms-container-full input[type=email]:valid{
         border: 2px solid #5ef570;
     }
 
-    /*specific rules again*/
-    #contact_form {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1.5rem;
-        gap: 1rem;
-        width: 40rem;
-    }
-
-
-
-
-    #message {
-        height: 16rem;
-    }
-
-    @media only screen and (max-width: 1024px) {
-        .page-id-82 #main {
-            background-position: -12vw 56vh;
-            background-attachment: scroll;
-        }
-
-        #graphic_section {
-            display: none;
-        }
-    }
-
-    @media only screen and (max-width: 767px) {
-        #contact_section {
-            padding: 0px;
-        }
-
-        #contact_form {
-            width: 90vw
-        }
-
-    }
+   
     </style>
-
-    <section id="contact_section">
-
-        <section id="graphic_section">
-            <img src="https://www.vildsvinejagt.com/wp-content/uploads/2023/05/green.svg" alt="grafik_logo_vildsvin">
-        </section>
-
-        <section id="form_section">
-            <h2>Kontaktformular</h2>
-
-            <!-- Contact form section layout -->
-            <form id="contact_form" class="form">
-                <h4>Har du nogle spørgsmål?</h4>
-                <div class="label_input">
-                    <label for="name">Fulde Navn <span class="required">*</span></label>
-                    <input type="text" id="name" name="Name" placeholder="Indtast navn" required="">
-                </div>
-
-                <div class="label_input">
-                    <label for="email">Email <span class="required">*</span></label>
-                    <input type="email" id="email" name="Email" placeholder="Indtast email" required="">
-                </div>
-
-                <div class="label_input">
-                    <label for="message">Din besked <span class="required">*</span></label>
-                    <textarea id="message" name="Message" placeholder="Skriv dine spørgsmål her"
-                        required=""></textarea>
-                </div>
-
-
-                <button type="submit">Send Message</button>
-
-            </form>
-        </section>
-
-    </section>
-
-
-</div><!-- #primary -->
-
 
 
 <?php if ( astra_page_layout() == 'right-sidebar' ) : ?>

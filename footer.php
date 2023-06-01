@@ -190,12 +190,12 @@ margin-left: -32px;
                     </div>
                     <div class="footer_social">
                         <ul class="social">
-                            <li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-official" style="font-size: 32px;"
+                            <li><a href="https://www.facebook.com/Vildsvinejagt" target="_blank"><i class="fa fa-facebook-official" style="font-size: 32px;"
                                         ></i></a></li>
-                            <li><a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram" style="font-size: 32px;"
+                            <li><a href="https://instagram.com/cazadejabalidk?igshid=MzRlODBiNWFlZA==" target="_blank"><i class="fa fa-instagram" style="font-size: 32px;"
                                         ></i></a>
                             </li>
-                            <li><a href="https://www.youtube.com" target="_blank"><i class="fa fa-youtube" style="font-size: 32px;"
+                            <li><a href="https://www.youtube.com/@cazadejabali4624" target="_blank"><i class="fa fa-youtube" style="font-size: 32px;"
                                         ></i></a>
                             </li>
                         </ul>

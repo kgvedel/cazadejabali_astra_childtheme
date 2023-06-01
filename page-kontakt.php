@@ -95,9 +95,7 @@ div#wpforms-confirmation-2298 {
 
     }
 
-.elementor-element.elementor-element-855e489.elementor-widget__width-initial.elementor-widget-tablet__width-initial.elementor-widget.elementor-widget-wpforms {
-    max-height: 28rem;
-}
+
 
 .wpforms-container .wpforms-field {
     padding: 0px;
@@ -175,3 +173,4 @@ div#wpforms-confirmation-2298 {
 <?php endif ?>
 
 <?php get_footer(); ?>
+

@@ -74,7 +74,7 @@ get_header(); ?>
 
     .card {
         display: flex;
-        flex: 1 0 280px;
+        flex: 0 1 361px;
         box-sizing: border-box;
         min-height: 40rem;
         max-height: 48rem;
@@ -146,13 +146,15 @@ get_header(); ?>
         flex-wrap: wrap;
         align-content: center;
         gap: 0.5rem;
-        min-height: 6rem;
+      min-height: fit-content;
 
     }
 
     .button-container button {
         background-color: var(--spanish_yellow);
         color: var(--black);
+		padding: 1rem 1.5rem;
+		
 
     }
 
@@ -189,7 +191,7 @@ get_header(); ?>
         }
 
         .card {
-            margin: 1rem;
+            margin: 0.5rem;
         }
 
     }
@@ -255,7 +257,7 @@ function getData() {
 function responsive() {
     let amountOfCards;
 
-    if (window.innerWidth >= 1024) {
+    if (window.innerWidth >= 1100) {
         amountOfCards = 3;
     } else if (window.innerWidth >= 767) {
         amountOfCards = 2;

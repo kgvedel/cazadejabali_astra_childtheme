@@ -38,129 +38,6 @@ if ( ! defined( 'ABSPATH' ) ) {
             --blue: #6473ff;
         }
 
-
-        /*Generelt form styling + newsletter*/
-        
-        form {
-            background: var(--beige);
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            padding: 1.5rem;
-            gap: 1rem;
-            max-width: 40rem;
-        }
-
-        form input {
-            min-width: 60%;
-            font-family: 'Open Sans';
-            min-height: 2rem;
-
-        }
-
-        input:focus,
-        input[type=text],
-        input[type=email],
-        input[type=tel],
-        input[type=number],
-        select,
-        textarea {
-            border: 2px solid var(--green);
-            border-radius: 4px;
-            outline: none !important;
-
-        }
-
-        form select,
-        form textarea {
-            font-family: 'Open Sans';
-        }
-
-
-        label {
-            font-weight: bold;
-            font-family: 'Open Sans';
-        }
-
-
-        form section {
-            display: flex;
-            gap: 2rem;
-            flex-direction: column;
-        }
-
-
-
-        .label_input {
-            position: relative;
-            display: flex;
-            width: 100%;
-            flex-direction: column;
-            flex: 1 0 48%;
-        }
-
-
-
-        /*validation*/
-        input:focus,
-        input[type=text]:focus,
-        input[type=email]:focus,
-        input[type=tel]:focus,
-        input[type=number]:focus,
-        select:focus,
-        textarea:focus {
-
-            border: 2px solid var(--blue);
-        }
-
-
-
-        .label_input:focus-within::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: -10px;
-            width: 3px;
-            background-color: var(--blue);
-            height: 0;
-            transition: height 0.3s ease-in-out;
-        }
-
-        .label_input:focus-within::before {
-            animation: expandLine 0.3s forwards;
-        }
-
-        @keyframes expandLine {
-            0% {
-                height: 0;
-                bottom: 0;
-            }
-
-            100% {
-                height: 100%;
-                bottom: auto;
-                top: 0;
-            }
-        }
-
-        input:invalid:not(:placeholder-shown) {
-            border: 2px solid var(--spanish_red);
-        }
-
-
-        input:focus:valid,
-        input:required:valid,
-        select:required:valid {
-            border: 2px solid #5ef570;
-        }
-
-        input:focus {
-
-            border: 2px solid var(--blue);
-        }
-
         /*Footer stylingen*/
 
         /*List stylingen bliver i flex, da vi gør det lokalt i html, er det kun adresse listen tilstede*/
@@ -215,12 +92,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			object-fit: cover;
         }
 
-.footer_nyhedsbrev_form > h5:nth-child(1) {
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
-
 #footer_top {
   display: flex;
   flex-wrap: wrap;
@@ -229,12 +100,6 @@ if ( ! defined( 'ABSPATH' ) ) {
   gap: 2rem;
   align-items: baseline;
 }
-
-
-#nyhedsbrev {
-  padding: 1rem;
-}
-
 
 .firma_tekst {
   font-size: 12px;
@@ -250,7 +115,14 @@ if ( ! defined( 'ABSPATH' ) ) {
   display: flex;
   gap: 16pt;
   padding-left: 0px;
+	margin-left: 42px;
+margin-bottom: 0px;
 }
+		
+		.middle {
+margin-left: -32px;
+}
+
 
 .footer_contact {
   align-items: center;
@@ -281,14 +153,14 @@ if ( ! defined( 'ABSPATH' ) ) {
   margin: 0 auto;
 	
 }
+		
     </style>
-
     <footer>
         <section id="sfooter">
             <section id="footer_top">
                 <section class="left">
                     <div id="footer_logo">
-                        <a id="footer_img" href="https://www.vildsvinejagt.com/"><img src="https://www.vildsvinejagt.com/wp-content/uploads/2023/05/green.svg" alt="Logo"></a>
+                        <a id="footer_img" href="https://www.vildsvinejagt.com/"><img src="https://www.vildsvinejagt.com/wp-content/uploads/2023/05/Frame-1333.svg" alt="Logo"></a>
                     </div>
                     <div class="firma_tekst">
                         <p>© Cazadejabali/Tom Vedel 2023</p>
@@ -333,7 +205,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
                 <section class="right">
                     <div class="footer_download">
-                        <h5>Download vores program, flyer og plakat</h5>
+                        <h5>Download vores program og flyer</h5>
                         <ul class="download">
                             <li><a target="_blank" class="jp-btn"
                                     href="https://www.vildsvinejagt.com/wp-content/uploads/2023/05/Cazadejabali_jagtprogram.pdf">Jagtprogram</a>
@@ -341,26 +213,9 @@ if ( ! defined( 'ABSPATH' ) ) {
                             <li><a target="_blank" class="jp-btn"
                                     href="https://www.vildsvinejagt.com/wp-content/uploads/2023/05/CazadeJabali_flyer-1.pdf">Flyer</a>
                             </li>
-                            <li><a target="_blank" class="jp-btn" href="https://www.google.com">Plakat</a></li>
-                        </ul>
+                           <!-- <li><a target="_blank" class="jp-btn" href="https://www.google.com">Plakat</a></li>
+                        </ul>-->
                     </div>
-                </section>
-            </section>
-
-            <section id="footer_nyhedsbrev_section">
-                <section id="nyhedsbrev">
-                    <form class="footer_nyhedsbrev_form">
-                        <h5>Tilmeld nyhedsbrev</h5>
-                        <div class="footer_form_group">
-                            <label for="mail">Email <span class="required">*</span></label>
-                            <input class="footer_input" type="mail" id="mail" name="mail"
-                                placeholder="Indtast email" required>
-                        </div>
-
-                        <div class="sign_btn">
-                            <button id="sign_up" type="submit">Tilmeld Nyhedsbrev</button>
-                        </div>
-                    </form>
                 </section>
             </section>
             <section class="footer_bottom">
@@ -386,6 +241,5 @@ wp_footer();
 
 
 </body>
-
 
 </html>

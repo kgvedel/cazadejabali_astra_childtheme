@@ -492,7 +492,7 @@ function updateCustomerOrder() {
 //calculating the base prise of the jagt
 function jagtPrisen() {
     const prisJagtTo = 1890;
-    const prisJagtTre = 2380;
+    const prisJagtTre = 2390;
     let jagtpris;
 
     //udregner jagtpris 
@@ -517,7 +517,7 @@ function showCart() {
 
     //udregner jagtpris
     const prisJagtTo = 1890;
-    const prisJagtTre = 2380;
+    const prisJagtTre = 2390;
     let jagtpris = jagtPrisen();
 
     const jagtPeriode = nyBookingInfo.jagtperiode;
@@ -646,7 +646,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($valgjagt == 4) {
         $pris = 1890;
       } else {
-        $pris = 2380;
+        $pris = 2390;
       }
       
    

@@ -195,7 +195,7 @@ get_header(); ?>
     }
 
 
-
+/*focus med linje */
     .label_input:focus-within::before {
         content: '';
         position: absolute;
@@ -224,12 +224,12 @@ get_header(); ?>
             top: 0;
         }
     }
-
+/*invalid*/
     input:invalid:not(:placeholder-shown) {
         border: 2px solid var(--spanish_red);
     }
 
-
+/*valid*/
     input:focus:valid,
     input:required:valid,
     select:required:valid {
@@ -573,24 +573,20 @@ function updateCart() {
 function sendFormData() {
 
     //formdata bliver læst direkte fra form fra nu af så php kan modtage det!!!!!
-
-
     console.log("sending form data");
 
     customerForm = document.querySelector("#booking_jagt_form");
 
-
     let formData = new FormData(customerForm);
 
-    // Create and send an AJAX request
+    // Laver og sender en AJAX request 
     let request = new XMLHttpRequest();
-    request.open('POST', ''); // Submit to the same file
+    request.open('POST', ''); // Submitter til php i den samme fil
 
     request.send(formData);
 
     displayConfirmation();
 }
-
 
 
 function displayConfirmation() {
@@ -624,12 +620,11 @@ function displayConfirmation() {
 
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Set the recipient email address
+    // ændr email adressen her senere
     $to = 'mathildeengb@gmail.com';
 
    
-
-    // Retrieve the form data
+    // Retrieve our form data
     $valgjagt = $_POST['valgjagt'];
     $jaegere = $_POST['jaegere'];
     $ledsagere = $_POST['ledsagere'];
@@ -639,7 +634,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $phone = $_POST['phone'];
     $besked = $_POST['besked'];
 
-    // Perform your calculations or any other necessary operations
+    // laver prisudregning
 
     $pris;
 
@@ -649,11 +644,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pris = 2390;
       }
       
-   
 
     $fuldpris =  $pris * $jaegere;
 
-    // Build the email content
+    // Bygger emailens indhold 
     $message = 'Ny bestillings forespørgsel: ' . "\r\n\r\n";
     $message .= 'Jagtperiode: ' . $valgjagt . "\r\n";
     $message .= 'Antal jægere: ' . $jaegere . "\r\n";
@@ -665,7 +659,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $message .= 'Besked: ' . $besked . "\r\n";
    
 
-     // Set the email subject
+     //setter subject line på emailen
      $subject = 'Ny Bestiling forespørgsel fra '  . $fornavn . ' ' . $efternavn . "\r\n";
 
     // Headers
@@ -673,7 +667,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'Content-Type: text/html; charset=UTF-8',
     );
 
-    // Send the email
+    // Send the email using the wp mail function
     $sent = wp_mail($to, $subject, $message, $headers);
 
     if ($sent) {

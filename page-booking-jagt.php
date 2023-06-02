@@ -352,7 +352,7 @@ get_header(); ?>
             <section id="valg_af_deltagere">
                 <div class="label_input">
                     <label for="jaegere">Jægere<span class="req_field"> *</span></label>
-                    <input type="number" id="jaegere" name="jaegere" min="10" max="16" placeholder="Antal jægere"
+                    <input type="number" id="jaegere" name="jaegere" min="1" max="16" placeholder="Antal jægere"
                         required>
                 </div>
                 <div class="label_input">
